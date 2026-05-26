@@ -64,6 +64,16 @@ export interface SlideEntry {
   /** 開発者向けのラベル（IDE のホバーで見える） */
   note?: string;
   textSelectable?: boolean;
+  /**
+   * 目次（TableOfContents）に表示する日本語タイトル。
+   * 未指定の場合はコンポーネント名から自動生成された英語名が表示される。
+   */
+  title?: string;
+  /**
+   * 目次でグルーピングするための章キー（例: 'opening' / 'chapter-01'）。
+   * 章ラベル・サブタイトルは TableOfContents 側の CHAPTER_LABELS で定義する。
+   */
+  chapter?: string;
 }
 
 /**
