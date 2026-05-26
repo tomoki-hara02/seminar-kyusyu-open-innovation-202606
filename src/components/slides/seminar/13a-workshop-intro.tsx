@@ -109,7 +109,7 @@ export default function Slide13aWorkshopIntro() {
               filter: 'drop-shadow(0 6px 36px rgba(200,168,255,0.4))',
             }}
           >
-            ワークショップ
+            Workshop
           </h1>
 
           {/* サブタイトル */}
@@ -117,7 +117,7 @@ export default function Slide13aWorkshopIntro() {
             className="font-bold text-white/85 tracking-tight"
             style={{ fontSize: 'clamp(1.1rem, 2.4vw, 1.75rem)' }}
           >
-            生成AI活用プラン作成
+            従業員の声をもとに活用プランを考える
           </p>
         </motion.div>
 
@@ -136,7 +136,7 @@ export default function Slide13aWorkshopIntro() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.9 }}
         >
-          次の 4 枚の架空企業の設定を元に<br />
+          次のスライドの<span className="text-white/85 font-semibold">従業員の声</span>を元に<br />
           <span className="text-white/85 font-semibold">
             生成AIを使って活用プランを考えてみましょう
           </span>

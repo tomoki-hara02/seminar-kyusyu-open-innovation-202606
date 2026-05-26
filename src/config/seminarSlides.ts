@@ -14,11 +14,7 @@ import Slide11Chapter01      from '@/components/slides/seminar/11-chapter-01';
 import Slide12AIRoi          from '@/components/slides/seminar/12-ai-roi';
 import Slide13LivePlan           from '@/components/slides/seminar/13-live-plan';
 import Slide13aWorkshopIntro    from '@/components/slides/seminar/13a-workshop-intro';
-import Slide14FictionalProfile from '@/components/slides/seminar/14-fictional-profile';
-import Slide15FictionalKpi     from '@/components/slides/seminar/15-fictional-kpi';
-import Slide16FictionalGapPlan from '@/components/slides/seminar/16-fictional-gap-plan';
 import Slide17EmployeeVoices   from '@/components/slides/seminar/17-employee-voices';
-import Slide18GrowthCycle      from '@/components/slides/seminar/18-growth-cycle';
 import Slide19Recap            from '@/components/slides/seminar/19-recap';
 import Slide20Chapter02        from '@/components/slides/seminar/20-chapter-02';
 import Slide20aAiPrinciples    from '@/components/slides/seminar/20a-ai-principles';
@@ -151,43 +147,12 @@ export const seminarSlideRegistry: SlideEntry[] = [
     note: 'p13a: ワークショップ開始アナウンス',
   },
   {
-    id: '14-fictional-profile',
-    Component: Slide14FictionalProfile,
-    chapter: 'chapter-01',
-    title: 'ワークショップ 1/3 — カンパニープロファイル',
-    note: 'p14: ワークショップ 1/3 — カンパニープロファイル',
-    textSelectable: true,
-  },
-  {
-    id: '15-fictional-kpi',
-    Component: Slide15FictionalKpi,
-    chapter: 'chapter-01',
-    title: 'ワークショップ 2/3 — 前期vs今期 KPI比較',
-    note: 'p15: ワークショップ 2/3 — 前期vs今期目標 KPI比較',
-    textSelectable: true,
-  },
-  {
-    id: '16-fictional-gap-plan',
-    Component: Slide16FictionalGapPlan,
-    chapter: 'chapter-01',
-    title: 'ワークショップ 3/3 — ギャップを埋める社長の考え',
-    note: 'p16: ワークショップ 3/3 — ギャップを埋める社長の考え',
-    textSelectable: true,
-  },
-  {
     id: '17-employee-voices',
     Component: Slide17EmployeeVoices,
     chapter: 'chapter-01',
-    title: '経営目標に対する従業員の声',
-    note: 'p17: 経営目標に対する従業員の声',
+    title: '従業員の声 — ワークショップ素材',
+    note: 'p17: 従業員の声をもとに生成AI活用プランを考える',
     textSelectable: true,
-  },
-  {
-    id: '18-growth-cycle',
-    Component: Slide18GrowthCycle,
-    chapter: 'chapter-01',
-    title: '業務効率化 → 再投資 → 事業拡大',
-    note: 'p18: How It Works — 業務効率化 → 再投資 → 事業拡大',
   },
   {
     id: '19-recap',
