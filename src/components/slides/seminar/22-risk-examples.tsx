@@ -27,7 +27,7 @@ type Case = {
 const CASES: Case[] = [
   {
     id: 'case2',
-    label: 'Example 2',
+    label: 'Example 1',
     messages: [
       {
         from: 'president',
@@ -36,12 +36,12 @@ const CASES: Case[] = [
       },
       {
         from: 'employee',
-        name: '従業員 B',
+        name: '従業員 A',
         text: 'そうですね！去年は調べるのに時間がかかって結構大変でした。早めに取り掛かった方がいいですかね。',
       },
       {
         from: 'employee',
-        name: '従業員 B',
+        name: '従業員 A',
         text: 'そうだ、季節の挨拶文を生成AIで出して、気に入ったものを採用する方が０から考えるより早いです！',
       },
       {
@@ -54,7 +54,7 @@ const CASES: Case[] = [
   },
   {
     id: 'case1',
-    label: 'Example 1',
+    label: 'Example 2',
     messages: [
       {
         from: 'employee',
@@ -271,8 +271,8 @@ function MatrixPanel() {
       {/* 凡例 */}
       <div className="flex flex-col gap-1.5 pt-2 border-t border-white/10">
         {[
-          { color: '#9ee0a8', icon: '✓', label: 'Example 2', jp: '低リスク' },
-          { color: '#ff5560', icon: '⚠', label: 'Example 1', jp: '極高リスク' },
+          { color: '#9ee0a8', icon: '✓', label: 'Example 1', jp: '低リスク' },
+          { color: '#ff5560', icon: '⚠', label: 'Example 2', jp: '極高リスク' },
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-2">
             <span style={{ fontSize: 10, color: item.color }}>{item.icon}</span>

@@ -12,7 +12,8 @@ import Slide09Agenda         from '@/components/slides/seminar/09-agenda';
 import Slide10Start          from '@/components/slides/seminar/10-start';
 import Slide11Chapter01      from '@/components/slides/seminar/11-chapter-01';
 import Slide12AIRoi          from '@/components/slides/seminar/12-ai-roi';
-import Slide13LivePlan         from '@/components/slides/seminar/13-live-plan';
+import Slide13LivePlan           from '@/components/slides/seminar/13-live-plan';
+import Slide13aWorkshopIntro    from '@/components/slides/seminar/13a-workshop-intro';
 import Slide14FictionalProfile from '@/components/slides/seminar/14-fictional-profile';
 import Slide15FictionalKpi     from '@/components/slides/seminar/15-fictional-kpi';
 import Slide16FictionalGapPlan from '@/components/slides/seminar/16-fictional-gap-plan';
@@ -25,7 +26,10 @@ import Slide20bGuidelines      from '@/components/slides/seminar/20b-guidelines-
 import Slide21RiskBased        from '@/components/slides/seminar/21-risk-based';
 import Slide22RiskExamples     from '@/components/slides/seminar/22-risk-examples';
 import Slide23DataFlow         from '@/components/slides/seminar/23-data-flow';
+import Slide23aChapter02Recap  from '@/components/slides/seminar/23a-chapter-02-recap';
 import Slide24Chapter02Back    from '@/components/slides/seminar/24-chapter-02-back';
+import Slide25RulesFunnel      from '@/components/slides/seminar/25-rules-funnel';
+import Slide26InternalRulesToc from '@/components/slides/seminar/26-internal-rules-toc';
 
 /**
  * 本番セミナー「生成AIを"安心して使い倒す"ためのルールづくり入門」用のスライド一覧。
@@ -140,6 +144,13 @@ export const seminarSlideRegistry: SlideEntry[] = [
     note: 'p13: Live Demo — 架空企業 AI活用プラン作成',
   },
   {
+    id: '13a-workshop-intro',
+    Component: Slide13aWorkshopIntro,
+    chapter: 'chapter-01',
+    title: 'ワークショップ — 生成AI活用プラン作成',
+    note: 'p13a: ワークショップ開始アナウンス',
+  },
+  {
     id: '14-fictional-profile',
     Component: Slide14FictionalProfile,
     chapter: 'chapter-01',
@@ -187,24 +198,25 @@ export const seminarSlideRegistry: SlideEntry[] = [
   },
 
   // ── Chapter 02: 生成AI社内規程の作成 ────────────────────
+  // ── Chapter 02 前編: 生成AI社内規程の作成（全体像） ──────────────────────────
   {
     id: '20-chapter-02',
     Component: Slide20Chapter02,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: 'Chapter 02 表紙（前編）— 社内規程の全体像',
     note: 'p20: Chapter 02 前編 — 生成AI社内規程の作成（全体像解説）',
   },
   {
     id: '20a-ai-principles',
     Component: Slide20aAiPrinciples,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: 'AI事業者ガイドライン基本理念',
     note: 'p20a: AI事業者ガイドライン基本理念 — Dignity / Diversity & Inclusion / Sustainability',
   },
   {
     id: '20b-guidelines-text',
     Component: Slide20bGuidelines,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: '経産省AIガイドライン1.2版 — リスクベース引用',
     note: 'p20b: 経産省AIガイドライン1.2版 — リスクベースアプローチ引用',
     textSelectable: true,
@@ -212,29 +224,52 @@ export const seminarSlideRegistry: SlideEntry[] = [
   {
     id: '21-risk-based',
     Component: Slide21RiskBased,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: 'リスクベースアプローチとは（マトリックス）',
     note: 'p21: リスクベースアプローチとは？（リスクマトリックス）',
   },
   {
     id: '22-risk-examples',
     Component: Slide22RiskExamples,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: 'リスクベースアプローチ — 具体例',
     note: 'p22: リスクベースアプローチ具体例（チャット形式）',
   },
   {
     id: '23-data-flow',
     Component: Slide23DataFlow,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-front',
     title: '入力情報の権利処理 × モデル側の利用規約',
     note: 'p23: 入力情報の権利処理 × モデル側の利用規約（PC↔AI 双方向フロー）',
   },
   {
+    id: '23a-chapter-02-recap',
+    Component: Slide23aChapter02Recap,
+    chapter: 'chapter-02-front',
+    title: 'Recap — Chapter 02 前編の3つのポイント',
+    note: 'p23a: Chapter 02 前編まとめ Recap',
+  },
+
+  // ── Chapter 02 後編: 生成AI社内規程の作成（各論） ────────────────────────────
+  {
     id: '24-chapter-02-back',
     Component: Slide24Chapter02Back,
-    chapter: 'chapter-02',
+    chapter: 'chapter-02-back',
     title: 'Chapter 02 後編 — 社内規程の各論へ',
     note: 'p24: Chapter 02 後編 — 生成AI社内規程の作成（各論）',
+  },
+  {
+    id: '25-rules-funnel',
+    Component: Slide25RulesFunnel,
+    chapter: 'chapter-02-back',
+    title: '社内規程の射程 — 各AI利用規約の範囲内',
+    note: 'p25: 生成AI利用規約 → 社内生成AI利用規約 ファネル図',
+  },
+  {
+    id: '26-internal-rules-toc',
+    Component: Slide26InternalRulesToc,
+    chapter: 'chapter-02-back',
+    title: '社内生成AI利用規程 — 全条項の目次（CardWheel）',
+    note: 'p26: 社内規程の目次 — 全18条項 CardWheel + サイドバー',
   },
 ];

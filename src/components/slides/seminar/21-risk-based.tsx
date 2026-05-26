@@ -144,7 +144,6 @@ export default function Slide21RiskBased() {
                   style={{
                     fontSize: 'clamp(10px, 0.95vw, 13px)',
                     writingMode: 'vertical-rl',
-                    transform: 'rotate(180deg)',
                   }}
                 >
                   発生確率
@@ -154,7 +153,6 @@ export default function Slide21RiskBased() {
                   style={{
                     fontSize: 'clamp(8px, 0.7vw, 10px)',
                     writingMode: 'vertical-rl',
-                    transform: 'rotate(180deg)',
                   }}
                 >
                   -Likelihood-

@@ -44,7 +44,8 @@ interface ChapterLabel {
 const CHAPTER_LABELS: Record<string, ChapterLabel> = {
   opening: { display: 'Opening', subtitle: 'イントロダクション' },
   'chapter-01': { display: 'Chapter 01', subtitle: '生成AI活用プランの作成' },
-  'chapter-02': { display: 'Chapter 02', subtitle: '生成AI社内規程の作成' },
+  'chapter-02-front': { display: 'Chapter 02 前編', subtitle: '生成AI社内規程 — 全体像' },
+  'chapter-02-back':  { display: 'Chapter 02 後編', subtitle: '生成AI社内規程 — 各論' },
   'chapter-03': {
     display: 'Chapter 03',
     subtitle: 'その他生成AIに関する法的論点',

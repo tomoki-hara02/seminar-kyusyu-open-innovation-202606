@@ -113,7 +113,16 @@ export default function Slide12AIRoi() {
           {/* 引用元 */}
           <p className="text-[10px] text-white/25 leading-relaxed tracking-wide">
             出典: MIT Sloan Management Review<br />
-            State of AI in Business (2025)
+            State of AI in Business (2025)<br />
+            <a
+              href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="underline underline-offset-2 text-white/40 hover:text-white/70 transition-colors"
+            >
+              資料はこちら
+            </a>
           </p>
         </motion.div>
 
