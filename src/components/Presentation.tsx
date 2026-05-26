@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DeckBackground } from './backgrounds';
 import TableOfContents from './TableOfContents';
-import { slideRegistry } from '@/config/slides';
+import { slideRegistry as defaultRegistry, type SlideEntry } from '@/config/slides';
 import { BG_COLOR } from '@/theme/colors';
 import { PresentationContext } from '@/context/presentation';
 
@@ -14,7 +14,13 @@ const slideVariants = {
   exit: { opacity: 0 },
 };
 
-export default function Presentation() {
+interface PresentationProps {
+  /** 表示するスライドの一覧。未指定の場合は既存テンプレートの slideRegistry を使う。 */
+  registry?: SlideEntry[];
+}
+
+export default function Presentation({ registry }: PresentationProps = {}) {
+  const slideRegistry = registry ?? defaultRegistry;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);
@@ -50,8 +56,12 @@ export default function Presentation() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goNext, goPrev, tocOpen]);
 
+  const entry = slideRegistry[currentSlide];
+  const CurrentSlideComponent = entry.Component;
+
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (tocOpen) return;
+    if (entry.textSelectable) return;
     const midpoint = window.innerWidth / 2;
     if (e.clientX > midpoint) {
       goNext();
@@ -60,13 +70,10 @@ export default function Presentation() {
     }
   };
 
-  const entry = slideRegistry[currentSlide];
-  const CurrentSlideComponent = entry.Component;
-
   return (
     <PresentationContext.Provider value={{ currentSlide, goTo }}>
     <div
-      className="relative w-screen h-screen overflow-hidden cursor-pointer select-none"
+      className={`relative w-screen h-screen overflow-hidden ${entry.textSelectable ? 'cursor-default select-text' : 'cursor-pointer select-none'}`}
       style={{ backgroundColor: BG_COLOR }}
       onClick={handleClick}
     >

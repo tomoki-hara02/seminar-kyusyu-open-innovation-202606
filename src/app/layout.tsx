@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Interactive Deck — Template",
-  description: "Reusable interactive presentation template",
+  title: '生成AIを"安心して使い倒す"ためのルールづくり入門 | tAiL. 法律事務所',
+  description:
+    "経営者・幹部・次世代リーダー層向けセミナー（2026年6月17日 熊本城ホール）。生成AI活用のルールづくりを学ぶ実践型セッション。",
 };
 
 export default function RootLayout({
