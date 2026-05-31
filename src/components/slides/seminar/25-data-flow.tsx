@@ -7,11 +7,10 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p23: 生成AIの問題を入力情報とモデル側に分ける
+ * p26: 生成AIの問題を4つの分析軸に分ける
  *
- * 左: PC（p8 と同じワイヤーフレーム表現）
- * 右: AI モデル（icosahedron + 回転リング + 中心コア）
- * 中央: PC → AI / AI → PC の双方向データフロー
+ * 左: PC（ユーザーリテラシー） / 右: AI モデル（演算環境）
+ * 中央: INPUT（PC→AI） / OUTPUT（AI→PC）の双方向データフロー
  */
 
 /* ────────── PC メッシュ（p8 と同じ） ────────── */
@@ -276,8 +275,83 @@ function ConnectionLine({ startX, endX, y, color }: { startX: number; endX: numb
   return <primitive object={lineObj} />;
 }
 
+/* ────────── 分析項目データ ────────── */
+const ANALYSIS_ITEMS = [
+  {
+    id: 'literacy',
+    index: '①',
+    overlayLabel: '① ユーザー',
+    overlayColor: '#f7c46c',
+    overlayPosition: { left: '26%', top: '48%' } as const,
+    overlayAlign: 'outside-right' as const,
+    sectionLabel: 'ユーザー',
+    title: 'ユーザー',
+    titleGradient: 'linear-gradient(90deg, #f7c46c 0%, #ffaacc 100%)',
+    accent: '#f7c46c',
+    bullets: [
+      'アカウント管理',
+      'ユーザー属性',
+      'リテラシー',
+    ],
+  },
+  {
+    id: 'input',
+    index: '②',
+    overlayLabel: '② INPUT →',
+    overlayColor: '#88bbff',
+    overlayPosition: { left: '50%', top: '35%' } as const,
+    sectionLabel: 'INPUT',
+    title: '入力情報の権利処理',
+    titleGradient: 'linear-gradient(90deg, #4F8EF7 0%, #88bbff 100%)',
+    accent: '#88bbff',
+    bullets: [
+      '社内データ・顧客情報の取扱い',
+      '著作物・第三者情報の権利確認',
+      '個人情報の同意・匿名化',
+    ],
+  },
+  {
+    id: 'compute',
+    index: '③',
+    overlayLabel: '③ 演算環境',
+    overlayColor: '#c8a8ff',
+    overlayPosition: { left: '74%', top: '48%' } as const,
+    overlayAlign: 'outside-left' as const,
+    sectionLabel: '演算環境',
+    title: 'モデル基盤',
+    titleGradient: 'linear-gradient(90deg, #c8a8ff 0%, #88bbff 100%)',
+    accent: '#c8a8ff',
+    bullets: [
+      '利用規約',
+      'データレジデンシー',
+      'サービス提供者',
+    ],
+  },
+  {
+    id: 'output',
+    index: '④',
+    overlayLabel: '← ④ OUTPUT',
+    overlayColor: '#FF6B9D',
+    overlayPosition: { left: '50%', top: '78%' } as const,
+    sectionLabel: 'OUTPUT',
+    title: '出力の取扱い',
+    titleGradient: 'linear-gradient(90deg, #c8a8ff 0%, #FF6B9D 100%)',
+    accent: '#FF6B9D',
+    bullets: [
+      '守秘義務との関係',
+      '利用前の社内審査',
+    ],
+  },
+] as const;
+
+const OVERLAY_ALIGN_CLASS = {
+  center: '-translate-x-1/2',
+  'outside-left': '-translate-y-1/2',
+  'outside-right': '-translate-x-full -translate-y-1/2',
+} as const;
+
 /* ────────── スライド本体 ────────── */
-export default function Slide23DataFlow() {
+export default function Slide25DataFlow() {
   return (
     <SlideWrapper>
       <div className="flex flex-col w-full h-full min-h-0">
@@ -289,49 +363,36 @@ export default function Slide23DataFlow() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <span
-            className="tracking-[0.32em] uppercase text-white/40 text-center"
-            style={{ fontSize: 'clamp(12px, 1.2vw, 16px)' }}
-          >
-            Two Concerns · 入力情報 × モデル側
-          </span>
           <h2
             className="font-bold tracking-tight text-white leading-snug text-center"
             style={{ fontSize: 'clamp(20px, 2.55vw, 36px)' }}
           >
+            生成AI社内規程に関する
             <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(90deg, #4F8EF7 0%, #88bbff 100%)' }}
+              className="bg-clip-text text-transparent ml-1"
+              style={{ backgroundImage: 'linear-gradient(90deg, #4F8EF7 0%, #c8a8ff 50%, #FF6B9D 100%)' }}
             >
-              入力情報の権利処理
+              ４つの分析セグメント
             </span>
-            と
-            <span
-              className="bg-clip-text text-transparent mx-1"
-              style={{ backgroundImage: 'linear-gradient(90deg, #c8a8ff 0%, #FF6B9D 100%)' }}
-            >
-              モデル側の利用規約
-            </span>
-            に分けて考える
           </h2>
         </motion.div>
 
-        {/* ── ② 3D キャンバス（中段・flex で残り高さを占有） ── */}
-        <div className="relative flex-1 min-h-0">
+        {/* ── ② 3D キャンバス（高さを抑えて下段テキスト用の余白を確保） ── */}
+        <div className="relative shrink-0 -mt-1 h-[49%] min-h-0">
           <Canvas
-            camera={{ position: [0, 0.8, 6.0], fov: 50 }}
+            camera={{ position: [0, 0.95, 6.4], fov: 48 }}
             gl={{ antialias: true, alpha: false }}
             style={{ background: '#0a0a0f', width: '100%', height: '100%' }}
           >
             <color attach="background" args={['#0a0a0f']} />
 
-            {/* PC（左） — y を下げて画面下寄りに */}
-            <group position={[-3, -0.3, 0]} scale={1.0}>
+            {/* PC（左） */}
+            <group position={[-3, 0.08, 0]} scale={0.92}>
               <PCMesh />
             </group>
 
-            {/* AI モデル（右） — 同様に下寄せ */}
-            <group position={[3, -0.3, 0]} scale={1.0}>
+            {/* AI モデル（右） */}
+            <group position={[3, 0.08, 0]} scale={0.92}>
               <AIModel />
             </group>
 
@@ -355,143 +416,86 @@ export default function Slide23DataFlow() {
             />
           </Canvas>
 
-          {/* ① INPUT — ストリーム上側の外（上）に配置 */}
-          <motion.div
-            className="absolute left-1/2 pointer-events-none z-10 -translate-x-1/2"
-            style={{ top: '35%' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <span
-              className="font-mono tracking-widest whitespace-nowrap"
-              style={{ color: '#88bbff', fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+          {/* 分析項目ラベル（Canvas 上） */}
+          {ANALYSIS_ITEMS.map((item, i) => (
+            <motion.div
+              key={item.id}
+              className={`absolute pointer-events-none z-10 ${OVERLAY_ALIGN_CLASS[item.overlayAlign ?? 'center']}`}
+              style={{
+                left: item.overlayPosition.left,
+                top: item.overlayPosition.top,
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 + i * 0.15 }}
             >
-              ① INPUT →
-            </span>
-          </motion.div>
-
-          {/* ② OUTPUT — ストリーム下側の外（下）に配置 */}
-          <motion.div
-            className="absolute left-1/2 pointer-events-none z-10 -translate-x-1/2"
-            style={{ top: '78%' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <span
-              className="font-mono tracking-widest whitespace-nowrap"
-              style={{ color: '#FF6B9D', fontSize: 'clamp(12px, 1.15vw, 16px)' }}
-            >
-              ← ② OUTPUT
-            </span>
-          </motion.div>
+              <span
+                className="font-mono tracking-widest whitespace-nowrap"
+                style={{ color: item.overlayColor, fontSize: 'clamp(11px, 1.05vw, 15px)' }}
+              >
+                {item.overlayLabel}
+              </span>
+            </motion.div>
+          ))}
         </div>
 
-        {/* ── ③ テキストブロック（メッシュの真下にそれぞれ配置） ── */}
-        <div className="shrink-0 relative h-[28%] min-h-[180px] z-10">
-
-          {/* 左：入力側（PC の真下、画面左 ~22%） */}
-          <motion.div
-            className="absolute flex flex-col items-center text-center gap-1.5"
-            style={{
-              left: '22%',
-              top: 0,
-              transform: 'translateX(-50%)',
-              width: 'min(34%, 360px)',
-            }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-          >
-            <div className="flex items-center gap-2">
-              <span className="h-px w-8" style={{ background: 'linear-gradient(90deg, transparent, #88bbff66)' }} />
-              <span
-                className="font-mono tracking-widest whitespace-nowrap"
-                style={{ color: '#88bbff', fontSize: 'clamp(12px, 1.15vw, 15px)' }}
-              >
-                ① 入力側
-              </span>
-              <span className="h-px w-8" style={{ background: 'linear-gradient(90deg, #88bbff66, transparent)' }} />
-            </div>
-            <h3
-              className="font-bold text-white leading-tight"
-              style={{ fontSize: 'clamp(17px, 1.75vw, 23px)' }}
+        {/* ── ③ テキストブロック（4列並列） ── */}
+        <div className="shrink-0 flex-1 grid grid-cols-4 gap-3 content-start px-5 pt-2 pb-8 z-10">
+          {ANALYSIS_ITEMS.map((item, i) => (
+            <motion.div
+              key={item.id}
+              className="flex flex-col items-center text-center gap-1.5 min-w-0"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 + i * 0.08 }}
             >
-              入力情報の
-              <span
-                className="bg-clip-text text-transparent ml-1"
-                style={{ backgroundImage: 'linear-gradient(90deg, #4F8EF7 0%, #88bbff 100%)' }}
+              <div className="flex items-center gap-1.5 w-full justify-center">
+                <span
+                  className="h-px flex-1 max-w-6"
+                  style={{ background: `linear-gradient(90deg, transparent, ${item.accent}66)` }}
+                />
+                <span
+                  className="font-mono tracking-widest whitespace-nowrap shrink-0"
+                  style={{ color: item.accent, fontSize: 'clamp(10px, 0.95vw, 13px)' }}
+                >
+                  {item.index} {item.sectionLabel}
+                </span>
+                <span
+                  className="h-px flex-1 max-w-6"
+                  style={{ background: `linear-gradient(90deg, ${item.accent}66, transparent)` }}
+                />
+              </div>
+              <h3
+                className="font-bold text-white leading-tight"
+                style={{ fontSize: 'clamp(13px, 1.25vw, 18px)' }}
               >
-                権利処理
-              </span>
-            </h3>
-            <div className="flex flex-col gap-1 items-center">
-              {[
-                '社内データ・顧客情報の取扱い',
-                '著作物・第三者情報の権利確認',
-                '個人情報の同意・匿名化',
-              ].map((item) => (
-                <div key={item} className="flex items-baseline gap-1.5 justify-center">
-                  <span style={{ color: '#88bbff', fontSize: 'clamp(14px, 1.25vw, 17px)' }}>▸</span>
-                  <span className="text-white/70 leading-snug" style={{ fontSize: 'clamp(14px, 1.25vw, 17px)' }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 右：モデル側（AI モデルの真下、画面右 ~22%） */}
-          <motion.div
-            className="absolute flex flex-col items-center text-center gap-1.5"
-            style={{
-              right: '22%',
-              top: 0,
-              transform: 'translateX(50%)',
-              width: 'min(34%, 360px)',
-            }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <div className="flex items-center gap-2">
-              <span className="h-px w-8" style={{ background: 'linear-gradient(90deg, transparent, #FF6B9D66)' }} />
-              <span
-                className="font-mono tracking-widest whitespace-nowrap"
-                style={{ color: '#FF6B9D', fontSize: 'clamp(12px, 1.15vw, 15px)' }}
-              >
-                ② モデル側
-              </span>
-              <span className="h-px w-8" style={{ background: 'linear-gradient(90deg, #FF6B9D66, transparent)' }} />
-            </div>
-            <h3
-              className="font-bold text-white leading-tight"
-              style={{ fontSize: 'clamp(17px, 1.75vw, 23px)' }}
-            >
-              モデル側の
-              <span
-                className="bg-clip-text text-transparent ml-1"
-                style={{ backgroundImage: 'linear-gradient(90deg, #c8a8ff 0%, #FF6B9D 100%)' }}
-              >
-                利用規約
-              </span>
-            </h3>
-            <div className="flex flex-col gap-1 items-center">
-              {[
-                '学習データ利用 / 秘密保持義務',
-                'データのレジデンシー',
-                '利用禁止項目 etc.',
-              ].map((item) => (
-                <div key={item} className="flex items-baseline gap-1.5 justify-center">
-                  <span style={{ color: '#FF6B9D', fontSize: 'clamp(14px, 1.25vw, 17px)' }}>▸</span>
-                  <span className="text-white/70 leading-snug" style={{ fontSize: 'clamp(14px, 1.25vw, 17px)' }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{ backgroundImage: item.titleGradient }}
+                >
+                  {item.title}
+                </span>
+              </h3>
+              <div className="flex flex-col gap-0.5 w-full max-w-[220px] mx-auto">
+                {item.bullets.map((bullet) => (
+                  <div key={bullet} className="grid grid-cols-[1em_1fr] gap-x-1.5 items-baseline w-full">
+                    <span
+                      className="shrink-0 leading-none"
+                      style={{ color: item.accent, fontSize: 'clamp(11px, 1vw, 14px)' }}
+                    >
+                      ▸
+                    </span>
+                    <span
+                      className="text-white/70 leading-snug text-left"
+                      style={{ fontSize: 'clamp(11px, 1vw, 14px)' }}
+                    >
+                      {bullet}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>

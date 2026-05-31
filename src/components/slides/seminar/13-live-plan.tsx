@@ -125,9 +125,13 @@ export default function Slide13LivePlan() {
           </h2>
         </div>
 
-        {/* ── 注意事項（赤字） ── */}
+        {/* ── 注意事項（アンバー：色覚バリアフリー対応） ── */}
         <motion.div
-          className="flex items-start gap-2 px-4 py-2.5 rounded-xl border border-red-500/30 bg-red-500/8"
+          className="flex items-start gap-2 px-4 py-2.5 rounded-xl"
+          style={{
+            border: '1px solid rgba(251,191,36,0.35)',
+            background: 'rgba(251,191,36,0.07)',
+          }}
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -136,18 +140,26 @@ export default function Slide13LivePlan() {
             className="w-4 h-4 shrink-0 mt-0.5"
             viewBox="0 0 16 16"
             fill="none"
-            stroke="#f87171"
+            stroke="#fbbf24"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
             <path d="M8 2L14 13H2L8 2z" />
             <line x1="8" y1="7" x2="8" y2="9.5" />
-            <circle cx="8" cy="11.5" r="0.5" fill="#f87171" stroke="none" />
+            <circle cx="8" cy="11.5" r="0.5" fill="#fbbf24" stroke="none" />
           </svg>
-          <p className="text-xs text-red-400 leading-relaxed font-medium">
+          <p className="text-xs leading-relaxed font-medium" style={{ color: '#fde68a' }}>
             必ず架空企業などの情報を用いてください。
-            <span className="font-bold underline decoration-red-400/60 ml-1">
+            <span
+              className="font-bold ml-1"
+              style={{
+                color: '#fbbf24',
+                textDecoration: 'underline',
+                textDecorationColor: 'rgba(251,191,36,0.55)',
+                textUnderlineOffset: '2px',
+              }}
+            >
               自社の実際の情報は絶対に入力しないでください。
             </span>
           </p>

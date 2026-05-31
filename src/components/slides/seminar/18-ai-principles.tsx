@@ -28,6 +28,46 @@ const PERI  = S * 3;
 const SEG_LEN = PERI / 6;
 const CYCLE = 4;
 
+// ─── ハイライトレンダラー ─────────────────────────────────────────────────────
+function HighlightedText({
+  text,
+  highlights,
+  color,
+}: {
+  text: string;
+  highlights: string[];
+  color: string;
+}) {
+  if (!highlights.length) return <>{text}</>;
+
+  const regex = new RegExp(`(${highlights.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
+  const parts = text.split(regex);
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        highlights.includes(part) ? (
+          <mark
+            key={i}
+            style={{
+              background: `${color}30`,
+              color,
+              borderRadius: '3px',
+              padding: '0 2px',
+              fontWeight: 700,
+              boxShadow: `0 0 0 1px ${color}55`,
+            }}
+          >
+            {part}
+          </mark>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 // ─── Principle data ──────────────────────────────────────────────────────────
 const PRINCIPLES = [
   {
@@ -41,6 +81,10 @@ const PRINCIPLES = [
     delay: 0,
     description:
       'AIを利活用して効率性や利便性を追求するあまり、人間がAIに過度に依存したり、人間の行動をコントロールすることにAIが利用される社会を構築するのではなく、人間がAIを道具として使いこなすことによって、人間の様々な能力をさらに発揮することを可能とし、より大きな創造性を発揮したり、やりがいのある仕事に従事したりすることで、物質的にも精神的にも豊かな生活を送ることができるような、人間の尊厳が尊重される社会を構築する必要がある。',
+    highlights: [
+      '人間がAIに過度に依存',
+      '人間の行動をコントロールすることにAIが利用される社会を構築するのではなく',
+    ],
   },
   {
     key: 'diversity',
@@ -53,6 +97,9 @@ const PRINCIPLES = [
     delay: CYCLE / 3,
     description:
       '多様な背景、価値観又は考え方を持つ人々が多様な幸せを追求し、それらを柔軟に包摂した上で新たな価値を創造できる社会は、現代における一つの理想であり、大きなチャレンジである。AIという強力な技術は、この理想に我々を近づける一つの有力な道具となりうる。我々はAIの適正な開発と展開によって、このように社会の在り方を変革していく必要がある。',
+    highlights: [
+      '多様な背景、価値観又は考え方を持つ人々が多様な幸せを追求し、それらを柔軟に包摂した上で新たな価値を創造できる社会',
+    ],
   },
   {
     key: 'sustainability',
@@ -65,6 +112,9 @@ const PRINCIPLES = [
     delay: (CYCLE * 2) / 3,
     description:
       '我々は、AIの活用によりビジネスやソリューションを次々と生み、社会の格差を解消し、地球規模の環境問題や気候変動等にも対応が可能な持続性のある社会を構築する方向へ展開させる必要がある。科学・技術立国としての我が国は、その科学的・技術的蓄積をAIによって強化し、そのような社会を作ることに貢献する責務がある。',
+    highlights: [
+      'AIの活用によりビジネスやソリューションを次々と生み、社会の格差を解消し',
+    ],
   },
 ];
 
@@ -286,7 +336,11 @@ export default function Slide20aAiPrinciples() {
               className="leading-[1.9] text-white/70"
               style={{ fontSize: 'clamp(11px, 1.05vw, 14px)' }}
             >
-              {active.description}
+              <HighlightedText
+                text={active.description}
+                highlights={active.highlights}
+                color={active.color}
+              />
             </p>
 
             {/* 出典 */}

@@ -13,19 +13,32 @@ import Slide10Start          from '@/components/slides/seminar/10-start';
 import Slide11Chapter01      from '@/components/slides/seminar/11-chapter-01';
 import Slide12AIRoi          from '@/components/slides/seminar/12-ai-roi';
 import Slide13LivePlan           from '@/components/slides/seminar/13-live-plan';
-import Slide13aWorkshopIntro    from '@/components/slides/seminar/13a-workshop-intro';
-import Slide17EmployeeVoices   from '@/components/slides/seminar/17-employee-voices';
-import Slide19Recap            from '@/components/slides/seminar/19-recap';
-import Slide20Chapter02        from '@/components/slides/seminar/20-chapter-02';
-import Slide20aAiPrinciples    from '@/components/slides/seminar/20a-ai-principles';
-import Slide20bGuidelines      from '@/components/slides/seminar/20b-guidelines-text';
-import Slide21RiskBased        from '@/components/slides/seminar/21-risk-based';
-import Slide22RiskExamples     from '@/components/slides/seminar/22-risk-examples';
-import Slide23DataFlow         from '@/components/slides/seminar/23-data-flow';
-import Slide23aChapter02Recap  from '@/components/slides/seminar/23a-chapter-02-recap';
-import Slide24Chapter02Back    from '@/components/slides/seminar/24-chapter-02-back';
-import Slide25RulesFunnel      from '@/components/slides/seminar/25-rules-funnel';
-import Slide26InternalRulesToc from '@/components/slides/seminar/26-internal-rules-toc';
+import Slide14WorkshopIntro    from '@/components/slides/seminar/14-workshop-intro';
+import Slide15EmployeeVoices   from '@/components/slides/seminar/15-employee-voices';
+import Slide16Recap            from '@/components/slides/seminar/16-recap';
+import Slide17Chapter02        from '@/components/slides/seminar/17-chapter-02';
+import Slide18AiPrinciples    from '@/components/slides/seminar/18-ai-principles';
+import Slide19CognitiveTraps from '@/components/slides/seminar/19-cognitive-traps';
+import Slide20BiasDivide     from '@/components/slides/seminar/20-bias-divide';
+import Slide21RightsNetwork  from '@/components/slides/seminar/21-rights-network';
+import Slide22Guidelines      from '@/components/slides/seminar/22-guidelines-text';
+import Slide23RiskBased        from '@/components/slides/seminar/23-risk-based';
+import Slide24RiskExamples     from '@/components/slides/seminar/24-risk-examples';
+import Slide25RiskPractice     from '@/components/slides/seminar/25-risk-practice';
+import Slide25DataFlow         from '@/components/slides/seminar/25-data-flow';
+import Slide26Chapter02Recap  from '@/components/slides/seminar/26-chapter-02-recap';
+import Slide27Chapter02Back    from '@/components/slides/seminar/27-chapter-02-back';
+import Slide28RulesFunnel      from '@/components/slides/seminar/28-rules-funnel';
+import Slide29InternalRulesToc from '@/components/slides/seminar/29-internal-rules-toc';
+import Slide30BasicPolicyKeywords from '@/components/slides/seminar/30-basic-policy-keywords';
+import Slide31UsagePurposeRestrictions from '@/components/slides/seminar/31-usage-purpose-restrictions';
+import Slide32ChiefResponsibleRecap from '@/components/slides/seminar/32-chief-responsible-recap';
+import Slide33UserScopePatterns from '@/components/slides/seminar/33-user-scope-patterns';
+import Slide34AccountManagement from '@/components/slides/seminar/34-account-management';
+import Slide35ToolAnalysisPerspectives from '@/components/slides/seminar/35-tool-analysis-perspectives';
+import Slide36AccessibleDevices from '@/components/slides/seminar/36-accessible-devices';
+import Slide37AiToolPlanSpec from '@/components/slides/seminar/37-ai-tool-plan-spec';
+import Slide38McpAgentHandling from '@/components/slides/seminar/38-mcp-agent-handling';
 
 /**
  * 本番セミナー「生成AIを"安心して使い倒す"ためのルールづくり入門」用のスライド一覧。
@@ -140,101 +153,193 @@ export const seminarSlideRegistry: SlideEntry[] = [
     note: 'p13: Live Demo — 架空企業 AI活用プラン作成',
   },
   {
-    id: '13a-workshop-intro',
-    Component: Slide13aWorkshopIntro,
+    id: '14-workshop-intro',
+    Component: Slide14WorkshopIntro,
     chapter: 'chapter-01',
     title: 'ワークショップ — 生成AI活用プラン作成',
-    note: 'p13a: ワークショップ開始アナウンス',
+    note: 'p14: ワークショップ開始アナウンス',
   },
   {
-    id: '17-employee-voices',
-    Component: Slide17EmployeeVoices,
+    id: '15-employee-voices',
+    Component: Slide15EmployeeVoices,
     chapter: 'chapter-01',
     title: '従業員の声 — ワークショップ素材',
-    note: 'p17: 従業員の声をもとに生成AI活用プランを考える',
+    note: 'p15: 従業員の声をもとに生成AI活用プランを考える',
     textSelectable: true,
   },
   {
-    id: '19-recap',
-    Component: Slide19Recap,
+    id: '16-recap',
+    Component: Slide16Recap,
     chapter: 'chapter-01',
     title: 'Recap — ここまでの3つのポイント',
-    note: 'p19: Recap — ここまでの 3 つのポイント',
+    note: 'p16: Recap — ここまでの 3 つのポイント',
   },
 
   // ── Chapter 02: 生成AI社内規程の作成 ────────────────────
   // ── Chapter 02 前編: 生成AI社内規程の作成（全体像） ──────────────────────────
   {
-    id: '20-chapter-02',
-    Component: Slide20Chapter02,
+    id: '17-chapter-02',
+    Component: Slide17Chapter02,
     chapter: 'chapter-02-front',
     title: 'Chapter 02 表紙（前編）— 社内規程の全体像',
-    note: 'p20: Chapter 02 前編 — 生成AI社内規程の作成（全体像解説）',
+    note: 'p17: Chapter 02 前編 — 生成AI社内規程の作成（全体像解説）',
   },
   {
-    id: '20a-ai-principles',
-    Component: Slide20aAiPrinciples,
+    id: '18-ai-principles',
+    Component: Slide18AiPrinciples,
     chapter: 'chapter-02-front',
     title: 'AI事業者ガイドライン基本理念',
-    note: 'p20a: AI事業者ガイドライン基本理念 — Dignity / Diversity & Inclusion / Sustainability',
+    note: 'p18: AI事業者ガイドライン基本理念 — Dignity / Diversity & Inclusion / Sustainability',
   },
   {
-    id: '20b-guidelines-text',
-    Component: Slide20bGuidelines,
+    id: '19-cognitive-traps',
+    Component: Slide19CognitiveTraps,
+    chapter: 'chapter-02-front',
+    title: '人間の尊厳 — 思考の放棄 × サイコファンシー',
+    note: 'p19: 人間の尊厳に背く2つの落とし穴（思考の放棄/サイコファンシー）',
+  },
+  {
+    id: '20-bias-divide',
+    Component: Slide20BiasDivide,
+    chapter: 'chapter-02-front',
+    title: '多様性・包摂 — バイアス × AIディバイド',
+    note: 'p20: 多様性・包摂を損なう2つの構造（バイアス/AIディバイド）',
+  },
+  {
+    id: '21-rights-network',
+    Component: Slide21RightsNetwork,
+    chapter: 'chapter-02-front',
+    title: '持続可能性 — 崩壊の具体例 × 果実分配の設計',
+    note: 'p21: インフルエンサー生成動画（崩壊）× 生成AIの果実分配（仕組み設計）',
+  },
+  {
+    id: '22-guidelines-text',
+    Component: Slide22Guidelines,
     chapter: 'chapter-02-front',
     title: '経産省AIガイドライン1.2版 — リスクベース引用',
-    note: 'p20b: 経産省AIガイドライン1.2版 — リスクベースアプローチ引用',
+    note: 'p22: 経産省AIガイドライン1.2版 — リスクベースアプローチ引用',
     textSelectable: true,
   },
   {
-    id: '21-risk-based',
-    Component: Slide21RiskBased,
+    id: '23-risk-based',
+    Component: Slide23RiskBased,
     chapter: 'chapter-02-front',
     title: 'リスクベースアプローチとは（マトリックス）',
-    note: 'p21: リスクベースアプローチとは？（リスクマトリックス）',
+    note: 'p23: リスクベースアプローチとは？（リスクマトリックス）',
   },
   {
-    id: '22-risk-examples',
-    Component: Slide22RiskExamples,
+    id: '24-risk-examples',
+    Component: Slide24RiskExamples,
     chapter: 'chapter-02-front',
     title: 'リスクベースアプローチ — 具体例',
-    note: 'p22: リスクベースアプローチ具体例（チャット形式）',
+    note: 'p24: リスクベースアプローチ具体例（チャット形式）',
   },
   {
-    id: '23-data-flow',
-    Component: Slide23DataFlow,
+    id: '25-risk-practice',
+    Component: Slide25RiskPractice,
     chapter: 'chapter-02-front',
-    title: '入力情報の権利処理 × モデル側の利用規約',
-    note: 'p23: 入力情報の権利処理 × モデル側の利用規約（PC↔AI 双方向フロー）',
+    title: 'リスクベースアプローチ — 実践例（名刺管理MCP）',
+    note: 'p25: リスクベースアプローチ実践例 — 名刺管理MCP → zod → 重複登録リスク → HITL/続行 → 判断',
   },
   {
-    id: '23a-chapter-02-recap',
-    Component: Slide23aChapter02Recap,
+    id: '25-data-flow',
+    Component: Slide25DataFlow,
+    chapter: 'chapter-02-front',
+    title: '生成AI社内規程に関する４つの分析セグメント',
+    note: 'p26: 生成AI社内規程に関する４つの分析セグメント（PC↔AI 双方向フロー）',
+  },
+  {
+    id: '26-chapter-02-recap',
+    Component: Slide26Chapter02Recap,
     chapter: 'chapter-02-front',
     title: 'Recap — Chapter 02 前編の3つのポイント',
-    note: 'p23a: Chapter 02 前編まとめ Recap',
+    note: 'p27: Chapter 02 前編まとめ Recap',
   },
 
   // ── Chapter 02 後編: 生成AI社内規程の作成（各論） ────────────────────────────
   {
-    id: '24-chapter-02-back',
-    Component: Slide24Chapter02Back,
+    id: '27-chapter-02-back',
+    Component: Slide27Chapter02Back,
     chapter: 'chapter-02-back',
     title: 'Chapter 02 後編 — 社内規程の各論へ',
-    note: 'p24: Chapter 02 後編 — 生成AI社内規程の作成（各論）',
+    note: 'p28: Chapter 02 後編 — 生成AI社内規程の作成（各論）',
   },
   {
-    id: '25-rules-funnel',
-    Component: Slide25RulesFunnel,
+    id: '28-rules-funnel',
+    Component: Slide28RulesFunnel,
     chapter: 'chapter-02-back',
     title: '社内規程の射程 — 各AI利用規約の範囲内',
-    note: 'p25: 生成AI利用規約 → 社内生成AI利用規約 ファネル図',
+    note: 'p29: 生成AI利用規約 → 社内生成AI利用規約 ファネル図',
   },
   {
-    id: '26-internal-rules-toc',
-    Component: Slide26InternalRulesToc,
+    id: '29-internal-rules-toc',
+    Component: Slide29InternalRulesToc,
     chapter: 'chapter-02-back',
     title: '社内生成AI利用規程 — 全条項の目次（CardWheel）',
-    note: 'p26: 社内規程の目次 — 全18条項 CardWheel + サイドバー',
+    note: 'p30: 社内規程の目次 — 全18条項 CardWheel + サイドバー',
+  },
+  {
+    id: '30-basic-policy-keywords',
+    Component: Slide30BasicPolicyKeywords,
+    chapter: 'chapter-02-back',
+    title: '1-1 基本方針 — 考えるべき項目',
+    note: 'p31: 1-1 基本方針 — KeywordCloud（10項目）',
+  },
+  {
+    id: '31-usage-purpose-restrictions',
+    Component: Slide31UsagePurposeRestrictions,
+    chapter: 'chapter-02-back',
+    title: '1-2 利用目的 — 生成AI利用規約による制限',
+    note: 'p32: 1-2 利用目的 — 禁止ユースケース（FurtherReading）',
+    textSelectable: true,
+  },
+  {
+    id: '32-chief-responsible-recap',
+    Component: Slide32ChiefResponsibleRecap,
+    chapter: 'chapter-02-back',
+    title: '1-3 統括責任者 — 求められるもの',
+    note: 'p33: 1-3 統括責任者 — Recap（4項目）',
+  },
+  {
+    id: '33-user-scope-patterns',
+    Component: Slide33UserScopePatterns,
+    chapter: 'chapter-02-back',
+    title: '2-1 使用者の範囲 — 活用者選定のパターン例',
+    note: 'p34: 2-1 使用者の範囲 — FeatureCards（3パターン）',
+  },
+  {
+    id: '34-account-management',
+    Component: Slide34AccountManagement,
+    chapter: 'chapter-02-back',
+    title: '2-2 アカウントの管理 — 2つの要点',
+    note: 'p35: 2-2 アカウントの管理 — 共有禁止 / アカウント別アクセス',
+  },
+  {
+    id: '35-tool-analysis-perspectives',
+    Component: Slide35ToolAnalysisPerspectives,
+    chapter: 'chapter-02-back',
+    title: '3-1 ツール総論 — 生成AIツール分析の視点',
+    note: 'p36: 3-1 ツール総論 — 4つの分析視点（LayeredArch + ギミック）',
+  },
+  {
+    id: '36-accessible-devices',
+    Component: Slide36AccessibleDevices,
+    chapter: 'chapter-02-back',
+    title: '3-2 アクセス可能な端末 — 企業が注意すべきこと',
+    note: 'p37: 3-2 アクセス可能な端末 — 私用端末禁止 / 法的・技術的対策',
+  },
+  {
+    id: '37-ai-tool-plan-spec',
+    Component: Slide37AiToolPlanSpec,
+    chapter: 'chapter-02-back',
+    title: '3-3 使用可能なAIツール・プランの指定',
+    note: 'p38: 3-3 ツール・プラン指定 — 無料/個人禁止 / シャドーAI対策',
+  },
+  {
+    id: '38-mcp-agent-handling',
+    Component: Slide38McpAgentHandling,
+    chapter: 'chapter-02-back',
+    title: '3-4 エージェント・MCPの取扱い — 外部アプリへの送信',
+    note: 'p39: 3-4 MCP・エージェント — WorldMap風データフロー図',
   },
 ];

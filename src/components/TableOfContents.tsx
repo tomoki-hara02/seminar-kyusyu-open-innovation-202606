@@ -114,6 +114,7 @@ interface TableOfContentsProps {
   onNavigate: (index: number) => void;
   isOpen: boolean;
   onToggle: () => void;
+  onShowBreak: () => void;
 }
 
 // ─── TOC overlay ──────────────────────────────────────────────────────────────
@@ -124,6 +125,7 @@ export default function TableOfContents({
   onNavigate,
   isOpen,
   onToggle,
+  onShowBreak,
 }: TableOfContentsProps) {
   const dialogId = useId();
   const dialogTitleId = `${dialogId}-title`;
@@ -305,20 +307,40 @@ export default function TableOfContents({
                     {entries.length} slides
                   </span>
                 </div>
-                <button
-                  ref={closeButtonRef}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onToggle();
-                  }}
-                  className="p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all"
-                  aria-label="目次を閉じる"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-                    <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
-                  </svg>
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onShowBreak();
+                      onToggle();
+                    }}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10 bg-white/5
+                      text-white/60 text-xs font-medium tracking-wide
+                      hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-200"
+                    aria-label="休憩スライドを表示"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                      <circle cx="12" cy="12" r="9" />
+                      <path strokeLinecap="round" d="M12 7v5l3 2" />
+                    </svg>
+                    <span>休憩</span>
+                  </button>
+                  <button
+                    ref={closeButtonRef}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggle();
+                    }}
+                    className="p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                    aria-label="目次を閉じる"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                      <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
               {/* ── 章ナビ（Opening → Chapter 01 → ...） ── */}

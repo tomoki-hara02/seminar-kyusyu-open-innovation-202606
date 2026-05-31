@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DeckBackground } from './backgrounds';
 import TableOfContents from './TableOfContents';
+import BreakSlide from './BreakSlide';
 import { slideRegistry as defaultRegistry, type SlideEntry } from '@/config/slides';
 import { BG_COLOR } from '@/theme/colors';
 import { PresentationContext } from '@/context/presentation';
@@ -24,6 +25,7 @@ export default function Presentation({ registry }: PresentationProps = {}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);
+  const [breakActive, setBreakActive] = useState(false);
 
   const slideCount = slideRegistry.length;
 
@@ -47,20 +49,20 @@ export default function Presentation({ registry }: PresentationProps = {}) {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // TOC が開いているときは矢印ナビを無効化
-      if (tocOpen) return;
+      // TOC / 休憩スライド表示中は矢印ナビを無効化
+      if (tocOpen || breakActive) return;
       if (e.key === 'ArrowRight' || e.key === ' ') goNext();
       if (e.key === 'ArrowLeft') goPrev();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goNext, goPrev, tocOpen]);
+  }, [goNext, goPrev, tocOpen, breakActive]);
 
   const entry = slideRegistry[currentSlide];
   const CurrentSlideComponent = entry.Component;
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (tocOpen) return;
+    if (tocOpen || breakActive) return;
     if (entry.textSelectable) return;
     const midpoint = window.innerWidth / 2;
     if (e.clientX > midpoint) {
@@ -96,6 +98,37 @@ export default function Presentation({ registry }: PresentationProps = {}) {
         </motion.div>
       </AnimatePresence>
 
+      {/* ── 休憩スライド（オーバーレイ） ── */}
+      <AnimatePresence>
+        {breakActive && (
+          <motion.div
+            key="break-overlay"
+            className="fixed inset-0 z-[60]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <DeckBackground variant="logoParticles" />
+            <BreakSlide onClose={() => setBreakActive(false)} />
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setBreakActive(false);
+              }}
+              className="fixed top-6 right-6 z-[70] p-2 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-all"
+              aria-label="休憩スライドを閉じる"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* ── 目次（左上トリガー + オーバーレイ） ── */}
       <TableOfContents
         entries={slideRegistry}
@@ -103,32 +136,11 @@ export default function Presentation({ registry }: PresentationProps = {}) {
         onNavigate={goTo}
         isOpen={tocOpen}
         onToggle={() => setTocOpen((v) => !v)}
+        onShowBreak={() => setBreakActive(true)}
       />
 
-      {/* Slide number indicator */}
-      <div className="fixed bottom-8 right-8 z-20 flex items-center gap-3">
-        {slideRegistry.map((s, i) => (
-          <button
-            key={s.id}
-            onClick={(e) => {
-              e.stopPropagation();
-              goTo(i);
-            }}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-              i === currentSlide
-                ? 'bg-white scale-125'
-                : 'bg-white/30 hover:bg-white/60'
-            }`}
-            aria-label={`Slide ${i + 1}: ${s.id}`}
-          />
-        ))}
-        <span className="ml-2 text-xs text-white/30 font-mono tabular-nums">
-          {currentSlide + 1} / {slideCount}
-        </span>
-      </div>
-
       {/* Navigation hint arrows */}
-      {currentSlide > 0 && (
+      {currentSlide > 0 && !breakActive && (
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -142,7 +154,7 @@ export default function Presentation({ registry }: PresentationProps = {}) {
           </svg>
         </button>
       )}
-      {currentSlide < slideCount - 1 && (
+      {currentSlide < slideCount - 1 && !breakActive && (
         <button
           onClick={(e) => {
             e.stopPropagation();
