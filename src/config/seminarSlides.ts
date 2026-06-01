@@ -39,6 +39,15 @@ import Slide35ToolAnalysisPerspectives from '@/components/slides/seminar/35-tool
 import Slide36AccessibleDevices from '@/components/slides/seminar/36-accessible-devices';
 import Slide37AiToolPlanSpec from '@/components/slides/seminar/37-ai-tool-plan-spec';
 import Slide38McpAgentHandling from '@/components/slides/seminar/38-mcp-agent-handling';
+import Slide39InputDataLegalRights from '@/components/slides/seminar/39-input-data-legal-rights';
+import Slide40ProhibitedInputExamples from '@/components/slides/seminar/40-prohibited-input-examples';
+import Slide41RiskBasedInputRelationship from '@/components/slides/seminar/41-risk-based-input-relationship';
+import Slide42TradeSecretAct from '@/components/slides/seminar/42-trade-secret-act';
+import Slide43PipActGenaiCheckpoints from '@/components/slides/seminar/43-pip-act-genai-checkpoints';
+import Slide44PipActGenaiArticles from '@/components/slides/seminar/44-pip-act-genai-articles';
+import Slide45DataResidencyPatterns from '@/components/slides/seminar/45-data-residency-patterns';
+import Slide46Article28ForeignThirdParty from '@/components/slides/seminar/46-article-28-foreign-third-party';
+import Slide47PipRecap from '@/components/slides/seminar/47-pip-recap';
 
 /**
  * 本番セミナー「生成AIを"安心して使い倒す"ためのルールづくり入門」用のスライド一覧。
@@ -341,5 +350,73 @@ export const seminarSlideRegistry: SlideEntry[] = [
     chapter: 'chapter-02-back',
     title: '3-4 エージェント・MCPの取扱い — 外部アプリへの送信',
     note: 'p39: 3-4 MCP・エージェント — WorldMap風データフロー図',
+  },
+  {
+    id: '39-input-data-legal-rights',
+    Component: Slide39InputDataLegalRights,
+    chapter: 'chapter-02-back',
+    title: '4-1 入力情報 総論 — データの法的権利関係',
+    note: 'p40: 4-1 入力情報 総論 — DATAハブ + 5法令（KnowledgeGraph風）',
+  },
+  {
+    id: '40-prohibited-input-examples',
+    Component: Slide40ProhibitedInputExamples,
+    chapter: 'chapter-02-back',
+    title: '4-2 入力禁止情報 — 規程に盛り込む具体例',
+    note: 'p41: 4-2 入力禁止情報 — 6カテゴリ具体例（FurtherReading風）',
+    textSelectable: true,
+  },
+  {
+    id: '41-risk-based-input-relationship',
+    Component: Slide41RiskBasedInputRelationship,
+    chapter: 'chapter-02-back',
+    title: '4-2 入力禁止情報 — リスクベースアプローチとの関係',
+    note: 'p42: 4-2 入力禁止 — 原則禁止 → RBA → 例外解除（Pipeline風）',
+  },
+  {
+    id: '42-trade-secret-act',
+    Component: Slide42TradeSecretAct,
+    chapter: 'chapter-02-back',
+    title: '4-3 社内秘密情報・営業秘密 — 不正競争防止法',
+    note: 'p43: 4-3 営業秘密 — 法第2条6項 + 秘密管理フロー + 経産省指針リンク',
+    textSelectable: true,
+  },
+  {
+    id: '43-pip-act-genai-checkpoints',
+    Component: Slide43PipActGenaiCheckpoints,
+    chapter: 'chapter-02-back',
+    title: '4-4 個人情報 — 個人情報保護法と生成AIの論点',
+    note: 'p44: 4-4 個情法×生成AI — 3点チェックリスト（NextSteps風）',
+  },
+  {
+    id: '44-pip-act-genai-articles',
+    Component: Slide44PipActGenaiArticles,
+    chapter: 'chapter-02-back',
+    title: '4-4 個人情報 — 第16条・第17条',
+    note: 'p45: 4-4 条文リファレンス — 第17条（利用目的）/ 第16条（定義）TextHighlight風',
+    textSelectable: true,
+  },
+  {
+    id: '45-data-residency-patterns',
+    Component: Slide45DataResidencyPatterns,
+    chapter: 'chapter-02-back',
+    title: '4-4 個人情報 — データレジデンシーパターンの概要',
+    note: 'p46: 4-4 データレジデンシー — オンプレ/SaaSフロー + 個情法28条ハイライト',
+    textSelectable: true,
+  },
+  {
+    id: '46-article-28-foreign-third-party',
+    Component: Slide46Article28ForeignThirdParty,
+    chapter: 'chapter-02-back',
+    title: '4-4 個人情報 — 第28条（外国第三者提供）',
+    note: 'p47: 4-4 第28条 — 条文 + 要件/効果/例外フロー',
+    textSelectable: true,
+  },
+  {
+    id: '47-pip-recap',
+    Component: Slide47PipRecap,
+    chapter: 'chapter-02-back',
+    title: '4-4 個人情報 — まとめ',
+    note: 'p48: 4-4 個人情報 Recap — プライバシーポリシー / 個人版 / DPA',
   },
 ];

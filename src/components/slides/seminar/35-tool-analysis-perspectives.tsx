@@ -425,6 +425,30 @@ export default function Slide35ToolAnalysisPerspectives() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="shrink-0 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-1"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
+        >
+          <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#c8a8ff]/40 bg-[#c8a8ff]/10 shrink-0">
+            <motion.span
+              className="w-1.5 h-1.5 rounded-full bg-[#c8a8ff]"
+              animate={{ opacity: [1, 0.35, 1] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <span className="text-[10px] tracking-[0.22em] uppercase text-[#d8c0ff] font-bold">
+              Workshop
+            </span>
+          </span>
+          <p
+            className="text-white/65 font-medium text-center"
+            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+          >
+            自身が使用している生成AIを分析してみましょう
+          </p>
+        </motion.div>
       </motion.div>
     </SlideWrapper>
   );
