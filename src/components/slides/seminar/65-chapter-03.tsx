@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p64: Chapter 03 — その他生成AIに関する法的論点
+ * p65: Chapter 03 — その他生成AIに関する法的論点
  *
  * ベーステンプレート: `templates/ChapterDivider.tsx` / `11-chapter-01.tsx`
  */

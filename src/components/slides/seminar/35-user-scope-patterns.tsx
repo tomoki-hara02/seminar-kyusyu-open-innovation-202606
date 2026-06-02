@@ -4,34 +4,34 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p34: 2-1 使用者の範囲 — 社内生成AI活用者選定のパターン例
+ * p34: 2-1 使用者の範囲 — 使用者範囲の設定で重要なポイント
  *
  * ベーステンプレート: `templates/FeatureCards.tsx`
  */
 
-const PATTERNS = [
+const KEY_POINTS = [
   {
     icon: '◎',
-    title: '一極集中型',
+    title: '誰が使用可能か明確化する',
     description:
-      '生成AIに関心のある一部従業員にノウハウや活用を集中させる方法',
+      '役職や保有資格など、生成AIの利用目的に合わせて必要な人物が使用可能となっているか確認する',
     accent: '#88bbff',
   },
   {
-    icon: '◇',
-    title: '基準方式',
+    icon: '⊘',
+    title: '間接利用の禁止',
     description:
-      '生成AI活用に関する基準を設け、基準をクリアした場合に生成AI業務に携わることを許可する方法',
-    accent: '#c8a8ff',
+      '使用可能な人物以外の利用（間接利用）などを禁止する',
+    accent: '#ffaacc',
   },
   {
-    icon: '▦',
-    title: '全社方式',
+    icon: '◇',
+    title: '希望すれば誰でも使用可能なルール作り',
     description:
-      '全社員に生成AI活用を認め、全体的な活用を模索する方法',
-    accent: '#60a5fa',
+      '生成AIの使用可否により格差が生じないよう配慮する',
+    accent: '#9ee0a8',
   },
-];
+] as const;
 
 export default function Slide33UserScopePatterns() {
   return (
@@ -48,29 +48,29 @@ export default function Slide33UserScopePatterns() {
           </span>
           <h2
             className="font-bold tracking-tight text-white leading-tight"
-            style={{ fontSize: 'clamp(28px, 3.8vw, 52px)' }}
+            style={{ fontSize: 'clamp(24px, 3.2vw, 44px)' }}
           >
-            社内生成AI
+            使用者範囲の設定で
             <span
               className="bg-clip-text text-transparent ml-2"
               style={{
-                backgroundImage: 'linear-gradient(90deg, #88bbff 0%, #c8a8ff 55%, #60a5fa 100%)',
+                backgroundImage: 'linear-gradient(90deg, #88bbff 0%, #c8a8ff 55%, #9ee0a8 100%)',
               }}
             >
-              活用者選定のパターン例
+              重要なポイント
             </span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-          {PATTERNS.map((pattern, i) => (
+          {KEY_POINTS.map((point, i) => (
             <motion.div
-              key={pattern.title}
+              key={point.title}
               className="flex flex-col items-center gap-4 p-7 md:p-8 rounded-2xl backdrop-blur-md border min-h-0"
               style={{
-                background: `linear-gradient(160deg, ${pattern.accent}14 0%, rgba(255,255,255,0.04) 100%)`,
-                borderColor: `${pattern.accent}44`,
-                boxShadow: `0 24px 48px -20px rgba(0,0,0,0.55), 0 0 40px -12px ${pattern.accent}33`,
+                background: `linear-gradient(160deg, ${point.accent}14 0%, rgba(255,255,255,0.04) 100%)`,
+                borderColor: `${point.accent}44`,
+                boxShadow: `0 24px 48px -20px rgba(0,0,0,0.55), 0 0 40px -12px ${point.accent}33`,
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -83,41 +83,27 @@ export default function Slide33UserScopePatterns() {
               <span
                 className="text-4xl leading-none"
                 style={{
-                  color: pattern.accent,
-                  filter: `drop-shadow(0 0 14px ${pattern.accent}88)`,
+                  color: point.accent,
+                  filter: `drop-shadow(0 0 14px ${point.accent}88)`,
                 }}
               >
-                {pattern.icon}
+                {point.icon}
               </span>
               <h3
-                className="font-semibold tracking-tight text-white"
-                style={{ fontSize: 'clamp(17px, 1.5vw, 22px)' }}
+                className="font-semibold tracking-tight text-white leading-snug"
+                style={{ fontSize: 'clamp(16px, 1.4vw, 20px)' }}
               >
-                {pattern.title}
+                {point.title}
               </h3>
               <p
                 className="text-white/65 leading-relaxed text-left md:text-center"
                 style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
               >
-                {pattern.description}
+                {point.description}
               </p>
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          className="max-w-3xl leading-relaxed tracking-wide"
-          style={{ fontSize: 'clamp(12px, 1vw, 14px)', color: '#f7c46c' }}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
-        >
-          ※ どの方法であっても
-          <span className="font-semibold" style={{ color: '#ffe08a' }}>
-            「社長 / 経営者」
-          </span>
-          が活用に携わるように設計する
-        </motion.p>
       </motion.div>
     </SlideWrapper>
   );
