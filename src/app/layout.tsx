@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import DesktopOnlyGate from "@/components/DesktopOnlyGate";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +34,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="overflow-hidden">{children}</body>
+      <body className="overflow-hidden">
+        <DesktopOnlyGate>{children}</DesktopOnlyGate>
+      </body>
     </html>
   );
 }

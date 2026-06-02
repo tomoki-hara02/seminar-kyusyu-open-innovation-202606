@@ -70,11 +70,11 @@ const CARDS: RuleCard[] = [
   { id: '4-7', number: '4-7', chapter: '4', title: 'その他',                             accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
 
   // ── Chapter 5: 出力 ───────────────────────────────────────────────────
-  { id: '5-1', number: '5-1', chapter: '5', title: '出力情報の取扱い（総論）',            accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-2', number: '5-2', chapter: '5', title: 'HITL（人間による確認）の要否',       accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-3', number: '5-3', chapter: '5', title: '出所明示',                           accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-4', number: '5-4', chapter: '5', title: '出力利用時の社内審査',               accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-5', number: '5-5', chapter: '5', title: '秘密情報を入力した場合の出力の扱い', accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
+  { id: '5-1', number: '5-1', chapter: '5', title: '出力の取扱い（総論）',            accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
+  { id: '5-2', number: '5-2', chapter: '5', title: 'HITL',       accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
+  { id: '5-3', number: '5-3', chapter: '5', title: '著作権関連',                         accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
+  { id: '5-4', number: '5-4', chapter: '5', title: '秘密情報入力',                       accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
+  { id: '5-5', number: '5-5', chapter: '5', title: '出力利用時の　社内審査',               accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
 
   // ── Chapter 6: 記録・対応 ─────────────────────────────────────────────
   { id: '6-1', number: '6-1', chapter: '6', title: '作業ログの取扱い',                   accent: G.log.accent,    gradient: G.log.grad,    group: G.log.label    },

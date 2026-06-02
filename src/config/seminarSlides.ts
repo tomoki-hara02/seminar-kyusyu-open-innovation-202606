@@ -25,29 +25,45 @@ import Slide22Guidelines      from '@/components/slides/seminar/22-guidelines-te
 import Slide23RiskBased        from '@/components/slides/seminar/23-risk-based';
 import Slide24RiskExamples     from '@/components/slides/seminar/24-risk-examples';
 import Slide25RiskPractice     from '@/components/slides/seminar/25-risk-practice';
-import Slide25DataFlow         from '@/components/slides/seminar/25-data-flow';
-import Slide26Chapter02Recap  from '@/components/slides/seminar/26-chapter-02-recap';
-import Slide27Chapter02Back    from '@/components/slides/seminar/27-chapter-02-back';
-import Slide28RulesFunnel      from '@/components/slides/seminar/28-rules-funnel';
-import Slide29InternalRulesToc from '@/components/slides/seminar/29-internal-rules-toc';
-import Slide30BasicPolicyKeywords from '@/components/slides/seminar/30-basic-policy-keywords';
-import Slide31UsagePurposeRestrictions from '@/components/slides/seminar/31-usage-purpose-restrictions';
-import Slide32ChiefResponsibleRecap from '@/components/slides/seminar/32-chief-responsible-recap';
-import Slide33UserScopePatterns from '@/components/slides/seminar/33-user-scope-patterns';
-import Slide34AccountManagement from '@/components/slides/seminar/34-account-management';
-import Slide35ToolAnalysisPerspectives from '@/components/slides/seminar/35-tool-analysis-perspectives';
-import Slide36AccessibleDevices from '@/components/slides/seminar/36-accessible-devices';
-import Slide37AiToolPlanSpec from '@/components/slides/seminar/37-ai-tool-plan-spec';
-import Slide38McpAgentHandling from '@/components/slides/seminar/38-mcp-agent-handling';
-import Slide39InputDataLegalRights from '@/components/slides/seminar/39-input-data-legal-rights';
-import Slide40ProhibitedInputExamples from '@/components/slides/seminar/40-prohibited-input-examples';
-import Slide41RiskBasedInputRelationship from '@/components/slides/seminar/41-risk-based-input-relationship';
-import Slide42TradeSecretAct from '@/components/slides/seminar/42-trade-secret-act';
-import Slide43PipActGenaiCheckpoints from '@/components/slides/seminar/43-pip-act-genai-checkpoints';
-import Slide44PipActGenaiArticles from '@/components/slides/seminar/44-pip-act-genai-articles';
-import Slide45DataResidencyPatterns from '@/components/slides/seminar/45-data-residency-patterns';
-import Slide46Article28ForeignThirdParty from '@/components/slides/seminar/46-article-28-foreign-third-party';
-import Slide47PipRecap from '@/components/slides/seminar/47-pip-recap';
+import Slide25DataFlow         from '@/components/slides/seminar/26-data-flow';
+import Slide26Chapter02Recap  from '@/components/slides/seminar/27-chapter-02-recap';
+import Slide27Chapter02Back    from '@/components/slides/seminar/28-chapter-02-back';
+import Slide28RulesFunnel      from '@/components/slides/seminar/29-rules-funnel';
+import Slide29InternalRulesToc from '@/components/slides/seminar/30-internal-rules-toc';
+import Slide30BasicPolicyKeywords from '@/components/slides/seminar/31-basic-policy-keywords';
+import Slide31UsagePurposeRestrictions from '@/components/slides/seminar/32-usage-purpose-restrictions';
+import Slide32ChiefResponsibleRecap from '@/components/slides/seminar/33-chief-responsible-recap';
+import Slide33UserScopePatterns from '@/components/slides/seminar/34-user-scope-patterns';
+import Slide34AccountManagement from '@/components/slides/seminar/35-account-management';
+import Slide35ToolAnalysisPerspectives from '@/components/slides/seminar/36-tool-analysis-perspectives';
+import Slide36AccessibleDevices from '@/components/slides/seminar/37-accessible-devices';
+import Slide37AiToolPlanSpec from '@/components/slides/seminar/38-ai-tool-plan-spec';
+import Slide38McpAgentHandling from '@/components/slides/seminar/39-mcp-agent-handling';
+import Slide39InputDataLegalRights from '@/components/slides/seminar/40-input-data-legal-rights';
+import Slide40ProhibitedInputExamples from '@/components/slides/seminar/41-prohibited-input-examples';
+import Slide41RiskBasedInputRelationship from '@/components/slides/seminar/42-risk-based-input-relationship';
+import Slide42TradeSecretAct from '@/components/slides/seminar/43-trade-secret-act';
+import Slide43PipActGenaiCheckpoints from '@/components/slides/seminar/44-pip-act-genai-checkpoints';
+import Slide44PipActGenaiArticles from '@/components/slides/seminar/45-pip-act-genai-articles';
+import Slide45DataResidencyPatterns from '@/components/slides/seminar/46-data-residency-patterns';
+import Slide46Article28ForeignThirdParty from '@/components/slides/seminar/47-article-28-foreign-third-party';
+import Slide47PipRecap from '@/components/slides/seminar/48-pip-recap';
+import Slide48ThirdPartySecrets from '@/components/slides/seminar/49-third-party-secrets';
+import Slide49CopyrightReviewFlow from '@/components/slides/seminar/50-copyright-review-flow';
+import Slide50CopyrightWorkDefinition from '@/components/slides/seminar/51-copyright-work-definition';
+import Slide51CopyrightLimitations from '@/components/slides/seminar/52-copyright-limitations';
+import Slide52CopyrightArticle304 from '@/components/slides/seminar/53-copyright-article-30-4';
+import Slide53CopyrightArticle475 from '@/components/slides/seminar/54-copyright-article-47-5';
+import Slide54PublicDataLicense from '@/components/slides/seminar/55-public-data-license';
+import Slide55CopyrightPenalty119 from '@/components/slides/seminar/56-copyright-penalty-119';
+import Slide56OutputOverview from '@/components/slides/seminar/57-output-overview';
+import Slide57HitlHumanReview from '@/components/slides/seminar/58-hitl-human-review';
+import Slide59UnrecognizedCopyrightOutput from '@/components/slides/seminar/59-unrecognized-copyright-output';
+import Slide60SecretInfoOutput from '@/components/slides/seminar/60-secret-info-output';
+import Slide61OutputReviewCriteria from '@/components/slides/seminar/61-output-review-criteria';
+import Slide62WorkLogHandling from '@/components/slides/seminar/62-work-log-handling';
+import Slide63Chapter02BackRecap from '@/components/slides/seminar/63-chapter-02-back-recap';
+import Slide64Chapter03 from '@/components/slides/seminar/64-chapter-03';
 
 /**
  * 本番セミナー「生成AIを"安心して使い倒す"ためのルールづくり入門」用のスライド一覧。
@@ -251,14 +267,14 @@ export const seminarSlideRegistry: SlideEntry[] = [
     note: 'p25: リスクベースアプローチ実践例 — 名刺管理MCP → zod → 重複登録リスク → HITL/続行 → 判断',
   },
   {
-    id: '25-data-flow',
+    id: '26-data-flow',
     Component: Slide25DataFlow,
     chapter: 'chapter-02-front',
     title: '生成AI社内規程に関する４つの分析セグメント',
     note: 'p26: 生成AI社内規程に関する４つの分析セグメント（PC↔AI 双方向フロー）',
   },
   {
-    id: '26-chapter-02-recap',
+    id: '27-chapter-02-recap',
     Component: Slide26Chapter02Recap,
     chapter: 'chapter-02-front',
     title: 'Recap — Chapter 02 前編の3つのポイント',
@@ -267,35 +283,35 @@ export const seminarSlideRegistry: SlideEntry[] = [
 
   // ── Chapter 02 後編: 生成AI社内規程の作成（各論） ────────────────────────────
   {
-    id: '27-chapter-02-back',
+    id: '28-chapter-02-back',
     Component: Slide27Chapter02Back,
     chapter: 'chapter-02-back',
     title: 'Chapter 02 後編 — 社内規程の各論へ',
     note: 'p28: Chapter 02 後編 — 生成AI社内規程の作成（各論）',
   },
   {
-    id: '28-rules-funnel',
+    id: '29-rules-funnel',
     Component: Slide28RulesFunnel,
     chapter: 'chapter-02-back',
     title: '社内規程の射程 — 各AI利用規約の範囲内',
     note: 'p29: 生成AI利用規約 → 社内生成AI利用規約 ファネル図',
   },
   {
-    id: '29-internal-rules-toc',
+    id: '30-internal-rules-toc',
     Component: Slide29InternalRulesToc,
     chapter: 'chapter-02-back',
     title: '社内生成AI利用規程 — 全条項の目次（CardWheel）',
     note: 'p30: 社内規程の目次 — 全18条項 CardWheel + サイドバー',
   },
   {
-    id: '30-basic-policy-keywords',
+    id: '31-basic-policy-keywords',
     Component: Slide30BasicPolicyKeywords,
     chapter: 'chapter-02-back',
     title: '1-1 基本方針 — 考えるべき項目',
     note: 'p31: 1-1 基本方針 — KeywordCloud（10項目）',
   },
   {
-    id: '31-usage-purpose-restrictions',
+    id: '32-usage-purpose-restrictions',
     Component: Slide31UsagePurposeRestrictions,
     chapter: 'chapter-02-back',
     title: '1-2 利用目的 — 生成AI利用規約による制限',
@@ -303,63 +319,63 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '32-chief-responsible-recap',
+    id: '33-chief-responsible-recap',
     Component: Slide32ChiefResponsibleRecap,
     chapter: 'chapter-02-back',
     title: '1-3 統括責任者 — 求められるもの',
     note: 'p33: 1-3 統括責任者 — Recap（4項目）',
   },
   {
-    id: '33-user-scope-patterns',
+    id: '34-user-scope-patterns',
     Component: Slide33UserScopePatterns,
     chapter: 'chapter-02-back',
     title: '2-1 使用者の範囲 — 活用者選定のパターン例',
     note: 'p34: 2-1 使用者の範囲 — FeatureCards（3パターン）',
   },
   {
-    id: '34-account-management',
+    id: '35-account-management',
     Component: Slide34AccountManagement,
     chapter: 'chapter-02-back',
     title: '2-2 アカウントの管理 — 2つの要点',
     note: 'p35: 2-2 アカウントの管理 — 共有禁止 / アカウント別アクセス',
   },
   {
-    id: '35-tool-analysis-perspectives',
+    id: '36-tool-analysis-perspectives',
     Component: Slide35ToolAnalysisPerspectives,
     chapter: 'chapter-02-back',
     title: '3-1 ツール総論 — 生成AIツール分析の視点',
     note: 'p36: 3-1 ツール総論 — 4つの分析視点（LayeredArch + ギミック）',
   },
   {
-    id: '36-accessible-devices',
+    id: '37-accessible-devices',
     Component: Slide36AccessibleDevices,
     chapter: 'chapter-02-back',
     title: '3-2 アクセス可能な端末 — 企業が注意すべきこと',
     note: 'p37: 3-2 アクセス可能な端末 — 私用端末禁止 / 法的・技術的対策',
   },
   {
-    id: '37-ai-tool-plan-spec',
+    id: '38-ai-tool-plan-spec',
     Component: Slide37AiToolPlanSpec,
     chapter: 'chapter-02-back',
     title: '3-3 使用可能なAIツール・プランの指定',
     note: 'p38: 3-3 ツール・プラン指定 — 無料/個人禁止 / シャドーAI対策',
   },
   {
-    id: '38-mcp-agent-handling',
+    id: '39-mcp-agent-handling',
     Component: Slide38McpAgentHandling,
     chapter: 'chapter-02-back',
     title: '3-4 エージェント・MCPの取扱い — 外部アプリへの送信',
     note: 'p39: 3-4 MCP・エージェント — WorldMap風データフロー図',
   },
   {
-    id: '39-input-data-legal-rights',
+    id: '40-input-data-legal-rights',
     Component: Slide39InputDataLegalRights,
     chapter: 'chapter-02-back',
     title: '4-1 入力情報 総論 — データの法的権利関係',
     note: 'p40: 4-1 入力情報 総論 — DATAハブ + 5法令（KnowledgeGraph風）',
   },
   {
-    id: '40-prohibited-input-examples',
+    id: '41-prohibited-input-examples',
     Component: Slide40ProhibitedInputExamples,
     chapter: 'chapter-02-back',
     title: '4-2 入力禁止情報 — 規程に盛り込む具体例',
@@ -367,14 +383,14 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '41-risk-based-input-relationship',
+    id: '42-risk-based-input-relationship',
     Component: Slide41RiskBasedInputRelationship,
     chapter: 'chapter-02-back',
     title: '4-2 入力禁止情報 — リスクベースアプローチとの関係',
     note: 'p42: 4-2 入力禁止 — 原則禁止 → RBA → 例外解除（Pipeline風）',
   },
   {
-    id: '42-trade-secret-act',
+    id: '43-trade-secret-act',
     Component: Slide42TradeSecretAct,
     chapter: 'chapter-02-back',
     title: '4-3 社内秘密情報・営業秘密 — 不正競争防止法',
@@ -382,14 +398,14 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '43-pip-act-genai-checkpoints',
+    id: '44-pip-act-genai-checkpoints',
     Component: Slide43PipActGenaiCheckpoints,
     chapter: 'chapter-02-back',
     title: '4-4 個人情報 — 個人情報保護法と生成AIの論点',
     note: 'p44: 4-4 個情法×生成AI — 3点チェックリスト（NextSteps風）',
   },
   {
-    id: '44-pip-act-genai-articles',
+    id: '45-pip-act-genai-articles',
     Component: Slide44PipActGenaiArticles,
     chapter: 'chapter-02-back',
     title: '4-4 個人情報 — 第16条・第17条',
@@ -397,7 +413,7 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '45-data-residency-patterns',
+    id: '46-data-residency-patterns',
     Component: Slide45DataResidencyPatterns,
     chapter: 'chapter-02-back',
     title: '4-4 個人情報 — データレジデンシーパターンの概要',
@@ -405,7 +421,7 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '46-article-28-foreign-third-party',
+    id: '47-article-28-foreign-third-party',
     Component: Slide46Article28ForeignThirdParty,
     chapter: 'chapter-02-back',
     title: '4-4 個人情報 — 第28条（外国第三者提供）',
@@ -413,10 +429,136 @@ export const seminarSlideRegistry: SlideEntry[] = [
     textSelectable: true,
   },
   {
-    id: '47-pip-recap',
+    id: '48-pip-recap',
     Component: Slide47PipRecap,
     chapter: 'chapter-02-back',
-    title: '4-4 個人情報 — まとめ',
-    note: 'p48: 4-4 個人情報 Recap — プライバシーポリシー / 個人版 / DPA',
+    title: '4-4 個人情報 — 全体判断フロー',
+    note: 'p48: 4-4 個人データ×生成AI 判断フロー（Step i→vii）',
+  },
+  {
+    id: '49-third-party-secrets',
+    Component: Slide48ThirdPartySecrets,
+    chapter: 'chapter-02-back',
+    title: '4-5 取引先・他社の秘密情報 — 秘密保持義務',
+    note: 'p49: 4-5 取引先・他社の秘密情報 — Cube3D（契約書）',
+  },
+  {
+    id: '50-copyright-review-flow',
+    Component: Slide49CopyrightReviewFlow,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — プロンプトに他人の制作物を入力する際の検討フロー',
+    note: 'p50: 4-6 著作物 — Pipeline（4ステップ検討フロー）',
+  },
+  {
+    id: '51-copyright-work-definition',
+    Component: Slide50CopyrightWorkDefinition,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — Step 1 著作物該当性（創作性）',
+    note: 'p51: 4-6 Step 1 — 著作権法第2条 + 原則2件 + 注意点2件（BentoGrid風）',
+    textSelectable: true,
+  },
+  {
+    id: '52-copyright-limitations',
+    Component: Slide51CopyrightLimitations,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — 著作権法における権利制限',
+    note: 'p52: 4-6 権利制限 — 第30条〜第47条の7 一覧（FurtherReading風）',
+    textSelectable: true,
+  },
+  {
+    id: '53-copyright-article-30-4',
+    Component: Slide52CopyrightArticle304,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — 第30条の4 条文解説（生成AI入力）',
+    note: 'p53: 4-6 第30条の4 + 文化審議会「AIと著作権に関する考え方について」',
+    textSelectable: true,
+  },
+  {
+    id: '54-copyright-article-47-5',
+    Component: Slide53CopyrightArticle475,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — 第47条の5 条文解説（軽微利用）',
+    note: 'p54: 4-6 第47条の5 条文 + Web検索/RAGの適用例',
+    textSelectable: true,
+  },
+  {
+    id: '55-public-data-license',
+    Component: Slide54PublicDataLicense,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — 公共データ利用規約（PDL1.0）',
+    note: 'p55: 公共データ利用規約（第1.0版）— デジタル庁',
+    textSelectable: true,
+  },
+  {
+    id: '56-copyright-penalty-119',
+    Component: Slide55CopyrightPenalty119,
+    chapter: 'chapter-02-back',
+    title: '4-6 著作物 — 請求類型と故意・過失の効果',
+    note: 'p56: 侵害に対する請求類型と故意・過失の効果（06_侵害に対する措置）',
+    textSelectable: true,
+  },
+  {
+    id: '57-output-overview',
+    Component: Slide56OutputOverview,
+    chapter: 'chapter-02-back',
+    title: '5-1 出力情報 総論 — 出力利用の構造',
+    note: 'p57: 5-1 出力総論 — 3論点（正確性・著作権・秘密情報）と対応手段',
+  },
+  {
+    id: '58-hitl-human-review',
+    Component: Slide57HitlHumanReview,
+    chapter: 'chapter-02-back',
+    title: '5-2 出力情報 — HITL（人間による確認）',
+    note: 'p58: 5-2 HITL — 出力の責任・注意点3項目 + プロンプト構成図',
+    textSelectable: true,
+  },
+  {
+    id: '59-unrecognized-copyright-output',
+    Component: Slide59UnrecognizedCopyrightOutput,
+    chapter: 'chapter-02-back',
+    title: '5-3 出力情報 — 認識の無い著作物の出力',
+    note: 'p59: 5-3 著作権関連 — 文化庁「AIと著作権に関する考え方」（依拠性の推認）',
+    textSelectable: true,
+  },
+  {
+    id: '60-secret-info-output',
+    Component: Slide60SecretInfoOutput,
+    chapter: 'chapter-02-back',
+    title: '5-4 出力情報 — 秘密情報入力時の出力の扱い',
+    note: 'p60: 5-4 秘密情報入力 — 出力も営業秘密・守秘義務対象として管理',
+    textSelectable: true,
+  },
+  {
+    id: '61-output-review-criteria',
+    Component: Slide61OutputReviewCriteria,
+    chapter: 'chapter-02-back',
+    title: '5-5 出力情報 — 社内外利用時の審査基準',
+    note: 'p61: 5-5 社内審査 — 担当者・資料・方法・利用指定（RBA）',
+    textSelectable: true,
+  },
+  {
+    id: '62-work-log-handling',
+    Component: Slide62WorkLogHandling,
+    chapter: 'chapter-02-back',
+    title: '6-1 記録・対応 — 作業ログの役割',
+    note: 'p62: 6-1 作業ログ — 証拠・創作性判断・社内改善の3つの役割',
+    textSelectable: true,
+  },
+  {
+    id: '63-chapter-02-back-recap',
+    Component: Slide63Chapter02BackRecap,
+    chapter: 'chapter-02-back',
+    title: 'Recap — 社内生成AI利用規程（後編まとめ）',
+    note: 'p63: Recap 後編 — 既存規程の枠内・4項目・RBA',
+    textSelectable: true,
+  },
+
+  // ── Chapter 03: その他生成AIに関する法的論点 ───────────────
+  {
+    id: '64-chapter-03',
+    Component: Slide64Chapter03,
+    chapter: 'chapter-03',
+    title: 'Chapter 03 — その他生成AIに関する法的論点',
+    note: 'p64: Chapter 03 — その他生成AIに関する法的論点',
   },
 ];
