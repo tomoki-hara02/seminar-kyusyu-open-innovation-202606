@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p23a: Recap · Chapter 02 前編まとめ
+ * p27: Recap · Chapter 02 前編まとめ
  *
  * 3 つのキーポイント：
  *   ① AI事業者ガイドライン適合性
@@ -30,7 +30,7 @@ const TAKEAWAYS = [
   },
 ];
 
-export default function Slide23aChapter02Recap() {
+export default function Slide27Chapter02Recap() {
   return (
     <SlideWrapper>
       <motion.div

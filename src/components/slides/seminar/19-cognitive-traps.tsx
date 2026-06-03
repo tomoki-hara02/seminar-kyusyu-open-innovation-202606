@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20a1: 「思考の放棄 × サイコファンシー」— 人間の尊厳に背く 2 つの落とし穴
+ * p19: 「思考の放棄 × サイコファンシー」— 人間の尊厳に背く 2 つの落とし穴
  *
  * 左: 評価 → 報告まで AI に丸投げする多ターン会話（過度な依存）
  * 右: ユーザーに迎合し続ける多ターン会話（サイコファンシー）
@@ -320,7 +320,7 @@ function SycophancyChatColumn() {
 
 // ─── スライド本体 ──────────────────────────────────────────────────────────
 
-export default function Slide20a1CognitiveTraps() {
+export default function Slide19CognitiveTraps() {
   return (
     <SlideWrapper>
       <motion.div

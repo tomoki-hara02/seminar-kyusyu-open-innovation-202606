@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20: Chapter 02 — 生成AI社内規程の作成（前編）
+ * p17: Chapter 02 — 生成AI社内規程の作成（前編）
  *
  * ベーステンプレート: `templates/ChapterDivider.tsx`
  *
@@ -21,7 +21,7 @@ const CHAPTER = {
     '社内でどんな規程・ルールが必要か。全体像を解説します。',
 };
 
-export default function Slide20Chapter02() {
+export default function Slide17Chapter02() {
   return (
     <SlideWrapper>
       <motion.div

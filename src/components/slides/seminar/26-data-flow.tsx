@@ -350,8 +350,14 @@ const OVERLAY_ALIGN_CLASS = {
   'outside-right': '-translate-x-full -translate-y-1/2',
 } as const;
 
+type OverlayAlign = keyof typeof OVERLAY_ALIGN_CLASS;
+
+function overlayAlignClass(align?: OverlayAlign): string {
+  return OVERLAY_ALIGN_CLASS[align ?? 'center'];
+}
+
 /* ────────── スライド本体 ────────── */
-export default function Slide25DataFlow() {
+export default function Slide26DataFlow() {
   return (
     <SlideWrapper>
       <div className="flex flex-col w-full h-full min-h-0">
@@ -420,7 +426,7 @@ export default function Slide25DataFlow() {
           {ANALYSIS_ITEMS.map((item, i) => (
             <motion.div
               key={item.id}
-              className={`absolute pointer-events-none z-10 ${OVERLAY_ALIGN_CLASS[item.overlayAlign ?? 'center']}`}
+              className={`absolute pointer-events-none z-10 ${overlayAlignClass('overlayAlign' in item ? item.overlayAlign : undefined)}`}
               style={{
                 left: item.overlayPosition.left,
                 top: item.overlayPosition.top,

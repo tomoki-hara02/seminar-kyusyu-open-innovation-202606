@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p25 (Chapter 02 後編 1 枚目): 社内生成AI利用規約のスコープ
+ * p30: 社内生成AI利用規約のスコープ
  *
  * 各AI サービスの「生成AI利用規約」をファネル（漏斗）に流し込み、
  * その範囲内で抽出されたものが「社内生成AI利用規約」になる、
@@ -36,7 +36,7 @@ const INPUT_CIRCLES = [
 const OUTPUT_CIRCLE = { cx: CX, cy: 470, r: 88 };
 
 // ─── component ───────────────────────────────────────────────────────
-export default function Slide25RulesFunnel() {
+export default function Slide30RulesFunnel() {
   // 漏斗の内側を流れるドット
   const DOTS = useMemo(() => {
     const N = 36;

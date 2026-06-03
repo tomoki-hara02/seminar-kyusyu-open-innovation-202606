@@ -289,7 +289,7 @@ function PersonaCard({
 }
 
 /* ─── スライド本体 ─── */
-export default function Slide17EmployeeVoices() {
+export default function Slide15EmployeeVoices() {
   const [focused, setFocused] = useState<number | null>(null);
 
   const close = useCallback(() => setFocused(null), []);

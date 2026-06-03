@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p26: 社内生成AI利用規程の目次（カードホイール）
+ * p31: 社内生成AI利用規程の目次（カードホイール）
  *
  * - 左側に条項一覧（目次サイドバー）
  * - 右側に CardWheel をカスタマイズした観覧車ビュー
@@ -15,76 +15,11 @@ import SlideWrapper from '../../SlideWrapper';
  * カード内容や詳細は後続スライドで個別に詰める想定の「目次スライド」。
  */
 
-// ─── データ ─────────────────────────────────────────────────────────────────
-
-interface RuleCard {
-  id: string;
-  /** 表示用番号（"1-1" / "3-2" 等、X-Y 形式） */
-  number: string;
-  /** チャプター番号（"1"〜"7"） */
-  chapter: string;
-  /** 条項見出し（サイドバー & 下部メーター） */
-  title: string;
-  /** カードの主色 */
-  accent: string;
-  /** カード背景のグラデーション 2 色 */
-  gradient: [string, string];
-  /** サイドバー上のグルーピング表示用ラベル */
-  group: string;
-}
-
-// セクション色定義
-const G = {
-  ideals: { accent: '#60a5fa', grad: ['#3b82f6', '#1d4ed8'] as [string, string], label: '目的・基本理念' },
-  user:   { accent: '#88bbff', grad: ['#5fa0ef', '#3a6cd1'] as [string, string], label: 'ユーザー' },
-  tool:   { accent: '#c8a8ff', grad: ['#a98aea', '#6e4ab8'] as [string, string], label: 'ツール' },
-  input:  { accent: '#9ee0a8', grad: ['#7fc890', '#3f9c5e'] as [string, string], label: '入力情報' },
-  output: { accent: '#ff9966', grad: ['#f17a45', '#c64823'] as [string, string], label: '出力' },
-  log:    { accent: '#f2d160', grad: ['#e0bb3a', '#a98a17'] as [string, string], label: '記録・対応' },
-  govern: { accent: '#ff7aa8', grad: ['#e85a8d', '#a73069'] as [string, string], label: 'ガバナンス' },
-} as const;
-
-const CARDS: RuleCard[] = [
-  // ── Chapter 1: 目的・基本理念 ─────────────────────────────────────────
-  { id: '1-1', number: '1-1', chapter: '1', title: '基本方針',                           accent: G.ideals.accent, gradient: G.ideals.grad, group: G.ideals.label },
-  { id: '1-2', number: '1-2', chapter: '1', title: '利用目的',                           accent: G.ideals.accent, gradient: G.ideals.grad, group: G.ideals.label },
-  { id: '1-3', number: '1-3', chapter: '1', title: '統括責任者',                         accent: G.ideals.accent, gradient: G.ideals.grad, group: G.ideals.label },
-
-  // ── Chapter 2: ユーザー ───────────────────────────────────────────────
-  { id: '2-1', number: '2-1', chapter: '2', title: '使用者の範囲',                       accent: G.user.accent,   gradient: G.user.grad,   group: G.user.label   },
-  { id: '2-2', number: '2-2', chapter: '2', title: 'アカウントの管理',                   accent: G.user.accent,   gradient: G.user.grad,   group: G.user.label   },
-
-  // ── Chapter 3: ツール ─────────────────────────────────────────────────
-  { id: '3-1', number: '3-1', chapter: '3', title: '総論',                               accent: G.tool.accent,   gradient: G.tool.grad,   group: G.tool.label   },
-  { id: '3-2', number: '3-2', chapter: '3', title: 'アクセス可能な端末',                 accent: G.tool.accent,   gradient: G.tool.grad,   group: G.tool.label   },
-  { id: '3-3', number: '3-3', chapter: '3', title: '使用可能なAIツール・プランの指定',   accent: G.tool.accent,   gradient: G.tool.grad,   group: G.tool.label   },
-  { id: '3-4', number: '3-4', chapter: '3', title: 'エージェント・MCPの取扱い',          accent: G.tool.accent,   gradient: G.tool.grad,   group: G.tool.label   },
-
-  // ── Chapter 4: 入力情報 ───────────────────────────────────────────────
-  { id: '4-1', number: '4-1', chapter: '4', title: '総論',                               accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-2', number: '4-2', chapter: '4', title: '入力禁止情報',                       accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-3', number: '4-3', chapter: '4', title: '社内秘密情報・営業秘密',             accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-4', number: '4-4', chapter: '4', title: '個人情報',                           accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-5', number: '4-5', chapter: '4', title: '取引先・他社の秘密情報',             accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-6', number: '4-6', chapter: '4', title: '著作物',                             accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-  { id: '4-7', number: '4-7', chapter: '4', title: 'その他',                             accent: G.input.accent,  gradient: G.input.grad,  group: G.input.label  },
-
-  // ── Chapter 5: 出力 ───────────────────────────────────────────────────
-  { id: '5-1', number: '5-1', chapter: '5', title: '出力の取扱い（総論）',            accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-2', number: '5-2', chapter: '5', title: 'HITL',       accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-3', number: '5-3', chapter: '5', title: '著作権関連',                         accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-4', number: '5-4', chapter: '5', title: '秘密情報入力',                       accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-  { id: '5-5', number: '5-5', chapter: '5', title: '出力利用時の　社内審査',               accent: G.output.accent, gradient: G.output.grad, group: G.output.label },
-
-  // ── Chapter 6: 記録・対応 ─────────────────────────────────────────────
-  { id: '6-1', number: '6-1', chapter: '6', title: '作業ログの取扱い',                   accent: G.log.accent,    gradient: G.log.grad,    group: G.log.label    },
-  { id: '6-2', number: '6-2', chapter: '6', title: 'インシデント対応',                   accent: G.log.accent,    gradient: G.log.grad,    group: G.log.label    },
-
-  // ── Chapter 7: ガバナンス ─────────────────────────────────────────────
-  { id: '7-1', number: '7-1', chapter: '7', title: '違反時の対応',                       accent: G.govern.accent, gradient: G.govern.grad, group: G.govern.label },
-  { id: '7-2', number: '7-2', chapter: '7', title: '社内リテラシー向上',                 accent: G.govern.accent, gradient: G.govern.grad, group: G.govern.label },
-  { id: '7-3', number: '7-3', chapter: '7', title: '規程の見直し',                       accent: G.govern.accent, gradient: G.govern.grad, group: G.govern.label },
-];
+import {
+  INTERNAL_RULE_CARDS as CARDS,
+  groupRuleCards,
+  type RuleCard,
+} from '@/data/internal-rules-cards';
 
 // ─── ホイール幾何 ───────────────────────────────────────────────────────────
 const CARD_W = 200;
@@ -96,7 +31,7 @@ const WHEEL_SENSITIVITY = 0.045;
 
 // ─── component ──────────────────────────────────────────────────────────────
 
-export default function Slide26InternalRulesToc() {
+export default function Slide31InternalRulesToc() {
   // card[0] が中央になる初期値: rawCenter = centerOffset + angle/STEP_DEG = 0
   //   → angle = -centerOffset * STEP_DEG
   const [angle, setAngle] = useState(() => -((CARDS.length - 1) / 2) * STEP_DEG);
@@ -191,19 +126,7 @@ export default function Slide26InternalRulesToc() {
     return natural + k * fullCycle;
   }
 
-  // サイドバーのグループ区切り表示用
-  const grouped = useMemo(() => {
-    const out: { group: string; accent: string; items: { card: RuleCard; idx: number }[] }[] = [];
-    CARDS.forEach((card, idx) => {
-      const last = out[out.length - 1];
-      if (last && last.group === card.group) {
-        last.items.push({ card, idx });
-      } else {
-        out.push({ group: card.group, accent: card.accent, items: [{ card, idx }] });
-      }
-    });
-    return out;
-  }, []);
+  const grouped = useMemo(() => groupRuleCards(), []);
 
   return (
     <SlideWrapper>

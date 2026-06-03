@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20a: AI事業者ガイドライン — 基本理念 3 原則
+ * p18: AI事業者ガイドライン — 基本理念 3 原則
  *
  * ベーステンプレート: `templates/TriangleDiagram.tsx`
  *
@@ -119,7 +119,7 @@ const PRINCIPLES = [
 ];
 
 // ─── Component ──────────────────────────────────────────────────────────────
-export default function Slide20aAiPrinciples() {
+export default function Slide18AiPrinciples() {
   const [activeKey, setActiveKey] = useState<string>('dignity');
   const active = PRINCIPLES.find((p) => p.key === activeKey)!;
 

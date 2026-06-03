@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20a2: 「バイアス × AIディバイド」— 多様性・包摂に背く 2 つの落とし穴
+ * p20: 「バイアス × AIディバイド」— 多様性・包摂に背く 2 つの落とし穴
  *
  * 左: モデルが学習した偏見をそのまま出力するケース（弁護士＝男性のデフォルト）
  * 右: AIを使いこなす層と取り残される層の格差が時間とともに拡大していくモーション
@@ -448,7 +448,7 @@ function AiDivideMotion() {
 
 // ─── スライド本体 ──────────────────────────────────────────────────────────
 
-export default function Slide20a2BiasDivide() {
+export default function Slide20BiasDivide() {
   return (
     <SlideWrapper>
       <motion.div

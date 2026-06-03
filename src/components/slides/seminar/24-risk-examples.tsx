@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p22: リスクベースアプローチ — 具体例
+ * p24: リスクベースアプローチ — 具体例
  *
  * チャット形式のアニメーションで 2 つの対話を順番に表示。
  * 各会話の下にリスクレベルバッジ（CRITICAL / LOW）を添えて直感的に比較させる。
@@ -298,7 +298,7 @@ function MatrixPanel() {
 }
 
 /* ── スライド本体 ── */
-export default function Slide22RiskExamples() {
+export default function Slide24RiskExamples() {
   return (
     <SlideWrapper>
       <motion.div

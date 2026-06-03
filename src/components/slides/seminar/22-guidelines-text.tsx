@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20b: 経産省「AI事業者ガイドライン 1.2版」— リスクベースアプローチの引用
+ * p22: 経産省「AI事業者ガイドライン 1.2版」— リスクベースアプローチの引用
  *
  * ベーステンプレート: `templates/TextHighlight.tsx`
  *
@@ -59,7 +59,7 @@ const SENTENCES: Sentence[] = [
 const TOTAL = SENTENCES.length;
 const ACCENT_COLOR = '#f7c46c';
 
-export default function Slide20bGuidelines() {
+export default function Slide22GuidelinesText() {
   // -1 = まだ何も表示していない。クリックで +1 ずつ進む（ブロック単位）
   const [activeIdx, setActiveIdx] = useState(-1);
 

@@ -1,13 +1,16 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DeckBackground } from './backgrounds';
 import TableOfContents from './TableOfContents';
 import BreakSlide from './BreakSlide';
+import InternalRulesTocOverlay from './InternalRulesTocOverlay';
+import SlideStage from './SlideStage';
 import { slideRegistry as defaultRegistry, type SlideEntry } from '@/config/slides';
 import { BG_COLOR } from '@/theme/colors';
 import { PresentationContext } from '@/context/presentation';
+import { shouldShowRulesTocButton } from '@/lib/internal-rules-navigation';
 
 const slideVariants = {
   enter: { opacity: 0 },
@@ -25,6 +28,7 @@ export default function Presentation({ registry }: PresentationProps = {}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);
+  const [rulesTocOpen, setRulesTocOpen] = useState(false);
   const [breakActive, setBreakActive] = useState(false);
 
   const slideCount = slideRegistry.length;
@@ -50,19 +54,24 @@ export default function Presentation({ registry }: PresentationProps = {}) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // TOC / 休憩スライド表示中は矢印ナビを無効化
-      if (tocOpen || breakActive) return;
+      if (tocOpen || rulesTocOpen || breakActive) return;
       if (e.key === 'ArrowRight' || e.key === ' ') goNext();
       if (e.key === 'ArrowLeft') goPrev();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goNext, goPrev, tocOpen, breakActive]);
+  }, [goNext, goPrev, tocOpen, rulesTocOpen, breakActive]);
 
   const entry = slideRegistry[currentSlide];
   const CurrentSlideComponent = entry.Component;
 
+  const showRulesTocButton = useMemo(
+    () => shouldShowRulesTocButton(slideRegistry, currentSlide),
+    [slideRegistry, currentSlide]
+  );
+
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (tocOpen || breakActive) return;
+    if (tocOpen || rulesTocOpen || breakActive) return;
     if (entry.textSelectable) return;
     const midpoint = window.innerWidth / 2;
     if (e.clientX > midpoint) {
@@ -82,21 +91,23 @@ export default function Presentation({ registry }: PresentationProps = {}) {
       {/* グローバル背景 */}
       <DeckBackground variant={entry.background ?? null} />
 
-      {/* スライド本体 */}
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={currentSlide}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="absolute inset-0"
-        >
-          <CurrentSlideComponent />
-        </motion.div>
-      </AnimatePresence>
+      {/* スライド本体（1920×1080 を基準に uniform scale で描画） */}
+      <SlideStage>
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={currentSlide}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <CurrentSlideComponent />
+          </motion.div>
+        </AnimatePresence>
+      </SlideStage>
 
       {/* ── 休憩スライド（オーバーレイ） ── */}
       <AnimatePresence>
@@ -111,7 +122,9 @@ export default function Presentation({ registry }: PresentationProps = {}) {
             onClick={(e) => e.stopPropagation()}
           >
             <DeckBackground variant="logoParticles" />
-            <BreakSlide onClose={() => setBreakActive(false)} />
+            <SlideStage>
+              <BreakSlide onClose={() => setBreakActive(false)} />
+            </SlideStage>
             <button
               type="button"
               onClick={(e) => {
@@ -129,15 +142,40 @@ export default function Presentation({ registry }: PresentationProps = {}) {
         )}
       </AnimatePresence>
 
-      {/* ── 目次（左上トリガー + オーバーレイ） ── */}
-      <TableOfContents
-        entries={slideRegistry}
-        currentIndex={currentSlide}
-        onNavigate={goTo}
-        isOpen={tocOpen}
-        onToggle={() => setTocOpen((v) => !v)}
-        onShowBreak={() => setBreakActive(true)}
-      />
+      <div className="fixed top-6 left-6 z-30 flex items-center gap-2">
+        <TableOfContents
+          entries={slideRegistry}
+          currentIndex={currentSlide}
+          onNavigate={goTo}
+          isOpen={tocOpen}
+          inlineTrigger
+          onToggle={() => {
+            setTocOpen((v) => {
+              const next = !v;
+              if (next) setRulesTocOpen(false);
+              return next;
+            });
+          }}
+          onShowBreak={() => setBreakActive(true)}
+        />
+
+        {showRulesTocButton && (
+          <InternalRulesTocOverlay
+            entries={slideRegistry}
+            currentIndex={currentSlide}
+            isOpen={rulesTocOpen}
+            inlineTrigger
+            onToggle={() => {
+              setRulesTocOpen((v) => {
+                const next = !v;
+                if (next) setTocOpen(false);
+                return next;
+              });
+            }}
+            onNavigate={goTo}
+          />
+        )}
+      </div>
 
       {/* Navigation hint arrows */}
       {currentSlide > 0 && !breakActive && (

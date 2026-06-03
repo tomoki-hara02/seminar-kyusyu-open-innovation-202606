@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p21: リスクベースアプローチとは？
+ * p23: リスクベースアプローチとは？
  *
  * Chapter 02 · 前編 · 全体像解説の 1 枚目。
  * 「発生確率 × 深刻さ」でリスクをスコア化し、レベルに応じて対応を変える考え方を、
@@ -62,7 +62,7 @@ function levelOf(value: number): Level {
 
 /* ────────── コンポーネント ────────── */
 
-export default function Slide21RiskBased() {
+export default function Slide23RiskBased() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.25 });
 

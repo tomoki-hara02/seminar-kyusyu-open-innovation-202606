@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:slide-pages": "node scripts/sync-slide-page-numbers.mjs",
+    "renumber:seminar-files": "node scripts/renumber-seminar-files.mjs",
+    "sync:slide-components": "node scripts/sync-slide-component-names.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

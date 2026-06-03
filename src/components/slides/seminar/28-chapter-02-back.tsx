@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p24: Chapter 02 — 生成AI社内規程の作成（後編）
+ * p28: Chapter 02 — 生成AI社内規程の作成（後編）
  *
  * ベーステンプレート: `templates/ChapterDivider.tsx`
  *
@@ -24,7 +24,7 @@ const TOPICS = [
   '各種利用規約の個別条項の検討',
 ];
 
-export default function Slide24Chapter02Back() {
+export default function Slide28Chapter02Back() {
   return (
     <SlideWrapper>
       <motion.div

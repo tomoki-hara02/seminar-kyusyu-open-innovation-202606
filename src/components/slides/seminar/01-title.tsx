@@ -6,9 +6,7 @@ import SlideWrapper from '../../SlideWrapper';
 import { ACCENTS } from '@/theme/colors';
 
 /**
- * p1 - タイトル
- *
- * セミナー:「生成AIを"安心して使い倒す"ためのルールづくり入門」
+ * p1: 「生成AIを"安心して使い倒す"ためのルールづくり入門」
  * 主催: tAiL. 法律事務所
  *
  * 本番投影用のタイトルスライド。タイトルと主催だけを大きく見せる構成。

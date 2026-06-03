@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p13a: ワークショップ開始アナウンス
+ * p14: ワークショップ開始アナウンス
  *
  * Live Demo（p13）の直後に挟む 1 枚。
  * 聴衆に「次の 4 枚の架空企業情報を見ながら、生成AIで活用プランを考えてみる」
@@ -60,7 +60,7 @@ function WorkshopIcon() {
 }
 
 // ── コンポーネント ────────────────────────────────────────────────────────────
-export default function Slide13aWorkshopIntro() {
+export default function Slide14WorkshopIntro() {
   return (
     <SlideWrapper>
       <motion.div

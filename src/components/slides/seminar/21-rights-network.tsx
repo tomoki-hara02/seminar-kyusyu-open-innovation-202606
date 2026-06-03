@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p20a3 / p21: 持続可能性 — 崩壊の具体例 × 果実分配の必要性
+ * p21: 持続可能性 — 崩壊の具体例 × 果実分配の必要性
  *
  * 左: インフルエンサー推薦動画を安易に生成しようとするチャット（持続可能性の崩壊）
  * 右: 生成AIの果実を組織全体に行き渡らせる仕組み（果実分配）
@@ -355,7 +355,7 @@ function FruitDistributionPanel() {
 
 // ─── スライド本体 ──────────────────────────────────────────────────────────
 
-export default function Slide20a3RightsNetwork() {
+export default function Slide21RightsNetwork() {
   return (
     <SlideWrapper>
       <motion.div

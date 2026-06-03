@@ -108,6 +108,9 @@ function groupByChapter(entries: SlideEntry[]): ChapterGroup[] | null {
 
 // ─── props ────────────────────────────────────────────────────────────────────
 
+const TRIGGER_BASE_CLASS =
+  'flex shrink-0 items-center gap-2 px-3 py-2 rounded-xl border transition-all duration-200 text-xs font-medium tracking-wide';
+
 interface TableOfContentsProps {
   entries: SlideEntry[];
   currentIndex: number;
@@ -115,6 +118,8 @@ interface TableOfContentsProps {
   isOpen: boolean;
   onToggle: () => void;
   onShowBreak: () => void;
+  /** 親のツールバー内に並べるときは true（fixed 配置しない） */
+  inlineTrigger?: boolean;
 }
 
 // ─── TOC overlay ──────────────────────────────────────────────────────────────
@@ -126,6 +131,7 @@ export default function TableOfContents({
   isOpen,
   onToggle,
   onShowBreak,
+  inlineTrigger = false,
 }: TableOfContentsProps) {
   const dialogId = useId();
   const dialogTitleId = `${dialogId}-title`;
@@ -233,7 +239,6 @@ export default function TableOfContents({
 
   return (
     <>
-      {/* ── Trigger button（左上固定）── */}
       <button
         ref={triggerRef}
         type="button"
@@ -244,13 +249,13 @@ export default function TableOfContents({
         aria-label={isOpen ? '目次を閉じる' : '目次を開く'}
         aria-expanded={isOpen}
         aria-controls={dialogId}
-        className={`fixed top-6 left-6 z-30 flex items-center gap-2 px-3 py-2 rounded-xl
-          border transition-all duration-200 text-xs font-medium tracking-wide
-          ${
-            isOpen
-              ? 'bg-white/10 border-white/30 text-white'
-              : 'bg-white/5 border-white/10 text-white/50 hover:bg-white/10 hover:text-white/80 hover:border-white/20'
-          }`}
+        className={`${TRIGGER_BASE_CLASS} ${
+          inlineTrigger ? '' : 'fixed top-6 left-6 z-30'
+        } ${
+          isOpen
+            ? 'bg-white/10 border-white/30 text-white'
+            : 'bg-white/5 border-white/10 text-white/50 hover:bg-white/10 hover:text-white/80 hover:border-white/20'
+        }`}
       >
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
           <rect x="1" y="1" width="6" height="6" rx="1" />

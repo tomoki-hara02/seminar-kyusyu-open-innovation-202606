@@ -164,7 +164,7 @@ function ParticleHalo({ count = 1400 }: { count?: number }) {
   );
 }
 
-export default function Slide08AICapability() {
+export default function Slide08AiCapability() {
   return (
     <SlideWrapper>
       <div className="absolute inset-0">

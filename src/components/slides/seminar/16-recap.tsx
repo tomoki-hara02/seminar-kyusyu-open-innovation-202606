@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
 /**
- * p19: Recap · Key Takeaways — ここまでのまとめ
+ * p16: Recap · Key Takeaways — ここまでのまとめ
  *
  * ベーステンプレート: `templates/Recap.tsx`
  *
@@ -32,7 +32,7 @@ const TAKEAWAYS = [
   },
 ];
 
-export default function Slide19Recap() {
+export default function Slide16Recap() {
   return (
     <SlideWrapper>
       <motion.div

@@ -28,6 +28,20 @@ body {
  * - Three.js (WebGL) の useFrame ループは止められないが、UI レイヤーの動きを停止
  *   することで前庭症状を引き起こすリスクを大幅に下げる
  */
+@keyframes regulation-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--pulse-color, rgba(136, 187, 255, 0.25));
+  }
+  50% {
+    box-shadow: 0 0 0 2px var(--pulse-color, rgba(136, 187, 255, 0.45));
+  }
+}
+
+.regulation-next-pulse {
+  animation: regulation-pulse 2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
