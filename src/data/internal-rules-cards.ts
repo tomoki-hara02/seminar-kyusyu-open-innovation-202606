@@ -56,7 +56,7 @@ export const INTERNAL_RULE_CARDS: RuleCard[] = [
   { id: '7-3', number: '7-3', chapter: '7', title: '規程の見直し', accent: G.govern.accent, gradient: G.govern.grad, group: G.govern.label },
 ];
 
-export const INTERNAL_RULES_TOC_SLIDE_ID = '31-internal-rules-toc';
+export const INTERNAL_RULES_TOC_SLIDE_ID = '28-internal-rules-toc';
 export const CHAPTER_02_BACK_KEY = 'chapter-02-back';
 
 export function groupRuleCards() {
