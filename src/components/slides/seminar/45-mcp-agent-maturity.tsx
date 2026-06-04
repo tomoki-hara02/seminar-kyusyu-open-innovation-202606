@@ -11,6 +11,21 @@ import SlideWrapper from '../../SlideWrapper';
 
 const TOOL_ACCENT = '#c8a8ff';
 
+type Mark = '〇' | '△' | '×';
+
+const MARK_COLOR: Record<Mark, string> = {
+  '〇': '#9ee0a8',
+  '△': '#f7c46c',
+  '×': '#ff7a8a',
+};
+
+const SCOPE_ITEMS: { key: 'chat' | 'browser' | 'cli' | 'connector'; label: string }[] = [
+  { key: 'chat', label: 'チャットアプリ' },
+  { key: 'browser', label: 'ブラウザエージェント' },
+  { key: 'cli', label: 'CLI' },
+  { key: 'connector', label: 'コネクタ' },
+];
+
 const MCP_MATURITY_TIERS = [
   {
     name: 'スターター',
@@ -23,7 +38,9 @@ const MCP_MATURITY_TIERS = [
     features: [
       'MCPはウェブ検索を基準にする',
       '公式MCPサーバー接続は、リスクの最も低い領域に限定する',
+      'ブラウザエージェントの使用は原則認めない',
     ],
+    scope: { chat: '〇', browser: '×', cli: '×', connector: '△' } as Record<string, Mark>,
     highlighted: false,
   },
   {
@@ -39,6 +56,7 @@ const MCP_MATURITY_TIERS = [
       '公式サーバーを原則とし、非公式は承認制を採る',
       '接続先アプリのデータのバックアップなどに注意',
     ],
+    scope: { chat: '〇', browser: '△', cli: '×', connector: '〇' } as Record<string, Mark>,
     highlighted: true,
   },
   {
@@ -53,6 +71,7 @@ const MCP_MATURITY_TIERS = [
       '使用可能なMCPサーバの基準を設ける（セキュリティ・コンプライアンス）',
       'ミスアライメントリスクの検証',
     ],
+    scope: { chat: '〇', browser: '〇', cli: '〇', connector: '〇' } as Record<string, Mark>,
     highlighted: false,
   },
 ] as const;
@@ -109,7 +128,7 @@ export default function Slide45McpAgentMaturity() {
           {MCP_MATURITY_TIERS.map((t, i) => (
             <motion.div
               key={t.name}
-              className={`relative flex flex-col gap-4 p-5 md:p-6 rounded-2xl border min-h-0 ${
+              className={`relative flex flex-col gap-3 p-4 md:p-5 rounded-2xl border min-h-0 overflow-hidden ${
                 t.highlighted
                   ? 'bg-white/[0.08] border-white/20 md:scale-[1.03]'
                   : 'bg-white/[0.04] border-white/10'
@@ -127,19 +146,6 @@ export default function Slide45McpAgentMaturity() {
                   : undefined,
               }}
             >
-              {t.highlighted && (
-                <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full tracking-[0.16em] uppercase whitespace-nowrap"
-                  style={{
-                    background: t.accent,
-                    color: '#1a1530',
-                    fontSize: 'clamp(10px, 0.75vw, 10px)',
-                  }}
-                >
-                  推奨アプローチ
-                </div>
-              )}
-
               <div className="flex flex-col gap-1 shrink-0">
                 <div className="flex items-center gap-2">
                   <span
@@ -209,12 +215,12 @@ export default function Slide45McpAgentMaturity() {
                 </p>
               </div>
 
-              <ul className="flex flex-col gap-2.5 flex-1 min-h-0">
+              <ul className="flex flex-col gap-1.5 shrink-0">
                 {t.features.map((f) => (
                   <li
                     key={f}
                     className="flex items-start gap-2 leading-snug text-white/75"
-                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
+                    style={{ fontSize: 'clamp(12px, 0.95vw, 13.5px)' }}
                   >
                     <span style={{ color: t.accent }} className="shrink-0 mt-0.5">
                       ✓
@@ -223,6 +229,49 @@ export default function Slide45McpAgentMaturity() {
                   </li>
                 ))}
               </ul>
+
+              {/* スコープ表（縦並び）：チャットアプリ / ブラウザエージェント / CLI / コネクタ */}
+              <div className="flex flex-col gap-1 shrink-0 mt-auto">
+                <span
+                  className="text-white/40 tracking-[0.18em] uppercase"
+                  style={{ fontSize: 'clamp(9.5px, 0.75vw, 10.5px)' }}
+                >
+                  使用可否スコープ
+                </span>
+                <div className="flex flex-col gap-0.5">
+                  {SCOPE_ITEMS.map((item) => {
+                    const mark = t.scope[item.key];
+                    const c = MARK_COLOR[mark];
+                    return (
+                      <div
+                        key={item.key}
+                        className="flex items-center justify-between gap-2 px-2 py-0.5 rounded-md border"
+                        style={{
+                          borderColor: `${c}55`,
+                          background: `linear-gradient(90deg, ${c}18 0%, rgba(255,255,255,0.02) 100%)`,
+                        }}
+                      >
+                        <span
+                          className="text-white/80 leading-tight whitespace-nowrap"
+                          style={{ fontSize: 'clamp(11px, 0.88vw, 12.5px)' }}
+                        >
+                          {item.label}
+                        </span>
+                        <span
+                          className="font-bold leading-none tabular-nums shrink-0"
+                          style={{
+                            color: c,
+                            fontSize: 'clamp(13px, 1.15vw, 16px)',
+                            textShadow: `0 0 8px ${c}55`,
+                          }}
+                        >
+                          {mark}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

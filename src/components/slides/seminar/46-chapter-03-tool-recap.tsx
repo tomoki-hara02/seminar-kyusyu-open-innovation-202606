@@ -18,11 +18,11 @@ const TAKEAWAYS = [
     accent: '#c8a8ff',
   },
   {
-    title: '使用端末からのアクセスを認めない',
+    title: '私用端末からのアクセスを認めない',
     accent: '#88bbff',
   },
   {
-    title: '無制限なMCPサーバー接続は認めない',
+    title: '無制限なMCPサーバや追加機能への接続は認めない',
     accent: '#ffaacc',
   },
 ];

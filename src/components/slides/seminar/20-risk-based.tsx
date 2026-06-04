@@ -279,7 +279,7 @@ export default function Slide20RiskBased() {
 
           {/* ── 右：4 段階凡例 ── */}
           <motion.div
-            className="flex flex-col gap-2 shrink-0 min-h-0"
+            className="flex flex-col gap-1.5 shrink-0 min-h-0"
             style={{ width: 'clamp(220px, 22vw, 300px)' }}
             initial={{ opacity: 0, x: 16 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -300,7 +300,7 @@ export default function Slide20RiskBased() {
               return (
                 <motion.div
                   key={lv}
-                  className="flex flex-col gap-1 p-2.5 md:p-3 rounded-xl border flex-1 min-h-0 min-w-0 overflow-hidden"
+                  className="flex flex-col gap-1.5 justify-center px-3 py-2 rounded-xl border flex-1 min-h-0 min-w-0 overflow-hidden"
                   style={{
                     borderColor: `${color}55`,
                     background: `linear-gradient(135deg, ${color}1a 0%, ${color}05 100%)`,
@@ -313,8 +313,8 @@ export default function Slide20RiskBased() {
                     <span
                       className="rounded-sm shrink-0"
                       style={{
-                        width: 12,
-                        height: 12,
+                        width: 10,
+                        height: 10,
                         background: color,
                         boxShadow: `0 0 10px ${color}88`,
                       }}
@@ -335,7 +335,7 @@ export default function Slide20RiskBased() {
                   <p
                     className="text-white/70 leading-snug break-words"
                     style={{
-                      fontSize: 'clamp(13px, 1vw, 14px)',
+                      fontSize: 'clamp(12px, 0.95vw, 13.5px)',
                       wordBreak: 'break-word',
                     }}
                   >

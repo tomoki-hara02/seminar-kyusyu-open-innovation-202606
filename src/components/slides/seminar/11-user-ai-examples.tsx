@@ -52,6 +52,19 @@ const SCENES: Scene[] = [
     ],
     accent: '#9ee0a8',
   },
+  {
+    no: '04',
+    when: '月次レビュー',
+    title: '集合分析でROIを測る',
+    prompt:
+      'ここ半年で受任になった人を、出会いの場・関係性タグ別に集計して。案件化率が高い組合せはどれ？',
+    outcome: [
+      '蓄積データを横断集計',
+      '高転換の「出会い × 関係性」を発見',
+      '次に注力する営業チャネルを判断',
+    ],
+    accent: '#ffaacc',
+  },
 ];
 
 const IconClaude: React.FC<{ color: string }> = ({ color }) => (
@@ -238,90 +251,105 @@ export default function Slide11UserAiExamples() {
           {/* 縦の仕切り */}
           <div className="w-px bg-white/15 shrink-0" />
 
-          {/* 右カラム: 3シーン（厚みのあるレイアウト） */}
-          <div className="flex-1 flex flex-col gap-3 p-5 min-h-0">
+          {/* 右カラム: 日常運用3シーン + 月次分析1シーン */}
+          <div className="flex-1 flex flex-col gap-2.5 p-5 min-h-0">
             <div className="flex items-center justify-between shrink-0">
               <span className="text-[10px] tracking-[0.22em] uppercase text-white/40">
-                3 Scenes · 自然言語で完結
+                Daily Ops × 3 + Monthly Insight × 1
               </span>
               <span className="text-[10px] tracking-[0.16em] text-white/30">
                 voice / chat → Claude → Firestore
               </span>
             </div>
 
-            <div className="flex-1 flex flex-col gap-3 min-h-0">
-              {SCENES.map((s, i) => (
-                <motion.div
-                  key={s.no}
-                  className="relative grid grid-cols-[58px_minmax(0,1.15fr)_minmax(0,1fr)] gap-4 rounded-xl p-4 flex-1 min-h-0"
-                  style={{
-                    background: `linear-gradient(135deg, ${s.accent}1c 0%, rgba(15,20,40,0.55) 75%)`,
-                    border: `1px solid ${s.accent}38`,
-                    boxShadow: `0 18px 38px -22px ${s.accent}66`,
-                  }}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                >
-                  {/* No バッジ + when */}
-                  <div className="flex flex-col items-center justify-center gap-1.5">
-                    <span
-                      className="text-2xl font-extrabold leading-none tabular-nums"
-                      style={{ color: s.accent }}
-                    >
-                      {s.no}
-                    </span>
-                    <span className="text-[9.5px] tracking-[0.12em] text-white/45 text-center leading-tight">
-                      {s.when}
-                    </span>
-                  </div>
-
-                  {/* 中: タイトル + 音声プロンプト */}
-                  <div className="flex flex-col gap-2 min-w-0 justify-center">
-                    <span
-                      className="text-[14px] font-bold leading-tight"
-                      style={{ color: s.accent }}
-                    >
-                      {s.title}
-                    </span>
-                    <div
-                      className="flex items-start gap-2 px-3 py-2 rounded-lg border"
-                      style={{
-                        borderColor: `${s.accent}60`,
-                        background: 'rgba(0,0,0,0.32)',
-                      }}
-                    >
-                      <span className="shrink-0 mt-[3px]">
-                        <IconMic color={s.accent} />
+            <div className="flex-1 flex flex-col gap-2 min-h-0">
+              {SCENES.map((s, i) => {
+                const isInsight = i === 3;
+                return (
+                  <motion.div
+                    key={s.no}
+                    className="relative grid grid-cols-[54px_minmax(0,1.15fr)_minmax(0,1fr)] gap-3 rounded-xl px-3.5 py-2.5 flex-1 min-h-0"
+                    style={{
+                      background: `linear-gradient(135deg, ${s.accent}1c 0%, rgba(15,20,40,0.55) 75%)`,
+                      border: `1px solid ${s.accent}38`,
+                      boxShadow: `0 16px 32px -22px ${s.accent}66`,
+                    }}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  >
+                    {/* No バッジ + when */}
+                    <div className="flex flex-col items-center justify-center gap-1">
+                      <span
+                        className="text-xl font-extrabold leading-none tabular-nums"
+                        style={{ color: s.accent }}
+                      >
+                        {s.no}
                       </span>
-                      <p className="text-[12.5px] text-white/90 leading-snug">
-                        {s.prompt}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* 右: 自動化される結果 */}
-                  <div className="flex flex-col gap-1.5 justify-center min-w-0">
-                    <span className="text-[9.5px] tracking-[0.18em] text-white/45 uppercase">
-                      Claude が自動で
-                    </span>
-                    <ul className="flex flex-col gap-1.5">
-                      {s.outcome.map((o) => (
-                        <li
-                          key={o}
-                          className="flex items-start gap-2 text-[12.5px] text-white/85 leading-snug"
+                      <span className="text-[9px] tracking-[0.1em] text-white/45 text-center leading-tight">
+                        {s.when}
+                      </span>
+                      {isInsight && (
+                        <span
+                          className="mt-1 px-1.5 py-0.5 rounded-full text-[8.5px] tracking-[0.16em] uppercase"
+                          style={{
+                            color: s.accent,
+                            border: `1px solid ${s.accent}80`,
+                            background: `${s.accent}10`,
+                          }}
                         >
-                          <span
-                            className="mt-[7px] w-1.5 h-1.5 rounded-full shrink-0"
-                            style={{ background: s.accent }}
-                          />
-                          <span>{o}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
+                          Insight
+                        </span>
+                      )}
+                    </div>
+
+                    {/* 中: タイトル + 音声プロンプト */}
+                    <div className="flex flex-col gap-1.5 min-w-0 justify-center">
+                      <span
+                        className="text-[13.5px] font-bold leading-tight"
+                        style={{ color: s.accent }}
+                      >
+                        {s.title}
+                      </span>
+                      <div
+                        className="flex items-start gap-1.5 px-2.5 py-1.5 rounded-lg border"
+                        style={{
+                          borderColor: `${s.accent}60`,
+                          background: 'rgba(0,0,0,0.32)',
+                        }}
+                      >
+                        <span className="shrink-0 mt-[2px]">
+                          <IconMic color={s.accent} />
+                        </span>
+                        <p className="text-[12px] text-white/90 leading-snug">
+                          {s.prompt}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 右: 自動化される結果 */}
+                    <div className="flex flex-col gap-1 justify-center min-w-0">
+                      <span className="text-[9px] tracking-[0.18em] text-white/45 uppercase">
+                        Claude が自動で
+                      </span>
+                      <ul className="flex flex-col gap-1">
+                        {s.outcome.map((o) => (
+                          <li
+                            key={o}
+                            className="flex items-start gap-2 text-[12px] text-white/85 leading-snug"
+                          >
+                            <span
+                              className="mt-[6px] w-1.5 h-1.5 rounded-full shrink-0"
+                              style={{ background: s.accent }}
+                            />
+                            <span>{o}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
@@ -333,11 +361,13 @@ export default function Slide11UserAiExamples() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
         >
-          専用アプリを開かず
+          日々は
           <span className="mx-1 text-white font-semibold">話すだけで完結</span>
-          → 入力ハードルがほぼゼロ。
+          → 蓄積したデータで
+          <span className="mx-1 text-white font-semibold">案件化率まで分析</span>
+          。
           <span className="ml-2 text-white/45">
-            高額CRMでも自作Excelでもない、中小企業サイズの「使い続けられる」設計。
+            「使い続けられる」入力と、振り返って投資判断できる出口を1つの仕組みに。
           </span>
         </motion.p>
       </motion.div>

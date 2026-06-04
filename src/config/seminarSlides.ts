@@ -143,8 +143,8 @@ export const seminarSlideRegistry: SlideEntry[] = [
     Component: Slide05Start,
     background: 'logoParticles',
     chapter: 'opening',
-    title: 'では、始めましょう',
-    note: 'p5:では、始めましょう！',
+    title: 'では、始めましょう ＋ セミナーの楽しみ方',
+    note: 'p5:では、始めましょう／2 Tips（ブラウザAI深堀・F11全画面）',
   },
 
   // ── Chapter 01: 近時のホットトピックと生成AI活用プラン ─────
