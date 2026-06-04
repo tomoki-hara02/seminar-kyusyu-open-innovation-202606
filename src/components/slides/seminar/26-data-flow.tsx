@@ -367,34 +367,37 @@ export default function Slide26DataFlow() {
           >
             <color attach="background" args={['#0a0a0f']} />
 
-            {/* PC（左） */}
-            <group position={[-3, 0.08, 0]} scale={1.12}>
-              <PCMesh />
+            {/* AI リングが右に張り出す分、図全体を左へ平行移動して視覚中心を画面中央へ */}
+            <group position={[-0.55, 0, 0]}>
+              {/* PC（左） */}
+              <group position={[-3, 0.08, 0]} scale={1.12}>
+                <PCMesh />
+              </group>
+
+              {/* AI モデル（右） */}
+              <group position={[3, 0.08, 0]} scale={1.12}>
+                <AIModel />
+              </group>
+
+              {/* 接続ライン */}
+              <ConnectionLine startX={-1.9} endX={1.9} y={0.15}  color="#88bbff" />
+              <ConnectionLine startX={-1.9} endX={1.9} y={-0.3}  color="#FF6B9D" />
+
+              {/* 入力ストリーム: PC → AI */}
+              <DataStream
+                startX={-1.9} endX={1.9}
+                yBase={0.15} zBase={0}
+                color="#88bbff"
+                count={45} speed={0.32} amp={0.14} freq={3.5}
+              />
+              {/* 出力ストリーム: AI → PC */}
+              <DataStream
+                startX={1.9} endX={-1.9}
+                yBase={-0.3} zBase={0}
+                color="#FF6B9D"
+                count={45} speed={0.32} amp={0.14} freq={3.5}
+              />
             </group>
-
-            {/* AI モデル（右） */}
-            <group position={[3, 0.08, 0]} scale={1.12}>
-              <AIModel />
-            </group>
-
-            {/* 接続ライン */}
-            <ConnectionLine startX={-1.9} endX={1.9} y={0.15}  color="#88bbff" />
-            <ConnectionLine startX={-1.9} endX={1.9} y={-0.3}  color="#FF6B9D" />
-
-            {/* 入力ストリーム: PC → AI */}
-            <DataStream
-              startX={-1.9} endX={1.9}
-              yBase={0.15} zBase={0}
-              color="#88bbff"
-              count={45} speed={0.32} amp={0.14} freq={3.5}
-            />
-            {/* 出力ストリーム: AI → PC */}
-            <DataStream
-              startX={1.9} endX={-1.9}
-              yBase={-0.3} zBase={0}
-              color="#FF6B9D"
-              count={45} speed={0.32} amp={0.14} freq={3.5}
-            />
           </Canvas>
           </div>
         </div>
