@@ -137,7 +137,7 @@ function PdcaCard({
             color: step.accent,
             borderColor: `${step.accent}88`,
             background: `${step.accent}1c`,
-            fontSize: 'clamp(9px, 0.78vw, 11px)',
+            fontSize: 'clamp(10px, 0.78vw, 11px)',
           }}
         >
           {step.phase}
@@ -145,7 +145,7 @@ function PdcaCard({
         {showCycleHint && (
           <span
             className="font-mono text-white/35 tracking-wider leading-none"
-            style={{ fontSize: 'clamp(9px, 0.72vw, 10.5px)' }}
+            style={{ fontSize: 'clamp(10px, 0.72vw, 10.5px)' }}
           >
             ↻ サイクル継続
           </span>
@@ -200,7 +200,7 @@ export default function Slide57DelegationSupervision() {
         <div className="flex flex-col gap-1.5 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-4 · 個人情報 · 委託先の監督
           </span>
@@ -236,7 +236,7 @@ export default function Slide57DelegationSupervision() {
                 color: LAW_ACCENT,
                 borderColor: `${LAW_ACCENT}66`,
                 background: `${LAW_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               EXAMPLES
@@ -281,7 +281,7 @@ export default function Slide57DelegationSupervision() {
           </span>
           <p
             className="text-white/85 leading-snug"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             これら<span className="text-white font-semibold">第三者機関の監査</span>を通じた委託運用にすることで、
             <span style={{ color: BRIDGE_ACCENT }} className="font-semibold">法25条 委託先監督義務</span>
@@ -298,7 +298,7 @@ export default function Slide57DelegationSupervision() {
                 color: CHAPTER_ACCENT,
                 borderColor: `${CHAPTER_ACCENT}66`,
                 background: `${CHAPTER_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               PDCA
@@ -330,7 +330,7 @@ export default function Slide57DelegationSupervision() {
           {/* recycle ヒント */}
           <motion.div
             className="flex items-center justify-center gap-2 pt-1 text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.95 }}

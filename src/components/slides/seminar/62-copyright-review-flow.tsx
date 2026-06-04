@@ -94,7 +94,7 @@ function StepCard({
       >
         <span
           className="font-mono font-bold tabular-nums"
-          style={{ color: step.accent, fontSize: 'clamp(12px, 1vw, 15px)' }}
+          style={{ color: step.accent, fontSize: 'clamp(13px, 1vw, 16px)' }}
         >
           {step.num}
         </span>
@@ -107,7 +107,7 @@ function StepCard({
             color: step.accent,
             borderColor: `${step.accent}55`,
             background: `${step.accent}12`,
-            fontSize: 'clamp(9px, 0.78vw, 11px)',
+            fontSize: 'clamp(10px, 0.78vw, 11px)',
           }}
         >
           {step.tag}
@@ -139,7 +139,7 @@ export default function Slide62CopyrightReviewFlow() {
         <div className="flex flex-col gap-2 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-6 · 著作物 · Pipeline
           </span>

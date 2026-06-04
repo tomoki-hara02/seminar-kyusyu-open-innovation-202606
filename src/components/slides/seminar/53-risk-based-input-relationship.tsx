@@ -101,7 +101,7 @@ function StepCard({
             color: step.accent,
             borderColor: `${step.accent}55`,
             background: `${step.accent}12`,
-            fontSize: 'clamp(9px, 0.78vw, 11px)',
+            fontSize: 'clamp(10px, 0.78vw, 11px)',
           }}
         >
           {step.tag}
@@ -133,7 +133,7 @@ export default function Slide53RiskBasedInputRelationship() {
         <div className="flex flex-col gap-2 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-2 · 入力禁止情報
           </span>

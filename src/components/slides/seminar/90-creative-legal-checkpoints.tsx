@@ -198,7 +198,7 @@ function ScenarioHub() {
           <IconCreator color={LAW_ACCENT} />
           <p
             className="font-bold text-white text-center"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             クリエイター業務委託
           </p>
@@ -208,7 +208,7 @@ function ScenarioHub() {
               color: WARN_ACCENT,
               border: `1px solid ${WARN_ACCENT}55`,
               background: `${WARN_ACCENT}18`,
-              fontSize: 'clamp(9px, 0.78vw, 11px)',
+              fontSize: 'clamp(10px, 0.78vw, 11px)',
             }}
           >
             AI混在
@@ -227,7 +227,7 @@ function ScenarioHub() {
           <IconDelivery color={CHAPTER_ACCENT} />
           <p
             className="font-bold text-white text-center"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             納品成果物
           </p>
@@ -237,7 +237,7 @@ function ScenarioHub() {
               color: CHAPTER_ACCENT,
               border: `1px solid ${CHAPTER_ACCENT}55`,
               background: `${CHAPTER_ACCENT}18`,
-              fontSize: 'clamp(9px, 0.78vw, 11px)',
+              fontSize: 'clamp(10px, 0.78vw, 11px)',
             }}
           >
             画像・音声・原稿
@@ -320,7 +320,7 @@ function CheckpointPillar({
             color: item.accent,
             borderColor: `${item.accent}66`,
             background: `${item.accent}18`,
-            fontSize: 'clamp(12px, 1.05vw, 14px)',
+            fontSize: 'clamp(13px, 1.05vw, 15px)',
           }}
         >
           {item.num}
@@ -346,7 +346,7 @@ function CheckpointPillar({
         className="text-white/55 font-mono tracking-wide px-2 py-1 rounded-md border border-dashed w-fit"
         style={{
           borderColor: `${item.accent}33`,
-          fontSize: 'clamp(9px, 0.78vw, 11px)',
+          fontSize: 'clamp(10px, 0.78vw, 11px)',
         }}
       >
         {item.visual}
@@ -374,7 +374,7 @@ export default function Slide90CreativeLegalCheckpoints() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             クリエイティブ編 · 4つの観点
           </span>

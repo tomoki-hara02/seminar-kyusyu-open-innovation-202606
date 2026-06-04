@@ -486,7 +486,7 @@ function RegulationsColumn() {
                 <li
                   key={item.text}
                   style={{
-                    fontSize: 'clamp(12px, 0.98vw, 14px)',
+                    fontSize: 'clamp(13px, 0.98vw, 15px)',
                     color: highlighted ? OVERSEAS_ACCENT : 'rgba(255,255,255,0.62)',
                     fontWeight: highlighted ? 700 : 400,
                     lineHeight: 1.45,
@@ -516,7 +516,7 @@ export default function Slide58DataResidencyPatterns() {
         <div className="flex flex-col gap-1.5 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-4 · 個人情報
           </span>

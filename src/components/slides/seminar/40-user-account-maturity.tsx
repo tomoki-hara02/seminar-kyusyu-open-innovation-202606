@@ -68,7 +68,7 @@ export default function Slide40UserAccountMaturity() {
         <div className="flex flex-col items-center gap-2 text-center shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             2 · ユーザー · Account Maturity
           </span>
@@ -88,13 +88,13 @@ export default function Slide40UserAccountMaturity() {
           </h2>
           <p
             className="text-white/50 leading-relaxed max-w-2xl"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             組織の規模と活用段階に応じて、使用者・アカウントの広げ方を変える
           </p>
           <p
             className="text-white/35 leading-relaxed flex flex-wrap items-center justify-center gap-x-2 gap-y-1"
-            style={{ fontSize: 'clamp(10px, 0.92vw, 13px)' }}
+            style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
           >
             <span style={{ color: '#9ee0a8' }}>少数・特定部署</span>
             <span className="text-white/25">→</span>
@@ -132,7 +132,7 @@ export default function Slide40UserAccountMaturity() {
                   style={{
                     background: t.accent,
                     color: '#1a1530',
-                    fontSize: 'clamp(8px, 0.75vw, 10px)',
+                    fontSize: 'clamp(10px, 0.75vw, 10px)',
                   }}
                 >
                   推奨アプローチ
@@ -147,7 +147,7 @@ export default function Slide40UserAccountMaturity() {
                   />
                   <span
                     className="font-semibold text-white tracking-tight"
-                    style={{ fontSize: 'clamp(12px, 1.1vw, 16px)' }}
+                    style={{ fontSize: 'clamp(13px, 1.1vw, 17px)' }}
                   >
                     {t.name}
                   </span>
@@ -168,20 +168,20 @@ export default function Slide40UserAccountMaturity() {
                     color: t.focusAccent,
                     border: `1px solid ${t.focusAccent}66`,
                     background: `${t.focusAccent}14`,
-                    fontSize: 'clamp(9px, 0.82vw, 11px)',
+                    fontSize: 'clamp(10px, 0.82vw, 11px)',
                   }}
                 >
                   {t.focusTag}
                 </span>
                 <p
                   className="font-bold text-white/90 leading-snug"
-                  style={{ fontSize: 'clamp(11px, 1vw, 14px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.15vw, 16px)' }}
                 >
                   {t.line1}
                 </p>
                 <p
                   className="text-white/60 leading-snug"
-                  style={{ fontSize: 'clamp(10px, 0.92vw, 12.5px)' }}
+                  style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
                 >
                   {t.line2}
                 </p>
@@ -192,7 +192,7 @@ export default function Slide40UserAccountMaturity() {
                   <li
                     key={f}
                     className="flex items-start gap-2 leading-snug text-white/75"
-                    style={{ fontSize: 'clamp(11px, 0.98vw, 13px)' }}
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
                   >
                     <span style={{ color: t.accent }} className="shrink-0 mt-0.5">
                       ✓
@@ -207,7 +207,7 @@ export default function Slide40UserAccountMaturity() {
 
         <p
           className="text-white/30 tracking-wider text-center shrink-0"
-          style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+          style={{ fontSize: 'clamp(12px, 0.92vw, 13px)' }}
         >
           ※ 2-1 使用者の範囲・2-2 アカウント管理とあわせて設計する
         </p>

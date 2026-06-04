@@ -23,7 +23,7 @@ export default function Slide06VoiceActorGenai() {
         <div className="flex flex-col gap-2 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             Opening · 注目トピック
           </span>
@@ -94,7 +94,7 @@ export default function Slide06VoiceActorGenai() {
           <div className="flex flex-col gap-2">
             <span
               className="tracking-[0.2em] uppercase text-white/35 font-semibold"
-              style={{ fontSize: 'clamp(9px, 0.82vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.82vw, 11px)' }}
             >
               参考資料
             </span>
@@ -134,7 +134,7 @@ export default function Slide06VoiceActorGenai() {
             </a>
             <p
               className="text-white/30 font-mono break-all leading-snug"
-              style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ fontSize: 'clamp(11px, 0.85vw, 12px)' }}
             >
               {MOJ_URL}
             </p>

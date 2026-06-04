@@ -85,7 +85,7 @@ function NoFreePersonalVisual({ accent }: { accent: string }) {
         transition={{ delay: 0.5 }}
       >
         <span className="text-sm">↓</span>
-        <span style={{ fontSize: 'clamp(9px, 0.8vw, 11px)' }}>理由</span>
+        <span style={{ fontSize: 'clamp(10px, 0.8vw, 11px)' }}>理由</span>
       </motion.div>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
@@ -108,7 +108,7 @@ function NoFreePersonalVisual({ accent }: { accent: string }) {
         ))}
         <motion.span
           className="text-white/40"
-          style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -135,7 +135,7 @@ function ShadowAIVisual({ accent }: { accent: string }) {
       >
         <span
           className="font-bold tracking-wide"
-          style={{ color: accent, fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+          style={{ color: accent, fontSize: 'clamp(10px, 0.78vw, 11px)' }}
         >
           指定ツール
         </span>
@@ -150,7 +150,7 @@ function ShadowAIVisual({ accent }: { accent: string }) {
             <span className="text-[#9ee0a8] text-xs font-bold shrink-0">✓</span>
             <span
               className="text-white/75 leading-snug"
-              style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             >
               {tool}
             </span>
@@ -166,7 +166,7 @@ function ShadowAIVisual({ accent }: { accent: string }) {
       >
         <span className="text-white/30 text-xs">|</span>
         <span
-          className="text-[9px] tracking-wider uppercase text-white/35 whitespace-nowrap"
+          className="text-[10px] tracking-wider uppercase text-white/35 whitespace-nowrap"
           style={{ writingMode: 'vertical-rl' }}
         >
           Gate
@@ -185,7 +185,7 @@ function ShadowAIVisual({ accent }: { accent: string }) {
       >
         <span
           className="font-bold tracking-wide text-[#ff7aa8]"
-          style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
         >
           Shadow AI
         </span>
@@ -200,7 +200,7 @@ function ShadowAIVisual({ accent }: { accent: string }) {
             <span className="text-[#ff7aa8] text-xs font-bold shrink-0">✕</span>
             <span
               className="text-white/55 leading-snug line-through decoration-white/25"
-              style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             >
               {tool}
             </span>
@@ -325,7 +325,7 @@ export default function Slide46AiToolPlanSpec() {
                   </h3>
                   <p
                     className="text-white/50 leading-relaxed"
-                    style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}
+                    style={{ fontSize: 'clamp(13px, 1vw, 15px)' }}
                   >
                     → {point.reason}
                   </p>

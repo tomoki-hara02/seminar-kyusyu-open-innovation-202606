@@ -92,7 +92,7 @@ function LimitationRow({
       </span>
       <span
         className={`leading-relaxed min-w-0 ${highlighted ? 'text-white font-semibold' : 'text-white/85'}`}
-        style={{ fontSize: 'clamp(12px, 1.02vw, 15px)' }}
+        style={{ fontSize: 'clamp(13px, 1.02vw, 16px)' }}
       >
         {item.title}
       </span>

@@ -101,13 +101,13 @@ function PrincipleSection({
         <>
           <p
             className="text-white/65 leading-relaxed"
-            style={{ fontSize: 'clamp(12px, 1.08vw, 16px)' }}
+            style={{ fontSize: 'clamp(13px, 1.08vw, 17px)' }}
           >
             {item.caseTitle}
           </p>
           <p
             className="text-white/55 leading-relaxed"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             {item.caseDesc}
           </p>
@@ -131,7 +131,7 @@ export default function Slide63CopyrightWorkDefinition() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-6 · 著作物 · Step 1
           </span>
@@ -273,7 +273,7 @@ export default function Slide63CopyrightWorkDefinition() {
                 color: COLUMN_ACCENT,
                 borderColor: `${COLUMN_ACCENT}55`,
                 background: `${COLUMN_ACCENT}14`,
-                fontSize: 'clamp(9px, 0.78vw, 11px)',
+                fontSize: 'clamp(10px, 0.78vw, 11px)',
               }}
             >
               Column
@@ -295,7 +295,7 @@ export default function Slide63CopyrightWorkDefinition() {
               </p>
               <p
                 className="leading-relaxed"
-                style={{ color: LAW_ACCENT, fontSize: 'clamp(12px, 1.08vw, 16px)' }}
+                style={{ color: LAW_ACCENT, fontSize: 'clamp(13px, 1.08vw, 17px)' }}
               >
                 {MCP_COLUMN.lawRef}
               </p>

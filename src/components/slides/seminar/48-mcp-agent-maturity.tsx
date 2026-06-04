@@ -69,7 +69,7 @@ export default function Slide48McpAgentMaturity() {
         <div className="flex flex-col items-center gap-2 text-center shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             3-4 · エージェント・MCP · Maturity
           </span>
@@ -89,7 +89,7 @@ export default function Slide48McpAgentMaturity() {
           </h2>
           <p
             className="text-white/50 leading-relaxed max-w-2xl"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             組織の連携範囲に応じて、利用ツールとMCPの許容範囲を段階的に設計する
           </p>
@@ -133,7 +133,7 @@ export default function Slide48McpAgentMaturity() {
                   style={{
                     background: t.accent,
                     color: '#1a1530',
-                    fontSize: 'clamp(8px, 0.75vw, 10px)',
+                    fontSize: 'clamp(10px, 0.75vw, 10px)',
                   }}
                 >
                   推奨アプローチ
@@ -155,7 +155,7 @@ export default function Slide48McpAgentMaturity() {
                 </div>
                 <p
                   className="text-white/55 leading-snug"
-                  style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
                 >
                   {t.desc}
                 </p>
@@ -175,14 +175,14 @@ export default function Slide48McpAgentMaturity() {
                     color: t.focusAccent,
                     border: `1px solid ${t.focusAccent}66`,
                     background: `${t.focusAccent}14`,
-                    fontSize: 'clamp(9px, 0.82vw, 11px)',
+                    fontSize: 'clamp(10px, 0.82vw, 11px)',
                   }}
                 >
                   {t.focusTag}
                 </span>
                 <p
                   className="font-bold text-white leading-snug"
-                  style={{ fontSize: 'clamp(12px, 1.1vw, 15px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
                 >
                   {t.focusLabel}
                 </p>
@@ -197,7 +197,7 @@ export default function Slide48McpAgentMaturity() {
               >
                 <p
                   className="text-white/40 tracking-wide uppercase mb-1"
-                  style={{ fontSize: 'clamp(9px, 0.8vw, 11px)' }}
+                  style={{ fontSize: 'clamp(10px, 0.8vw, 11px)' }}
                 >
                   プラン・契約
                 </p>
@@ -214,7 +214,7 @@ export default function Slide48McpAgentMaturity() {
                   <li
                     key={f}
                     className="flex items-start gap-2 leading-snug text-white/75"
-                    style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
                   >
                     <span style={{ color: t.accent }} className="shrink-0 mt-0.5">
                       ✓

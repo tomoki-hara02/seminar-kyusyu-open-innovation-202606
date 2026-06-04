@@ -112,7 +112,7 @@ function TypeCard({
         <div className="flex flex-col leading-tight gap-0.5 min-w-0">
           <span
             className="tracking-[0.18em] uppercase text-white/45 font-semibold"
-            style={{ fontSize: 'clamp(9px, 0.75vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
           >
             {type.label}
           </span>
@@ -268,7 +268,7 @@ export default function Slide78IncidentResponse() {
                 color: INCIDENT_ACCENT,
                 borderColor: `${INCIDENT_ACCENT}66`,
                 background: `${INCIDENT_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               STEP 1
@@ -297,7 +297,7 @@ export default function Slide78IncidentResponse() {
                 color: LAW_ACCENT,
                 borderColor: `${LAW_ACCENT}66`,
                 background: `${LAW_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               STEP 2–4

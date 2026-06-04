@@ -80,7 +80,7 @@ export default function Slide23RiskBased() {
           <div className="flex items-center gap-3">
             <span
               className="tracking-[0.32em] uppercase text-white/40"
-              style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
             >
               Risk-Based Approach
             </span>
@@ -100,7 +100,7 @@ export default function Slide23RiskBased() {
           </h2>
           <span
             className="text-white/55 leading-snug"
-            style={{ fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+            style={{ fontSize: 'clamp(13px, 1.15vw, 17px)' }}
           >
             すべてのリスクを同じレベルで対応するのではなく、
             <span className="text-white/85 font-bold">「発生確率 × 深刻さ」</span>
@@ -123,13 +123,13 @@ export default function Slide23RiskBased() {
             <div className="flex items-baseline justify-between gap-2 flex-wrap shrink-0">
               <span
                 className="font-semibold tracking-wide text-white/80 whitespace-nowrap"
-                style={{ fontSize: 'clamp(12px, 1.2vw, 16px)' }}
+                style={{ fontSize: 'clamp(13px, 1.2vw, 17px)' }}
               >
                 リスクマトリックス
               </span>
               <span
                 className="text-white/35 tracking-widest whitespace-nowrap"
-                style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+                style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
               >
                 Likelihood × Severity
               </span>
@@ -142,7 +142,7 @@ export default function Slide23RiskBased() {
                 <span
                   className="text-white/80 font-bold leading-none whitespace-nowrap"
                   style={{
-                    fontSize: 'clamp(10px, 0.95vw, 13px)',
+                    fontSize: 'clamp(13px, 0.95vw, 14px)',
                     writingMode: 'vertical-rl',
                   }}
                 >
@@ -151,7 +151,7 @@ export default function Slide23RiskBased() {
                 <span
                   className="font-mono tracking-widest text-white/35 leading-none mt-1 whitespace-nowrap"
                   style={{
-                    fontSize: 'clamp(8px, 0.7vw, 10px)',
+                    fontSize: 'clamp(10px, 0.75vw, 11px)',
                     writingMode: 'vertical-rl',
                   }}
                 >
@@ -176,13 +176,13 @@ export default function Slide23RiskBased() {
                   >
                     <span
                       className="text-white/80 font-bold whitespace-nowrap"
-                      style={{ fontSize: 'clamp(10px, 1vw, 13px)' }}
+                      style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
                     >
                       深刻さ
                     </span>
                     <span
                       className="font-mono tracking-widest text-white/35 mt-0.5 whitespace-nowrap"
-                      style={{ fontSize: 'clamp(8px, 0.7vw, 10px)' }}
+                      style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
                     >
                       -Severity-
                     </span>
@@ -202,7 +202,7 @@ export default function Slide23RiskBased() {
                     <div
                       key={s}
                       className="text-center font-mono tabular-nums text-white/60"
-                      style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+                      style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
                     >
                       {s}
                     </div>
@@ -226,7 +226,7 @@ export default function Slide23RiskBased() {
                     <div className="flex items-center justify-center">
                       <span
                         className="font-mono tabular-nums text-white/60"
-                        style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+                        style={{ fontSize: 'clamp(11px, 0.9vw, 12px)' }}
                       >
                         {l}
                       </span>
@@ -245,7 +245,7 @@ export default function Slide23RiskBased() {
                             background: soft,
                             border: `1px solid ${color}66`,
                             color,
-                            fontSize: 'clamp(9px, 0.95vw, 13px)',
+                            fontSize: 'clamp(10px, 0.95vw, 13px)',
                             minHeight: 0,
                           }}
                           initial={{ opacity: 0, scale: 0.92 }}
@@ -268,7 +268,7 @@ export default function Slide23RiskBased() {
             <div
               className="flex items-center gap-2 text-white/35 pt-1 shrink-0 break-words"
               style={{
-                fontSize: 'clamp(10px, 0.85vw, 12px)',
+                fontSize: 'clamp(12px, 0.85vw, 12px)',
                 wordBreak: 'break-word',
               }}
             >
@@ -289,7 +289,7 @@ export default function Slide23RiskBased() {
               <span className="w-1 h-4 rounded-full bg-white/40 shrink-0" />
               <span
                 className="font-semibold tracking-wide text-white/80 whitespace-nowrap"
-                style={{ fontSize: 'clamp(11px, 1.1vw, 15px)' }}
+                style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
               >
                 リスクレベルと対応方針
               </span>
@@ -321,13 +321,13 @@ export default function Slide23RiskBased() {
                     />
                     <span
                       className="font-bold text-white whitespace-nowrap"
-                      style={{ fontSize: 'clamp(11px, 1.1vw, 15px)' }}
+                      style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
                     >
                       {jp}
                     </span>
                     <span
                       className="font-mono tracking-widest whitespace-nowrap"
-                      style={{ color: `${color}cc`, fontSize: 'clamp(8px, 0.7vw, 10px)' }}
+                      style={{ color: `${color}cc`, fontSize: 'clamp(10px, 0.75vw, 11px)' }}
                     >
                       {label}
                     </span>
@@ -335,7 +335,7 @@ export default function Slide23RiskBased() {
                   <p
                     className="text-white/70 leading-snug break-words"
                     style={{
-                      fontSize: 'clamp(10px, 0.9vw, 12.5px)',
+                      fontSize: 'clamp(13px, 1vw, 14px)',
                       wordBreak: 'break-word',
                     }}
                   >
@@ -351,7 +351,7 @@ export default function Slide23RiskBased() {
         <motion.p
           className="shrink-0 text-white/40 tracking-wide break-words"
           style={{
-            fontSize: 'clamp(10px, 0.9vw, 12px)',
+            fontSize: 'clamp(13px, 1vw, 14px)',
             wordBreak: 'break-word',
           }}
           initial={{ opacity: 0 }}

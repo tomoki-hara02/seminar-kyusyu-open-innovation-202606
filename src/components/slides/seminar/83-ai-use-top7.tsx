@@ -112,7 +112,7 @@ function BarRow({ item, delay }: { item: TopUse; delay: number }) {
         <div className="flex items-baseline gap-2 min-w-0 flex-wrap">
           <span
             className="font-bold text-white leading-tight"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             {item.usage}
           </span>
@@ -128,7 +128,7 @@ function BarRow({ item, delay }: { item: TopUse; delay: number }) {
               style={{
                 color: `${item.accent}cc`,
                 borderColor: `${item.accent}44`,
-                fontSize: 'clamp(8px, 0.68vw, 9px)',
+                fontSize: 'clamp(10px, 0.68vw, 9px)',
               }}
             >
               推計
@@ -151,7 +151,7 @@ function BarRow({ item, delay }: { item: TopUse; delay: number }) {
         </div>
         <span
           className="text-white/42 leading-snug"
-          style={{ fontSize: 'clamp(9px, 0.75vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
         >
           {item.comment}
         </span>
@@ -159,7 +159,7 @@ function BarRow({ item, delay }: { item: TopUse; delay: number }) {
 
       <span
         className="font-bold tabular-nums text-right row-span-2 self-center"
-        style={{ color: item.accent, fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+        style={{ color: item.accent, fontSize: 'clamp(13px, 1.05vw, 16px)' }}
       >
         {item.pctLabel}
       </span>
@@ -179,7 +179,7 @@ export default function Slide83AiUseTop7() {
         <div className="shrink-0 flex flex-col gap-1">
           <span
             className="tracking-[0.28em] uppercase text-white/35"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             活用実態 · 企業管理職調査
           </span>
@@ -193,14 +193,14 @@ export default function Slide83AiUseTop7() {
             </span>
             <span
               className="text-white/55 font-semibold ml-1.5"
-              style={{ fontSize: 'clamp(12px, 1.05vw, 16px)' }}
+              style={{ fontSize: 'clamp(13px, 1.05vw, 17px)' }}
             >
               （複数回答）
             </span>
           </h2>
           <p
             className="text-white/45 leading-snug"
-            style={{ fontSize: 'clamp(9px, 0.82vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.82vw, 11px)' }}
           >
             出典：コーレ株式会社「企業の生成AI利用実態調査」2026年1月（管理職・マネージャー n=1,008）
           </p>
@@ -209,7 +209,7 @@ export default function Slide83AiUseTop7() {
         <div className="flex items-center gap-2 px-0.5 shrink-0">
           <span
             className="tracking-[0.18em] uppercase font-semibold text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           >
             順位 × 割合
           </span>
@@ -232,7 +232,7 @@ export default function Slide83AiUseTop7() {
             <p
               key={i}
               className="text-white/32 leading-snug"
-              style={{ fontSize: 'clamp(8px, 0.7vw, 10px)' }}
+              style={{ fontSize: 'clamp(10px, 0.7vw, 10px)' }}
             >
               ※{note}
             </p>

@@ -219,7 +219,7 @@ export default function Slide07WebPipeline() {
                   {/* テキスト */}
                   <div className="text-center px-1">
                     <motion.h3
-                      className="text-sm font-bold tracking-tight leading-snug whitespace-pre-line min-h-[2.5rem] flex items-center justify-center"
+                      className="text-base font-bold tracking-tight leading-snug whitespace-pre-line min-h-[2.5rem] flex items-center justify-center"
                       animate={{
                         color: isActive
                           ? accent
@@ -232,7 +232,7 @@ export default function Slide07WebPipeline() {
                       {step.title}
                     </motion.h3>
                     <motion.p
-                      className="text-[11px] mt-2 leading-relaxed"
+                      className="text-sm mt-2 leading-relaxed"
                       animate={{
                         color: isActive
                           ? 'rgba(255,255,255,0.7)'
@@ -247,7 +247,7 @@ export default function Slide07WebPipeline() {
                     {/* MCPノート */}
                     {step.note && (
                       <motion.span
-                        className="inline-block mt-2 px-2 py-0.5 rounded-full text-[9px] tracking-widest uppercase border"
+                        className="inline-block mt-2 px-2 py-0.5 rounded-full text-[10px] tracking-widest uppercase border"
                         style={{ borderColor: `${accent}55`, color: accent }}
                         animate={{ opacity: isActive ? 1 : 0.35 }}
                         transition={{ duration: 0.3 }}

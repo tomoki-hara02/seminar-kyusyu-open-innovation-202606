@@ -85,7 +85,7 @@ function StructureRow({
       >
         <span
           className="shrink-0 font-mono font-bold tabular-nums"
-          style={{ color: item.accent, fontSize: 'clamp(12px, 1vw, 15px)' }}
+          style={{ color: item.accent, fontSize: 'clamp(13px, 1vw, 16px)' }}
         >
           {item.num}
         </span>
@@ -113,7 +113,7 @@ function StructureRow({
             color: item.accent,
             borderColor: `${item.accent}55`,
             background: `${item.accent}10`,
-            fontSize: 'clamp(8px, 0.72vw, 10px)',
+            fontSize: 'clamp(10px, 0.72vw, 10px)',
           }}
         >
           {item.tag}
@@ -165,7 +165,7 @@ export default function Slide70OutputOverview() {
           </h2>
           <p
             className="text-white/50 leading-relaxed"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             論点ごとに対応手段を分けて設計する
           </p>

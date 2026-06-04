@@ -38,7 +38,7 @@ function FlowPillButton({ label, className = '' }: { label: string; className?: 
       style={{
         borderColor: `${LAW_ACCENT}88`,
         background: `${LAW_ACCENT}28`,
-        fontSize: 'clamp(12px, 1.02vw, 14px)',
+        fontSize: 'clamp(13px, 1.02vw, 15px)',
       }}
     >
       {label}
@@ -53,7 +53,7 @@ function RequirementPill({ label }: { label: string }) {
       style={{
         borderColor: `${LAW_ACCENT}88`,
         background: `${LAW_ACCENT}28`,
-        fontSize: 'clamp(12px, 1.02vw, 14px)',
+        fontSize: 'clamp(13px, 1.02vw, 15px)',
         lineHeight: 1.35,
       }}
     >
@@ -68,7 +68,7 @@ function BracketTag({ label, className = '' }: { label: string; className?: stri
       className={`flex items-center pl-3 border-l-2 rounded-l-md shrink-0 self-stretch ${className}`}
       style={{
         borderColor: `${LAW_ACCENT}88`,
-        fontSize: 'clamp(12px, 1.02vw, 14px)',
+        fontSize: 'clamp(13px, 1.02vw, 15px)',
         color: LAW_ACCENT,
         fontWeight: 700,
         minWidth: '4.5rem',
@@ -250,7 +250,7 @@ function ForeignNoteBox() {
       style={{
         borderColor: 'rgba(255,255,255,0.12)',
         background: 'rgba(255,255,255,0.04)',
-        fontSize: 'clamp(12px, 1.02vw, 14px)',
+        fontSize: 'clamp(13px, 1.02vw, 15px)',
         color: 'rgba(255,255,255,0.78)',
       }}
     >
@@ -273,7 +273,7 @@ function RulesNoteBox() {
         color: 'rgba(255,255,255,0.72)',
       }}
     >
-      <p className="font-bold text-white/90 mb-1" style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}>
+      <p className="font-bold text-white/90 mb-1" style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}>
         【個人情報保護規則16条】
       </p>
       <ul className="list-disc pl-4 space-y-0.5">
@@ -447,7 +447,7 @@ function Article28Text() {
         </p>
         <p
           className="text-white/40"
-          style={{ fontSize: 'clamp(12px, 1.02vw, 14px)' }}
+          style={{ fontSize: 'clamp(13px, 1.02vw, 15px)' }}
         >
           2. （略）
         </p>

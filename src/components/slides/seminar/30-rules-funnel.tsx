@@ -70,7 +70,7 @@ export default function Slide30RulesFunnel() {
           <div className="flex items-center gap-3">
             <span
               className="tracking-[0.32em] uppercase text-white/40"
-              style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
             >
               Scope of Internal Rules
             </span>

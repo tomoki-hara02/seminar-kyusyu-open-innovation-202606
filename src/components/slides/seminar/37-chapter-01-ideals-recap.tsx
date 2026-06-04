@@ -40,7 +40,7 @@ export default function Slide37Chapter01IdealsRecap() {
           <div className="flex items-center gap-3">
             <span
               className="tracking-[0.32em] uppercase text-white/40"
-              style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
             >
               Recap · Chapter 02 後編 · 1 目的・基本理念
             </span>
@@ -99,7 +99,7 @@ export default function Slide37Chapter01IdealsRecap() {
 
         <p
           className="text-white/30 tracking-wider shrink-0"
-          style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+          style={{ fontSize: 'clamp(13px, 0.88vw, 14px)' }}
         >
           ※ 次は「2 ユーザー」— 使用者の範囲・アカウント管理へ進みます
         </p>

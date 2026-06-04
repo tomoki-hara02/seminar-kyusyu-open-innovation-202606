@@ -25,7 +25,7 @@ export default function Slide85SalesLegalRights() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             商談編 · 法的論点
           </span>

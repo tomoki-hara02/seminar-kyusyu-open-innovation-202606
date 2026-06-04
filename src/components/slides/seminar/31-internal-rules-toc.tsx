@@ -162,7 +162,7 @@ export default function Slide31InternalRulesToc() {
                 {String(currentIdx + 1).padStart(2, '0')}
                 <span className="text-white/20"> / {String(n).padStart(2, '0')}</span>
               </span>
-              <span className="text-[9px] tracking-widest uppercase text-white/30">
+              <span className="text-[10px] tracking-widest uppercase text-white/30">
                 {currentCard.group}
               </span>
             </div>
@@ -182,7 +182,7 @@ export default function Slide31InternalRulesToc() {
                       style={{ background: g.accent }}
                     />
                     <span
-                      className="text-[9px] tracking-[0.28em] uppercase font-bold"
+                      className="text-[10px] tracking-[0.28em] uppercase font-bold"
                       style={{ color: g.accent }}
                     >
                       {g.group}
@@ -455,7 +455,7 @@ export default function Slide31InternalRulesToc() {
                 <span>{String(n).padStart(2, '0')}</span>
               </div>
 
-              <p className="text-[9px] tracking-[0.32em] uppercase text-white/30">
+              <p className="text-[10px] tracking-[0.32em] uppercase text-white/30">
                 Scroll · Swipe · Arrow Keys · Tap Card or List
               </p>
             </div>

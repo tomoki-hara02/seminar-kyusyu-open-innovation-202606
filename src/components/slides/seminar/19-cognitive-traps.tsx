@@ -61,7 +61,7 @@ function useTokenStream(tokens: string[], ms: number, start: boolean) {
 function UserBubble({ text, streaming, done }: { text: string; streaming?: boolean; done?: boolean }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">You</span>
+      <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">You</span>
       <div className="rounded-2xl rounded-tl-sm bg-white/[0.04] border border-white/10 px-4 py-3">
         <p className="text-[12.5px] leading-relaxed text-white/85 font-mono min-h-[1.5em]">
           {text}
@@ -93,7 +93,7 @@ function AiBubble({
     <div className="flex flex-col gap-1.5">
       <div className="flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
-        <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">AI</span>
+        <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">AI</span>
       </div>
       <div
         className="relative rounded-2xl rounded-tl-sm border px-4 py-3 overflow-hidden"
@@ -144,7 +144,7 @@ function ColumnShell({
         <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent, boxShadow: `0 0 8px ${accent}` }} />
         <span className="text-[10px] font-mono tracking-[0.24em] uppercase" style={{ color: accent }}>{badge}</span>
         <span className="text-[10px] tracking-widest text-white/40">·</span>
-        <span className="text-[11px] font-bold text-white/85 tracking-tight">{badgeJa}</span>
+        <span className="text-xs font-bold text-white/85 tracking-tight">{badgeJa}</span>
       </div>
       <h3 className="font-bold tracking-tight leading-tight" style={{ color: `${accent}f0`, fontSize: 'clamp(14px, 1.35vw, 18px)' }}>
         {heading}

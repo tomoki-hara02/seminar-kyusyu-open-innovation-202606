@@ -39,7 +39,7 @@ export default function Slide67PublicDataLicense() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+            style={{ fontSize: 'clamp(13px, 1.15vw, 17px)' }}
           >
             4-6 · 著作物 · 公的データの二次利用
           </span>

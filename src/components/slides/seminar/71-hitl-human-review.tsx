@@ -111,7 +111,7 @@ function PromptInputDiagram() {
               </p>
               <p
                 className="text-white/45 leading-tight mt-1"
-                style={{ fontSize: 'clamp(9px, 0.82vw, 11px)' }}
+                style={{ fontSize: 'clamp(10px, 0.82vw, 11px)' }}
               >
                 {col.sub}
               </p>
@@ -185,7 +185,7 @@ export default function Slide71HitlHumanReview() {
         >
           <p
             className="text-white/85 leading-relaxed"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             各生成AI利用規約では、
             <span style={{ color: HIGHLIGHT_ACCENT, fontWeight: 700 }}>

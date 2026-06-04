@@ -447,7 +447,7 @@ export default function Slide26DataFlow() {
                     </span>
                     <span
                       className="text-white/70 leading-snug text-left"
-                      style={{ fontSize: 'clamp(11px, 1vw, 14px)' }}
+                      style={{ fontSize: 'clamp(13px, 1.1vw, 15px)' }}
                     >
                       {bullet}
                     </span>

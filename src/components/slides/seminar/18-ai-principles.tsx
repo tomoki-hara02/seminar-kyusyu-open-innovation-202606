@@ -280,7 +280,7 @@ export default function Slide18AiPrinciples() {
             })}
           </svg>
 
-          <p className="text-[9px] text-white/25 tracking-wide text-center mt-1">
+          <p className="text-[10px] text-white/25 tracking-wide text-center mt-1">
             頂点をクリックして説明を切り替え
           </p>
         </div>
@@ -334,7 +334,7 @@ export default function Slide18AiPrinciples() {
             {/* 本文 */}
             <p
               className="leading-[1.9] text-white/70"
-              style={{ fontSize: 'clamp(11px, 1.05vw, 14px)' }}
+              style={{ fontSize: 'clamp(14px, 1.2vw, 16px)' }}
             >
               <HighlightedText
                 text={active.description}
@@ -344,7 +344,7 @@ export default function Slide18AiPrinciples() {
             </p>
 
             {/* 出典 */}
-            <span className="text-[10px] text-white/25 tracking-wide mt-1">
+            <span className="text-xs text-white/25 tracking-wide mt-1">
               出典: 経済産業省「AI事業者ガイドライン（1.2版）」（2026年3月）
             </span>
           </motion.div>

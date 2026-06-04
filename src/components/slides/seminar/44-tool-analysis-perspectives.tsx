@@ -103,13 +103,13 @@ function PlansVisual() {
         >
           <span
             className="font-bold text-white"
-            style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}
+            style={{ fontSize: 'clamp(13px, 1vw, 15px)' }}
           >
             {plan.label}
           </span>
           <span
             className="text-white/45 leading-none"
-            style={{ fontSize: 'clamp(9px, 0.75vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
           >
             {plan.sub}
           </span>
@@ -165,7 +165,7 @@ function ResidencyVisual({ accent }: { accent: string }) {
 
   return (
     <div className="relative w-full">
-      <svg viewBox="0 0 100 50" className="w-full h-24 md:h-28">
+      <svg viewBox="0 0 100 50" className="w-full h-36 md:h-40">
         <defs>
           <filter id="residency-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="0.8" result="b" />
@@ -256,19 +256,19 @@ function ResidencyVisual({ accent }: { accent: string }) {
               x={region.x}
               y={region.y + 11}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.72)"
-              fontSize="3.2"
-              fontWeight="600"
+              fill="rgba(255,255,255,0.85)"
+              fontSize="4.4"
+              fontWeight="700"
               fontFamily="sans-serif"
             >
               {region.label}
             </text>
             <text
               x={region.x}
-              y={region.y + 15}
+              y={region.y + 16}
               textAnchor="middle"
-              fill="rgba(255,255,255,0.38)"
-              fontSize="2.4"
+              fill="rgba(255,255,255,0.5)"
+              fontSize="3"
               fontFamily="sans-serif"
             >
               Server
@@ -277,7 +277,7 @@ function ResidencyVisual({ accent }: { accent: string }) {
         ))}
       </svg>
       <motion.span
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[9px] tracking-[0.18em] uppercase whitespace-nowrap"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.18em] uppercase whitespace-nowrap"
         style={{ color: `${accent}bb` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -315,7 +315,7 @@ function EntityVisual() {
           </span>
           <span
             className="text-white/80 font-medium"
-            style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}
+            style={{ fontSize: 'clamp(13px, 1vw, 15px)' }}
           >
             {item.label}
           </span>
@@ -404,7 +404,7 @@ export default function Slide44ToolAnalysisPerspectives() {
                   </h3>
                   <p
                     className="text-white/45"
-                    style={{ fontSize: 'clamp(11px, 0.9vw, 13px)' }}
+                    style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}
                   >
                     {item.sub}
                   </p>
@@ -413,7 +413,7 @@ export default function Slide44ToolAnalysisPerspectives() {
 
               <div
                 className={`rounded-lg border px-3 py-3 flex items-center justify-center ml-2 ${
-                  i === 2 ? 'min-h-[7.5rem]' : 'min-h-[5.5rem]'
+                  i === 2 ? 'min-h-[10.5rem]' : 'min-h-[6rem]'
                 }`}
                 style={{
                   borderColor: 'rgba(255,255,255,0.08)',
@@ -444,7 +444,7 @@ export default function Slide44ToolAnalysisPerspectives() {
           </span>
           <p
             className="text-white/65 font-medium text-center"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             自身が使用している生成AIを分析してみましょう
           </p>

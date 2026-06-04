@@ -114,7 +114,7 @@ function InfluencerChatColumn() {
           Infringement
         </span>
         <span className="text-[10px] tracking-widest text-white/40">·</span>
-        <span className="text-[11px] font-bold text-white/85 tracking-tight">
+        <span className="text-xs font-bold text-white/85 tracking-tight">
           安易な依頼に潜む権利侵害
         </span>
       </div>
@@ -127,7 +127,7 @@ function InfluencerChatColumn() {
       </h3>
 
       <div className="flex flex-col gap-1.5">
-        <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">You</span>
+        <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">You</span>
         <div className="rounded-2xl rounded-tl-sm bg-white/[0.04] border border-white/10 px-4 py-3">
           <p className="text-[12.5px] leading-relaxed text-white/85 font-mono min-h-[1.5em]">
             {phase === 'prompt' || phase === 'idle' ? promptText : PROMPT}
@@ -152,7 +152,7 @@ function InfluencerChatColumn() {
           >
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
-              <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">AI</span>
+              <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">AI</span>
             </div>
             <div
               className="relative rounded-2xl rounded-tl-sm border px-4 py-3 overflow-hidden"
@@ -164,7 +164,7 @@ function InfluencerChatColumn() {
               {phase === 'thinking' && (
                 <div className="flex items-center gap-2.5">
                   <ThinkingDots />
-                  <span className="text-[11px] text-white/40 tracking-wider">動画生成中…</span>
+                  <span className="text-xs text-white/40 tracking-wider">動画生成中…</span>
                 </div>
               )}
               {phase === 'answer' && (
@@ -334,7 +334,7 @@ function FruitDistributionPanel() {
           Distribution
         </span>
         <span className="text-[10px] tracking-widest text-white/40">·</span>
-        <span className="text-[11px] font-bold text-white/85 tracking-tight">
+        <span className="text-xs font-bold text-white/85 tracking-tight">
           果実の分配
         </span>
       </div>

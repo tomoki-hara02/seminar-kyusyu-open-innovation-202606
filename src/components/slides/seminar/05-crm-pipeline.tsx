@@ -134,7 +134,7 @@ function CategoryCard({ category, baseDelay }: { category: Category; baseDelay: 
             color: category.accent,
             borderColor: `${category.accent}55`,
             background: `${category.accent}14`,
-            fontSize: 'clamp(12px, 1.05vw, 14px)',
+            fontSize: 'clamp(13px, 1.05vw, 15px)',
           }}
         >
           {category.num}
@@ -172,7 +172,7 @@ export default function Slide05PipAmendment2026() {
         <div className="shrink-0 flex flex-col gap-1">
           <span
             className="tracking-[0.28em] uppercase text-white/35"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             個人情報保護法 · 改正概要
           </span>
@@ -190,7 +190,7 @@ export default function Slide05PipAmendment2026() {
           </h2>
           <p
             className="text-white/50 tracking-wide"
-            style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+            style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
           >
             2026年4月7日閣議決定　／　公布から原則2年以内施行
           </p>
@@ -215,13 +215,13 @@ export default function Slide05PipAmendment2026() {
             >
               <span
                 className="tracking-[0.2em] uppercase text-white/35"
-                style={{ fontSize: 'clamp(8px, 0.72vw, 10px)' }}
+                style={{ fontSize: 'clamp(10px, 0.72vw, 11px)' }}
               >
                 {m.label}
               </span>
               <span
                 className="font-semibold text-white/85 leading-snug"
-                style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+                style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
               >
                 {m.value}
               </span>

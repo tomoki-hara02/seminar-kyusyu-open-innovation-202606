@@ -171,7 +171,7 @@ export default function Slide29InternalRulesWorkshop() {
         >
           <span
             className="block text-white/45 mb-2 tracking-wide"
-            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(13px, 0.9vw, 14px)' }}
           >
             フィードバック用 Gem
           </span>
@@ -180,7 +180,7 @@ export default function Slide29InternalRulesWorkshop() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-[#88bbff] underline decoration-[#88bbff]/50 underline-offset-4 break-all leading-relaxed hover:text-[#a8d0ff] transition-colors"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             {GEMINI_GEM_URL}
           </a>

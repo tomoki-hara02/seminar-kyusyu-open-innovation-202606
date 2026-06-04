@@ -79,7 +79,7 @@ function PurposePointRow({
           color: LAW_ACCENT,
           borderColor: `${LAW_ACCENT}66`,
           background: `${LAW_ACCENT}14`,
-          fontSize: 'clamp(9px, 0.78vw, 11px)',
+          fontSize: 'clamp(10px, 0.78vw, 11px)',
           minWidth: '4.2rem',
           textAlign: 'center',
         }}
@@ -89,7 +89,7 @@ function PurposePointRow({
       <div className="flex flex-col gap-0.5 min-w-0">
         <p
           className="font-bold text-white leading-snug"
-          style={{ fontSize: 'clamp(12px, 1.02vw, 14px)' }}
+          style={{ fontSize: 'clamp(13px, 1.02vw, 15px)' }}
         >
           {point.label}
         </p>
@@ -129,7 +129,7 @@ function AiImpactCard({
       <div className="flex items-baseline gap-2 pl-1.5">
         <span
           className="shrink-0 font-mono font-bold leading-none"
-          style={{ color: impact.color, fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+          style={{ color: impact.color, fontSize: 'clamp(13px, 1.05vw, 16px)' }}
         >
           {impact.badge}
         </span>
@@ -162,7 +162,7 @@ export default function Slide56PipActGenaiArticles() {
         <div className="flex flex-col gap-1.5 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-4 · 個人情報 · 利用目的
           </span>
@@ -207,7 +207,7 @@ export default function Slide56PipActGenaiArticles() {
                   color: LAW_ACCENT,
                   borderColor: `${LAW_ACCENT}88`,
                   background: `${LAW_ACCENT}1c`,
-                  fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                  fontSize: 'clamp(10px, 0.72vw, 10.5px)',
                 }}
               >
                 PART 1
@@ -245,7 +245,7 @@ export default function Slide56PipActGenaiArticles() {
                   color: AI_ACCENT,
                   borderColor: `${AI_ACCENT}88`,
                   background: `${AI_ACCENT}1c`,
-                  fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                  fontSize: 'clamp(10px, 0.72vw, 10.5px)',
                 }}
               >
                 PART 2

@@ -142,7 +142,7 @@ function MinorUseDiagram() {
     >
       <span
         className="font-bold text-white block mb-2"
-        style={{ fontSize: 'clamp(12px, 1.1vw, 15px)' }}
+        style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
       >
         【出力内容】軽微利用の3要素
       </span>
@@ -289,7 +289,7 @@ function ApplicationExampleColumn() {
       <div className="flex flex-col gap-1 shrink-0">
         <p
           className="text-white/70 leading-snug"
-          style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+          style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
         >
           ここで、
         </p>
@@ -308,13 +308,13 @@ function ApplicationExampleColumn() {
             >
               <span
                 className="shrink-0 font-bold leading-relaxed"
-                style={{ color: item.accent, fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+                style={{ color: item.accent, fontSize: 'clamp(13px, 1.05vw, 16px)' }}
               >
                 ○
               </span>
               <span
                 className="text-white leading-snug min-w-0 font-semibold"
-                style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+                style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
               >
                 {item.text}
               </span>
@@ -342,7 +342,7 @@ export default function Slide66CopyrightArticle475() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+            style={{ fontSize: 'clamp(13px, 1.15vw, 17px)' }}
           >
             4-6 · 著作物 · 第47条の5
           </span>

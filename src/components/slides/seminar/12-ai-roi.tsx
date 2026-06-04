@@ -111,7 +111,7 @@ export default function Slide12AiRoi() {
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
           {/* 引用元 */}
-          <p className="text-[10px] text-white/25 leading-relaxed tracking-wide">
+          <p className="text-sm text-white/25 leading-relaxed tracking-wide">
             出典: MIT Sloan Management Review<br />
             State of AI in Business (2025)<br />
             <a
@@ -179,10 +179,10 @@ export default function Slide12AiRoi() {
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div className="flex flex-col gap-0.5 min-w-0">
-                  <span className="text-sm font-bold text-white/90 leading-snug">
+                  <span className="text-base font-bold text-white/90 leading-snug">
                     {f.label}
                   </span>
-                  <span className="text-[11px] text-white/45 leading-relaxed">
+                  <span className="text-sm text-white/45 leading-relaxed">
                     {f.desc}
                   </span>
                 </div>

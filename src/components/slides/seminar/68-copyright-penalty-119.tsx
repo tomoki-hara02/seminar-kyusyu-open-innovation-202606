@@ -91,7 +91,7 @@ function MarkCell({
       {note ? (
         <span
           className="text-white/50 leading-tight"
-          style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
         >
           （{note}）
         </span>
@@ -127,7 +127,7 @@ function TableHeader() {
         </span>
         <span
           className="font-semibold text-center leading-snug"
-          style={{ color: HIGHLIGHT_ACCENT, fontSize: 'clamp(9px, 0.82vw, 11px)' }}
+          style={{ color: HIGHLIGHT_ACCENT, fontSize: 'clamp(10px, 0.82vw, 11px)' }}
         >
           AI利用者が
           <br />
@@ -135,7 +135,7 @@ function TableHeader() {
         </span>
         <span
           className="font-semibold text-center leading-snug"
-          style={{ color: HIGHLIGHT_ACCENT, fontSize: 'clamp(9px, 0.82vw, 11px)' }}
+          style={{ color: HIGHLIGHT_ACCENT, fontSize: 'clamp(10px, 0.82vw, 11px)' }}
         >
           認識なし・
           <br />
@@ -159,7 +159,7 @@ function TableRowItem({ row, index }: { row: TableRow; index: number }) {
     >
       <span
         className="font-bold text-white leading-snug"
-        style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+        style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
       >
         {row.type}
       </span>
@@ -205,7 +205,7 @@ export default function Slide68CopyrightPenalty119() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+            style={{ fontSize: 'clamp(13px, 1.15vw, 17px)' }}
           >
             4-6 · 著作物 · 侵害に対する措置
           </span>

@@ -150,14 +150,14 @@ function LegalVisual({ accent }: { accent: string }) {
         >
           <span
             className="text-white/85 font-semibold leading-tight"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           >
             {policy.label}
           </span>
           {'sub' in policy && policy.sub ? (
             <span
               className="leading-none"
-              style={{ color: accent, fontSize: 'clamp(8px, 0.68vw, 10px)' }}
+              style={{ color: accent, fontSize: 'clamp(10px, 0.68vw, 10px)' }}
             >
               （{policy.sub}）
             </span>
@@ -173,11 +173,11 @@ function LegalVisual({ accent }: { accent: string }) {
       >
         <span
           className="font-semibold tracking-wide"
-          style={{ color: accent, fontSize: 'clamp(8px, 0.72vw, 10px)' }}
+          style={{ color: accent, fontSize: 'clamp(10px, 0.72vw, 10px)' }}
         >
           規程連携
         </span>
-        <span className="text-white/35" style={{ fontSize: 'clamp(7px, 0.62vw, 9px)' }}>
+        <span className="text-white/35" style={{ fontSize: 'clamp(10px, 0.62vw, 9px)' }}>
           等
         </span>
       </motion.div>

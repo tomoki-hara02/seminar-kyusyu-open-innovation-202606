@@ -39,7 +39,7 @@ export default function Slide55PipActGenaiCheckpoints() {
         <div className="flex flex-col gap-2 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-4 · 個人情報 · Checkpoints
           </span>

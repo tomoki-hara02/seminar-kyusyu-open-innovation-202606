@@ -151,7 +151,7 @@ function ProviderCard({
       >
         <span
           className="tracking-[0.18em] uppercase text-white/35 font-semibold"
-          style={{ fontSize: 'clamp(8px, 0.7vw, 10px)' }}
+          style={{ fontSize: 'clamp(10px, 0.7vw, 10px)' }}
         >
           直近の改訂
         </span>
@@ -209,7 +209,7 @@ function TriggerCard({
             color: trigger.accent,
             background: `${trigger.accent}1c`,
             border: `1px solid ${trigger.accent}55`,
-            fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+            fontSize: 'clamp(10px, 0.72vw, 10.5px)',
           }}
         >
           {trigger.badge}
@@ -217,7 +217,7 @@ function TriggerCard({
         {isPrimary && (
           <span
             className="font-semibold tracking-widest text-white/55"
-            style={{ fontSize: 'clamp(9px, 0.72vw, 10.5px)' }}
+            style={{ fontSize: 'clamp(10px, 0.72vw, 10.5px)' }}
           >
             最低限のリズム
           </span>
@@ -260,7 +260,7 @@ export default function Slide79RegulationReview() {
         <div className="flex flex-col gap-1.5 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             7-2 · ガバナンス · 規程の見直し
           </span>
@@ -287,7 +287,7 @@ export default function Slide79RegulationReview() {
             <div className="flex items-center gap-2 px-1">
               <span
                 className="tracking-[0.2em] uppercase font-semibold text-white/40"
-                style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+                style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
               >
                 ① 事業者規約の改訂リズム
               </span>
@@ -305,7 +305,7 @@ export default function Slide79RegulationReview() {
             <div className="flex items-center gap-2 px-1">
               <span
                 className="tracking-[0.2em] uppercase font-semibold"
-                style={{ color: GOVERN_ACCENT, fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+                style={{ color: GOVERN_ACCENT, fontSize: 'clamp(10px, 0.78vw, 11px)' }}
               >
                 ② 社内規程 — 見直しのタイミング
               </span>

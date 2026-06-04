@@ -214,7 +214,7 @@ export default function Slide76WorkLogHandling() {
                 color: LOG_ACCENT,
                 borderColor: `${LOG_ACCENT}66`,
                 background: `${LOG_ACCENT}14`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               WHY
@@ -253,7 +253,7 @@ export default function Slide76WorkLogHandling() {
                 color: FOCUS_ACCENT,
                 borderColor: `${FOCUS_ACCENT}77`,
                 background: `${FOCUS_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               WHAT
@@ -306,7 +306,7 @@ export default function Slide76WorkLogHandling() {
                 color: OK_ACCENT,
                 borderColor: `${OK_ACCENT}66`,
                 background: `${OK_ACCENT}14`,
-                fontSize: 'clamp(9px, 0.72vw, 10.5px)',
+                fontSize: 'clamp(10px, 0.72vw, 10.5px)',
               }}
             >
               HOW

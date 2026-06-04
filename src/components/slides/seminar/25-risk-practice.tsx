@@ -111,7 +111,7 @@ function StepCard({
         <div className="flex items-center gap-2 flex-wrap">
           <span
             className="font-mono tracking-widest whitespace-nowrap shrink-0"
-            style={{ color: step.accent, fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ color: step.accent, fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             {step.label}
           </span>
@@ -122,7 +122,7 @@ function StepCard({
                 color: '#ff5560',
                 background: '#ff556018',
                 border: '1px solid #ff556055',
-                fontSize: 'clamp(8px, 0.75vw, 10px)',
+                fontSize: 'clamp(10px, 0.75vw, 11px)',
               }}
             >
               ⚠ ミスアライメント
@@ -140,7 +140,7 @@ function StepCard({
         {step.desc && (
           <p
             className="text-white/60 leading-snug"
-            style={{ fontSize: 'clamp(10px, 0.95vw, 13px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
           >
             {step.desc}
           </p>
@@ -157,19 +157,19 @@ function StepCard({
             >
               <span
                 className="font-mono tracking-wider text-[#ff5560]"
-                style={{ fontSize: 'clamp(8px, 0.75vw, 10px)' }}
+                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
               >
                 リスク大
               </span>
               <span
                 className="font-bold text-white leading-snug"
-                style={{ fontSize: 'clamp(11px, 1.05vw, 14px)' }}
+                style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
               >
                 → HITL
               </span>
               <span
                 className="text-white/50 leading-snug"
-                style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+                style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
               >
                 人が確認してから登録
               </span>
@@ -183,19 +183,19 @@ function StepCard({
             >
               <span
                 className="font-mono tracking-wider text-[#9ee0a8]"
-                style={{ fontSize: 'clamp(8px, 0.75vw, 10px)' }}
+                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
               >
                 許容範囲
               </span>
               <span
                 className="font-bold text-white leading-snug"
-                style={{ fontSize: 'clamp(11px, 1.05vw, 14px)' }}
+                style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
               >
                 → 続行
               </span>
               <span
                 className="text-white/50 leading-snug"
-                style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+                style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
               >
                 自動登録フローを維持
               </span>
@@ -205,10 +205,10 @@ function StepCard({
 
         {isDecision && (
           <div className="flex items-center gap-2 mt-0.5">
-            <span style={{ color: step.accent, fontSize: 'clamp(12px, 1.1vw, 16px)' }}>✓</span>
+            <span style={{ color: step.accent, fontSize: 'clamp(13px, 1.1vw, 17px)' }}>✓</span>
             <span
               className="text-white/70"
-              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
             >
               発生確率 × 深刻さでスコア化し、自社基準で方針を決める
             </span>
@@ -236,7 +236,7 @@ export default function Slide25RiskPractice() {
         <div className="shrink-0 flex flex-col gap-1">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             Risk-Based Approach · 実践編
           </span>
@@ -267,7 +267,7 @@ export default function Slide25RiskPractice() {
         {/* フッター */}
         <motion.p
           className="shrink-0 text-white/35 tracking-wide text-center"
-          style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
+          style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.9 }}

@@ -188,14 +188,14 @@ export default function Slide03Speaker() {
             </span>
             {SPEAKER.career.map((item) => (
               <div key={item.org} className="flex items-start gap-3">
-                <span className="text-[10px] text-white/30 font-mono whitespace-nowrap pt-0.5 w-24 shrink-0">
+                <span className="text-xs text-white/30 font-mono whitespace-nowrap pt-0.5 w-24 shrink-0">
                   {item.period}
                 </span>
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-xs text-white/80 font-medium">
+                  <span className="text-sm text-white/80 font-medium">
                     {item.org}
                   </span>
-                  <span className="text-[10px] text-white/40">{item.note}</span>
+                  <span className="text-xs text-white/40">{item.note}</span>
                 </div>
               </div>
             ))}
@@ -222,7 +222,7 @@ export default function Slide03Speaker() {
                 >
                   {s.value}
                 </span>
-                <span className="text-[9px] tracking-widest uppercase text-white/40 leading-tight">
+                <span className="text-[10px] tracking-widest uppercase text-white/40 leading-tight">
                   {s.label}
                 </span>
               </div>

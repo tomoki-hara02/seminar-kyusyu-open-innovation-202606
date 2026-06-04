@@ -101,7 +101,7 @@ function CategoryCard({ item, index }: { item: ProhibitedCategory; index: number
         <div className="flex flex-col gap-1">
           <span
             className="tracking-wider text-white/35"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           >
             具体例
           </span>
@@ -119,7 +119,7 @@ function CategoryCard({ item, index }: { item: ProhibitedCategory; index: number
         >
           <span
             className="tracking-wider"
-            style={{ color: `${item.accent}cc`, fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ color: `${item.accent}cc`, fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           >
             リスク・理由
           </span>
@@ -147,7 +147,7 @@ export default function Slide52ProhibitedInputExamples() {
         <div className="flex flex-col gap-2 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-2 · 入力禁止情報
           </span>
@@ -167,7 +167,7 @@ export default function Slide52ProhibitedInputExamples() {
           </h2>
           <p
             className="text-white/50 leading-relaxed max-w-4xl"
-            style={{ fontSize: 'clamp(12px, 1vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1vw, 16px)' }}
           >
             社員が「何を入力してはいけないのか」を直感的に判断できるよう、
             <span className="text-white/75 font-medium">具体的なデータ例</span>

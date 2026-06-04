@@ -167,7 +167,7 @@ function CaseCard({ c, startDelay }: { c: Case; startDelay: number }) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.35, ease: 'easeOut' }}
               >
-                <span className="font-mono tracking-widest text-white/40" style={{ fontSize: 'clamp(8px, 0.7vw, 10px)' }}>
+                <span className="font-mono tracking-widest text-white/40" style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}>
                   {msg.name}
                 </span>
                 <div
@@ -178,7 +178,7 @@ function CaseCard({ c, startDelay }: { c: Case; startDelay: number }) {
                     border: isEmployee ? '1px solid rgba(255,255,255,0.12)' : `1px solid ${cfg.color}55`,
                     borderRadius: isEmployee ? '4px 14px 14px 14px' : '14px 4px 14px 14px',
                     color: isEmployee ? 'rgba(255,255,255,0.88)' : cfg.color,
-                    fontSize: 'clamp(11px, 1vw, 14px)',
+                    fontSize: 'clamp(13px, 1.1vw, 15px)',
                     wordBreak: 'break-word',
                     overflowWrap: 'anywhere',
                   }}
@@ -213,21 +213,21 @@ function MatrixPanel() {
       className="flex flex-col gap-3 justify-center shrink-0 p-4 rounded-2xl border border-white/10"
       style={{ width: 'clamp(160px, 17vw, 210px)', background: 'rgba(255,255,255,0.02)' }}
     >
-      <span className="text-[9px] tracking-[0.28em] uppercase text-white/35 text-center">
+      <span className="text-[10px] tracking-[0.28em] uppercase text-white/35 text-center">
         Risk Matrix
       </span>
 
       {/* 軸ラベル上段 */}
       <div className="flex items-center justify-between">
-        <span className="text-[8px] text-white/30">発生確率 ↓</span>
-        <span className="text-[8px] text-white/30">深刻さ →</span>
+        <span className="text-[10px] text-white/30">発生確率 ↓</span>
+        <span className="text-[10px] text-white/30">深刻さ →</span>
       </div>
 
       {/* Y 軸 + グリッド */}
       <div className="flex items-stretch gap-1 w-full">
         <div className="flex flex-col justify-between py-0.5 shrink-0">
-          <span className="text-[7px] text-white/30 leading-none">低</span>
-          <span className="text-[7px] text-white/30 leading-none">高</span>
+          <span className="text-[10px] text-white/30 leading-none">低</span>
+          <span className="text-[10px] text-white/30 leading-none">高</span>
         </div>
 
         <div className="grid flex-1 gap-1" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
@@ -251,10 +251,10 @@ function MatrixPanel() {
                 transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: isLow ? 0 : 0.6 }}
               >
                 {isLow && (
-                  <span style={{ fontSize: 8, color: '#9ee0a8', fontWeight: 700, lineHeight: 1 }}>✓</span>
+                  <span style={{ fontSize: 10, color: '#9ee0a8', fontWeight: 700, lineHeight: 1 }}>✓</span>
                 )}
                 {isCritical && (
-                  <span style={{ fontSize: 8, color: '#ff5560', fontWeight: 700, lineHeight: 1 }}>⚠</span>
+                  <span style={{ fontSize: 10, color: '#ff5560', fontWeight: 700, lineHeight: 1 }}>⚠</span>
                 )}
               </motion.div>
             );
@@ -263,7 +263,7 @@ function MatrixPanel() {
       </div>
 
       {/* X 軸ラベル */}
-      <div className="flex justify-between pl-3 text-[7px] text-white/25 font-mono">
+      <div className="flex justify-between pl-3 text-[10px] text-white/25 font-mono">
         <span>低</span>
         <span>高</span>
       </div>
@@ -276,7 +276,7 @@ function MatrixPanel() {
         ].map((item) => (
           <div key={item.label} className="flex items-center gap-2">
             <span style={{ fontSize: 10, color: item.color }}>{item.icon}</span>
-            <span className="font-mono text-white/40" style={{ fontSize: 'clamp(8px, 0.75vw, 10px)' }}>
+            <span className="font-mono text-white/40" style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}>
               {item.label}
             </span>
             <span
@@ -285,7 +285,7 @@ function MatrixPanel() {
                 color: item.color,
                 background: `${item.color}18`,
                 border: `1px solid ${item.color}55`,
-                fontSize: 'clamp(8px, 0.7vw, 10px)',
+                fontSize: 'clamp(10px, 0.75vw, 11px)',
               }}
             >
               {item.jp}
@@ -311,7 +311,7 @@ export default function Slide24RiskExamples() {
         <div className="shrink-0 flex flex-col gap-1">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             Risk-Based Approach · 具体例
           </span>
@@ -343,7 +343,7 @@ export default function Slide24RiskExamples() {
         {/* フッター */}
         <motion.p
           className="shrink-0 text-white/35 tracking-wide"
-          style={{ fontSize: 'clamp(10px, 0.9vw, 12px)', wordBreak: 'break-word' }}
+          style={{ fontSize: 'clamp(13px, 1vw, 14px)', wordBreak: 'break-word' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.2 }}

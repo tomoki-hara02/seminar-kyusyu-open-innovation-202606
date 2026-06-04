@@ -107,7 +107,7 @@ function StrategyCard({
 
       <p
         className="font-semibold leading-snug"
-        style={{ color: strategy.accent, fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+        style={{ color: strategy.accent, fontSize: 'clamp(13px, 1.05vw, 16px)' }}
       >
         {strategy.headline}
       </p>
@@ -177,7 +177,7 @@ function ReviewElementCard({
         </span>
         <h4
           className="font-bold text-white leading-snug"
-          style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+          style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
         >
           {element.title}
         </h4>
@@ -245,7 +245,7 @@ export default function Slide74OutputReviewCriteria() {
           <div className="flex items-center gap-2 px-1">
             <span
               className="tracking-[0.2em] uppercase font-semibold text-white/50"
-              style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             >
               それでも個別審査が必要なケースの構成
             </span>

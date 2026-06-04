@@ -194,7 +194,7 @@ function NodeCard({
             {node.sub && (
               <p
                 className={`mt-0.5 ${isHighlight ? 'text-white/75 font-medium' : 'text-white/45'}`}
-                style={{ fontSize: 'clamp(11px, 0.88vw, 13px)' }}
+                style={{ fontSize: 'clamp(13px, 0.88vw, 14px)' }}
               >
                 {node.sub}
               </p>
@@ -203,7 +203,7 @@ function NodeCard({
         </div>
         <p
           className={isHighlight ? 'text-white/72 leading-relaxed' : 'text-white/55 leading-relaxed'}
-          style={{ fontSize: 'clamp(11px, 0.9vw, 13px)' }}
+          style={{ fontSize: 'clamp(13px, 0.9vw, 14px)' }}
         >
           {node.desc}
         </p>

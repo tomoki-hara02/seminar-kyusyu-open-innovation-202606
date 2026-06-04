@@ -146,7 +146,7 @@ function HintsBlock({ accent, hints }: { accent: string; hints: string[] }) {
                   </span>
                   <p
                     className="leading-relaxed text-white/85"
-                    style={{ fontSize: 'clamp(11px, 1.05vw, 14px)' }}
+                    style={{ fontSize: 'clamp(13px, 1.15vw, 15px)' }}
                   >
                     {hint}
                   </p>
@@ -200,13 +200,13 @@ function PersonaCard({
       <div className="relative w-full flex items-center justify-between">
         <span
           className="font-mono tracking-[0.22em] uppercase"
-          style={{ color: `${emp.accent}cc`, fontSize: 'clamp(8px, 0.8vw, 11px)' }}
+          style={{ color: `${emp.accent}cc`, fontSize: 'clamp(10px, 0.8vw, 11px)' }}
         >
           {emp.dept}
         </span>
         <span
           className="font-mono"
-          style={{ color: `${emp.accent}66`, fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+          style={{ color: `${emp.accent}66`, fontSize: 'clamp(10px, 0.9vw, 12px)' }}
         >
           0{index + 1}
         </span>
@@ -238,7 +238,7 @@ function PersonaCard({
         </span>
         <span
           className="text-white/55 font-mono"
-          style={{ fontSize: 'clamp(9px, 0.95vw, 12px)' }}
+          style={{ fontSize: 'clamp(13px, 0.95vw, 14px)' }}
         >
           {emp.meta}
         </span>
@@ -263,7 +263,7 @@ function PersonaCard({
       {/* 問題タイトル（要約） */}
       <p
         className="relative font-bold text-white/85 text-center leading-snug whitespace-pre-line"
-        style={{ fontSize: 'clamp(11px, 1.1vw, 14px)' }}
+        style={{ fontSize: 'clamp(13px, 1.2vw, 15px)' }}
       >
         「{emp.problem}」
       </p>
@@ -271,7 +271,7 @@ function PersonaCard({
       {/* フッターヒント */}
       <div
         className="relative mt-auto pt-2 w-full flex items-center justify-center gap-1.5"
-        style={{ color: `${emp.accent}aa`, fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+        style={{ color: `${emp.accent}aa`, fontSize: 'clamp(10px, 0.85vw, 11px)' }}
       >
         <span>クリックで詳細を表示</span>
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -321,7 +321,7 @@ export default function Slide15EmployeeVoices() {
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-[#c8a8ff]" />
             <span
               className="tracking-[0.32em] uppercase text-white/35"
-              style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
             >
               Employee Voices
             </span>
@@ -414,7 +414,7 @@ export default function Slide15EmployeeVoices() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <span
                         className="font-mono tracking-[0.22em] uppercase"
-                        style={{ color: `${EMPLOYEES[focused].accent}cc`, fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+                        style={{ color: `${EMPLOYEES[focused].accent}cc`, fontSize: 'clamp(10px, 0.9vw, 12px)' }}
                       >
                         {EMPLOYEES[focused].dept}
                       </span>
@@ -424,7 +424,7 @@ export default function Slide15EmployeeVoices() {
                           color: EMPLOYEES[focused].accent,
                           background: `${EMPLOYEES[focused].accent}22`,
                           border: `1px solid ${EMPLOYEES[focused].accent}44`,
-                          fontSize: 'clamp(9px, 0.9vw, 12px)',
+                          fontSize: 'clamp(10px, 0.9vw, 12px)',
                         }}
                       >
                         {EMPLOYEES[focused].role}
@@ -498,7 +498,7 @@ export default function Slide15EmployeeVoices() {
                 >
                   <p
                     className="leading-relaxed text-white/80"
-                    style={{ fontSize: 'clamp(12px, 1.15vw, 16px)' }}
+                    style={{ fontSize: 'clamp(14px, 1.25vw, 17px)' }}
                   >
                     {EMPLOYEES[focused].voice}
                   </p>
@@ -516,7 +516,7 @@ export default function Slide15EmployeeVoices() {
                 className="shrink-0 flex items-center justify-end gap-2 px-7 py-2 border-t text-white/35"
                 style={{
                   borderColor: `${EMPLOYEES[focused].accent}22`,
-                  fontSize: 'clamp(9px, 0.85vw, 11px)',
+                  fontSize: 'clamp(10px, 0.85vw, 11px)',
                 }}
               >
                 <kbd className="px-1.5 py-0.5 rounded border border-white/15 font-mono">Esc</kbd>

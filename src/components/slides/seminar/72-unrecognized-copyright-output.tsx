@@ -167,7 +167,7 @@ function RecognitionCases() {
 
             <p
               className="text-white/85 leading-relaxed ml-1"
-              style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+              style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
             >
               {item.body}
             </p>

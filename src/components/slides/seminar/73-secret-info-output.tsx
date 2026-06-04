@@ -106,7 +106,7 @@ function SecretFlowDiagram() {
                 color: SECRET_ACCENT,
                 borderColor: `${SECRET_ACCENT}66`,
                 background: `${SECRET_ACCENT}12`,
-                fontSize: 'clamp(12px, 1.05vw, 15px)',
+                fontSize: 'clamp(13px, 1.05vw, 16px)',
               }}
             >
               {label}
@@ -124,7 +124,7 @@ function SecretFlowDiagram() {
           color: LAW_ACCENT,
           borderColor: `${LAW_ACCENT}55`,
           background: `${LAW_ACCENT}12`,
-          fontSize: 'clamp(12px, 1.05vw, 15px)',
+          fontSize: 'clamp(13px, 1.05vw, 16px)',
         }}
       >
         生成AI

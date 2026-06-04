@@ -111,7 +111,7 @@ export default function Slide93Closing() {
           <a
             href="https://tail-legal.jp/"
             className="font-mono text-white/55 tracking-wide hover:text-white transition-colors"
-            style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+            style={{ fontSize: 'clamp(13px, 0.95vw, 15px)' }}
           >
             tail-legal.jp
           </a>

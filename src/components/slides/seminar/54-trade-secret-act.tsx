@@ -79,7 +79,7 @@ function LegalQuoteColumn() {
           <div className="flex flex-col gap-0.5 shrink-0">
             <span
               className="tracking-[0.22em] uppercase text-white/30"
-              style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             >
               不正競争防止法
             </span>
@@ -147,7 +147,7 @@ function LegalQuoteColumn() {
             {!isFinished && (
               <motion.div
                 className="flex items-center justify-center gap-2 text-white/20 tracking-widest pointer-events-none pt-0.5"
-                style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+                style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -292,7 +292,7 @@ function RiskBasedDecisionTree() {
       <div className="flex flex-col gap-0 shrink-0">
         <span
           className="tracking-[0.22em] uppercase text-white/30"
-          style={{ fontSize: 'clamp(9px, 0.72vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.72vw, 11px)' }}
         >
           Decision Flow
         </span>
@@ -483,7 +483,7 @@ export default function Slide54TradeSecretAct() {
         <div className="flex flex-col gap-1 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             4-3 · 社内秘密情報・営業秘密
           </span>

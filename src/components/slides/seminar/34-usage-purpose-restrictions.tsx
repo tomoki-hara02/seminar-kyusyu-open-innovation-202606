@@ -122,13 +122,13 @@ function ConstraintBand({ reg, index }: { reg: RegulationConstraint; index: numb
     <>
       <p
         className="font-bold text-white leading-tight"
-        style={{ fontSize: 'clamp(10px, 0.95vw, 13px)' }}
+        style={{ fontSize: 'clamp(13px, 0.95vw, 14px)' }}
       >
         {reg.name}
       </p>
       <p
         className="text-white/55 mt-0.5"
-        style={{ fontSize: 'clamp(8px, 0.75vw, 10.5px)' }}
+        style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
       >
         {reg.shortNote}
       </p>
@@ -208,7 +208,7 @@ function UsableAreaDiagram({ activeCount }: { activeCount: number }) {
         {isFinished && (
           <span
             className="text-white/45 font-normal ml-2"
-            style={{ fontSize: 'clamp(10px, 0.9vw, 13px)' }}
+            style={{ fontSize: 'clamp(13px, 0.9vw, 14px)' }}
           >
             → 社内で設定できる利用目的
           </span>
@@ -270,7 +270,7 @@ function UsableAreaDiagram({ activeCount }: { activeCount: number }) {
                 <motion.p
                   key="hint"
                   className="text-white/50 leading-snug max-w-[16rem]"
-                  style={{ fontSize: 'clamp(10px, 0.88vw, 12.5px)' }}
+                  style={{ fontSize: 'clamp(13px, 0.88vw, 14px)' }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -292,7 +292,7 @@ function RegulationSidebar({ activeCount }: { activeCount: number }) {
     <div className="flex flex-col gap-2 min-w-0 shrink-0 w-full md:w-[13.5rem] lg:w-[15rem] pointer-events-none">
       <p
         className="font-bold text-white/70 tracking-wide"
-        style={{ fontSize: 'clamp(11px, 1vw, 13px)' }}
+        style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
       >
         上限となる関連規程
       </p>
@@ -329,13 +329,13 @@ function RegulationSidebar({ activeCount }: { activeCount: number }) {
               <div className="min-w-0">
                 <p
                   className="font-semibold leading-snug text-white"
-                  style={{ fontSize: 'clamp(10px, 0.92vw, 12.5px)' }}
+                  style={{ fontSize: 'clamp(13px, 0.92vw, 14px)' }}
                 >
                   {reg.name}
                 </p>
                 <p
                   className="text-white/45 leading-snug mt-0.5"
-                  style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+                  style={{ fontSize: 'clamp(11px, 0.85vw, 12px)' }}
                 >
                   {reg.shortNote}
                 </p>
@@ -420,7 +420,7 @@ export default function Slide34UsagePurposeRestrictions() {
         <div className="flex flex-col gap-1.5 shrink-0 pointer-events-none">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             1-2 · 利用目的 · Usable Scope
           </span>
@@ -440,7 +440,7 @@ export default function Slide34UsagePurposeRestrictions() {
           </h2>
           <p
             className="text-white/50 leading-relaxed"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             関連規程により、社内で設定できる利用目的の領域は狭まる
           </p>
@@ -473,7 +473,7 @@ export default function Slide34UsagePurposeRestrictions() {
         {!isFinished && (
           <motion.div
             className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 text-white/25 tracking-widest pointer-events-none"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -40,7 +40,7 @@ export default function Slide49Chapter03ToolRecap() {
           <div className="flex items-center gap-3">
             <span
               className="tracking-[0.32em] uppercase text-white/40"
-              style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+              style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
             >
               Recap · Chapter 02 後編 · 3 ツール
             </span>

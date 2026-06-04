@@ -141,7 +141,7 @@ function BiasChatColumn() {
           Bias
         </span>
         <span className="text-[10px] tracking-widest text-white/40">·</span>
-        <span className="text-[11px] font-bold text-white/85 tracking-tight">
+        <span className="text-xs font-bold text-white/85 tracking-tight">
           学習データの偏り
         </span>
       </div>
@@ -156,7 +156,7 @@ function BiasChatColumn() {
 
       {/* プロンプト */}
       <div className="flex flex-col gap-1.5">
-        <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">You</span>
+        <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">You</span>
         <div className="rounded-2xl rounded-tl-sm bg-white/[0.04] border border-white/10 px-4 py-3">
           <p className="text-[12.5px] leading-relaxed text-white/85 font-mono min-h-[1.5em]">
             {phase === 'prompt' || phase === 'idle' ? promptText : LEFT_PROMPT}
@@ -182,7 +182,7 @@ function BiasChatColumn() {
           >
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: accent }} />
-              <span className="text-[9px] tracking-[0.18em] uppercase text-white/30">AI</span>
+              <span className="text-[10px] tracking-[0.18em] uppercase text-white/30">AI</span>
             </div>
 
             <div
@@ -195,7 +195,7 @@ function BiasChatColumn() {
               {phase === 'thinking' && (
                 <div className="flex items-center gap-2.5">
                   <ThinkingDots />
-                  <span className="text-[11px] text-white/40 tracking-wider">男性のスーツ姿の弁護士の画像を生成中…</span>
+                  <span className="text-xs text-white/40 tracking-wider">男性のスーツ姿の弁護士の画像を生成中…</span>
                 </div>
               )}
               {(phase === 'answer' || phase === 'image') && (
@@ -238,7 +238,7 @@ function BiasChatColumn() {
                     />
                     {/* キャプション */}
                     <span
-                      className="absolute bottom-1 left-1 right-1 text-center text-[9px] font-mono tracking-widest uppercase"
+                      className="absolute bottom-1 left-1 right-1 text-center text-[10px] font-mono tracking-widest uppercase"
                       style={{ color: `${accent}cc` }}
                     >
                       generated · male · 40s
@@ -274,7 +274,7 @@ function AiDivideMotion() {
           AI Divide
         </span>
         <span className="text-[10px] tracking-widest text-white/40">·</span>
-        <span className="text-[11px] font-bold text-white/85 tracking-tight">
+        <span className="text-xs font-bold text-white/85 tracking-tight">
           活用層と取り残される層の格差
         </span>
       </div>
@@ -434,11 +434,11 @@ function AiDivideMotion() {
           </span>
         </motion.div>
         {/* 出発点ラベル */}
-        <span className="absolute top-[112px] left-2 text-[9px] font-mono tracking-widest text-white/35">
+        <span className="absolute top-[112px] left-2 text-[10px] font-mono tracking-widest text-white/35">
           NOW
         </span>
         {/* 軸ラベル */}
-        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-mono tracking-[0.28em] uppercase text-white/30">
+        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-mono tracking-[0.28em] uppercase text-white/30">
           time →
         </span>
       </div>

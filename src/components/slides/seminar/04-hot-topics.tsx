@@ -186,7 +186,7 @@ export default function Slide04HotTopics() {
                         {n.label}
                       </text>
                       {n.sub && (
-                        <text x={n.x} y={n.y + n.r + 29} textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize={9} fontFamily="sans-serif" letterSpacing="0.04em">
+                        <text x={n.x} y={n.y + n.r + 29} textAnchor="middle" fill="rgba(255,255,255,0.28)" fontSize={10} fontFamily="sans-serif" letterSpacing="0.04em">
                           {n.sub}
                         </text>
                       )}
@@ -216,11 +216,11 @@ export default function Slide04HotTopics() {
               >
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ background: kw.accent }} />
-                  <span className="text-sm font-bold leading-snug" style={{ color: kw.accent }}>
+                  <span className="text-base font-bold leading-snug" style={{ color: kw.accent }}>
                     {kw.term}
                   </span>
                 </div>
-                <p className="text-xs text-white/65 leading-relaxed">
+                <p className="text-sm text-white/65 leading-relaxed">
                   {kw.body}
                 </p>
               </motion.div>

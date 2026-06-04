@@ -88,7 +88,7 @@ export default function Slide36ChiefResponsibleRecap() {
                 </h3>
                 <p
                   className="text-white/55 leading-relaxed"
-                  style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
                 >
                   {t.desc}
                 </p>

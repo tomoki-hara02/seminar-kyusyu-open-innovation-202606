@@ -128,7 +128,7 @@ function LayerCard({
             />
             <span
               className="text-white/80"
-              style={{ fontSize: 'clamp(12px, 1.02vw, 14px)' }}
+              style={{ fontSize: 'clamp(13px, 1.02vw, 15px)' }}
             >
               {item}
             </span>
@@ -142,7 +142,7 @@ function LayerCard({
       >
         <p
           className="font-semibold leading-snug"
-          style={{ color: layer.accent, fontSize: 'clamp(12px, 1.02vw, 14px)' }}
+          style={{ color: layer.accent, fontSize: 'clamp(13px, 1.02vw, 15px)' }}
         >
           {layer.insight}
         </p>
@@ -163,7 +163,7 @@ export default function Slide80InternalLiteracy() {
         <div className="flex flex-col gap-1.5 shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
           >
             7-3 · ガバナンス · 社内リテラシー
           </span>
@@ -209,7 +209,7 @@ export default function Slide80InternalLiteracy() {
           <div className="flex items-center gap-2">
             <span
               className="tracking-[0.2em] uppercase font-semibold"
-              style={{ color: GOVERN_ACCENT, fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+              style={{ color: GOVERN_ACCENT, fontSize: 'clamp(10px, 0.78vw, 11px)' }}
             >
               基本理念 × リテラシー
             </span>

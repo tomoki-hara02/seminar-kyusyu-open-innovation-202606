@@ -124,7 +124,7 @@ function StepRow({ step, index, isLast }: { step: Step; index: number; isLast: b
           </span>
           <span
             className="font-mono tracking-wider text-white/40 leading-none"
-            style={{ fontSize: 'clamp(9px, 0.78vw, 11px)' }}
+            style={{ fontSize: 'clamp(10px, 0.78vw, 11px)' }}
           >
             {isLast ? 'YES ↓ 同意不要へ' : 'YES ↓ 次へ'}
           </span>
@@ -228,7 +228,7 @@ export default function Slide60PipRecap() {
                 color: FINAL_ACCENT,
                 borderColor: `${FINAL_ACCENT}88`,
                 background: `${FINAL_ACCENT}1c`,
-                fontSize: 'clamp(9px, 0.78vw, 11px)',
+                fontSize: 'clamp(10px, 0.78vw, 11px)',
               }}
             >
               全STEP YES

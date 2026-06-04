@@ -61,7 +61,7 @@ export default function Slide88SectionCh03Creative02() {
             </span>
             <span
               className="tracking-[0.2em] text-white/30"
-              style={{ fontSize: 'clamp(9px, 0.72vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.72vw, 11px)' }}
             >
               · Chapter 03
             </span>

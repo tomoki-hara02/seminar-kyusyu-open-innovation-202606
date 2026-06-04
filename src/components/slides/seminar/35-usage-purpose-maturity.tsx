@@ -71,7 +71,7 @@ export default function Slide35UsagePurposeMaturity() {
         <div className="flex flex-col items-center gap-2 text-center shrink-0">
           <span
             className="tracking-[0.32em] uppercase text-white/40"
-            style={{ fontSize: 'clamp(9px, 0.9vw, 12px)' }}
+            style={{ fontSize: 'clamp(10px, 0.9vw, 12px)' }}
           >
             1-2 · 利用目的 · Maturity
           </span>
@@ -91,13 +91,13 @@ export default function Slide35UsagePurposeMaturity() {
           </h2>
           <p
             className="text-white/50 leading-relaxed max-w-2xl"
-            style={{ fontSize: 'clamp(12px, 1.05vw, 15px)' }}
+            style={{ fontSize: 'clamp(13px, 1.05vw, 16px)' }}
           >
             組織の生成AI活用段階に応じて、利用目的の定め方を変える
           </p>
           <p
             className="text-white/35 leading-relaxed flex flex-wrap items-center justify-center gap-x-2 gap-y-1"
-            style={{ fontSize: 'clamp(10px, 0.92vw, 13px)' }}
+            style={{ fontSize: 'clamp(13px, 0.92vw, 14px)' }}
           >
             <span style={{ color: '#9ee0a8' }}>OK中心</span>
             <span className="text-white/25">→</span>
@@ -135,7 +135,7 @@ export default function Slide35UsagePurposeMaturity() {
                   style={{
                     background: t.accent,
                     color: '#1a1530',
-                    fontSize: 'clamp(8px, 0.75vw, 10px)',
+                    fontSize: 'clamp(10px, 0.75vw, 11px)',
                   }}
                 >
                   推奨アプローチ
@@ -157,7 +157,7 @@ export default function Slide35UsagePurposeMaturity() {
                 </div>
                 <p
                   className="text-white/55 leading-snug"
-                  style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
                 >
                   {t.desc}
                 </p>
@@ -177,14 +177,14 @@ export default function Slide35UsagePurposeMaturity() {
                     color: t.focusAccent,
                     border: `1px solid ${t.focusAccent}66`,
                     background: `${t.focusAccent}14`,
-                    fontSize: 'clamp(9px, 0.82vw, 11px)',
+                    fontSize: 'clamp(10px, 0.82vw, 11px)',
                   }}
                 >
                   {t.focusTag}
                 </span>
                 <p
                   className="font-bold text-white leading-snug"
-                  style={{ fontSize: 'clamp(12px, 1.1vw, 15px)' }}
+                  style={{ fontSize: 'clamp(13px, 1.1vw, 16px)' }}
                 >
                   {t.focusLabel}
                 </p>
@@ -199,7 +199,7 @@ export default function Slide35UsagePurposeMaturity() {
               >
                 <p
                   className="text-white/40 tracking-wide uppercase mb-1"
-                  style={{ fontSize: 'clamp(9px, 0.8vw, 11px)' }}
+                  style={{ fontSize: 'clamp(10px, 0.8vw, 11px)' }}
                 >
                   設計の考え方
                 </p>
@@ -216,7 +216,7 @@ export default function Slide35UsagePurposeMaturity() {
                   <li
                     key={f}
                     className="flex items-start gap-2 leading-snug text-white/75"
-                    style={{ fontSize: 'clamp(12px, 1.05vw, 14px)' }}
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
                   >
                     <span style={{ color: t.accent }} className="shrink-0 mt-0.5">
                       ✓
@@ -231,7 +231,7 @@ export default function Slide35UsagePurposeMaturity() {
 
         <p
           className="text-white/30 tracking-wider text-center shrink-0"
-          style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+          style={{ fontSize: 'clamp(13px, 0.88vw, 14px)' }}
         >
           ※ 関連規程の枠内で、いずれかの成熟度に合わせて利用目的を設計する
         </p>

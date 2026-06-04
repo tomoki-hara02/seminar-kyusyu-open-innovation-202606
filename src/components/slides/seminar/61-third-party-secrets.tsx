@@ -358,7 +358,7 @@ export default function Slide61ThirdPartySecrets() {
         />
         <span
           className="tracking-[0.22em] uppercase text-white/40"
-          style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+          style={{ fontSize: 'clamp(10px, 0.85vw, 11px)' }}
         >
           NDA · Contract
         </span>

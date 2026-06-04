@@ -98,16 +98,16 @@ export default function Slide02OfficeIntro() {
           </p>
 
           <div className="w-full pt-3 border-t border-white/10">
-            <p className="text-[9px] tracking-[0.35em] uppercase text-white/30 mb-2 text-center">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-white/30 mb-2 text-center">
               Office Info
             </p>
             <div className="grid grid-cols-4 gap-x-6 gap-y-1.5">
               {OFFICE_INFO.map((item) => (
                 <div key={item.label} className="flex flex-col gap-0.5">
-                  <span className="text-[9px] tracking-widest uppercase text-white/25">
+                  <span className="text-[10px] tracking-widest uppercase text-white/25">
                     {item.label}
                   </span>
-                  <span className="text-[11px] text-white/55 leading-snug">
+                  <span className="text-sm text-white/55 leading-snug">
                     {item.value}
                   </span>
                 </div>

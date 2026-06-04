@@ -93,7 +93,7 @@ export default function Slide22GuidelinesText() {
                 href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] text-[#f7c46c]/60 hover:text-[#f7c46c] underline underline-offset-2 leading-none transition-colors"
+                className="text-xs text-[#f7c46c]/60 hover:text-[#f7c46c] underline underline-offset-2 leading-none transition-colors"
                 onClick={(e) => e.stopPropagation()}
               >
                 資料はこちら
@@ -151,7 +151,7 @@ export default function Slide22GuidelinesText() {
           {/* ── フッター ── */}
           <div className="flex items-center gap-2 mt-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[#f7c46c]/60" />
-            <span className="text-[11px] text-white/25 tracking-wide">
+            <span className="text-xs text-white/25 tracking-wide">
               リスクの大きさに応じて対策の程度を変える ＝ リスクベースアプローチ
             </span>
           </div>

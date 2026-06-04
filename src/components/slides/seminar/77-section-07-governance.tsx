@@ -88,7 +88,7 @@ export default function Slide77Section07Governance() {
           >
             <span
               className="tracking-[0.28em] uppercase text-white/30"
-              style={{ fontSize: 'clamp(9px, 0.72vw, 11px)' }}
+              style={{ fontSize: 'clamp(10px, 0.72vw, 11px)' }}
             >
               このセクションの内容
             </span>
