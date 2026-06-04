@@ -9,8 +9,8 @@ import SlideWrapper from '../../SlideWrapper';
 /**
  * p26: 生成AIの問題を4つの分析軸に分ける
  *
- * 左: PC（ユーザーリテラシー） / 右: AI モデル（演算環境）
- * 中央: INPUT（PC→AI） / OUTPUT（AI→PC）の双方向データフロー
+ * 左: PC / 右: AI モデル — INPUT・OUTPUT の双方向データフロー（図のみ）
+ * 下段: ①〜④の説明テキスト
  */
 
 /* ────────── PC メッシュ（p8 と同じ） ────────── */
@@ -280,10 +280,6 @@ const ANALYSIS_ITEMS = [
   {
     id: 'literacy',
     index: '①',
-    overlayLabel: '① ユーザー',
-    overlayColor: '#f7c46c',
-    overlayPosition: { left: '26%', top: '48%' } as const,
-    overlayAlign: 'outside-right' as const,
     sectionLabel: 'ユーザー',
     title: 'ユーザー',
     titleGradient: 'linear-gradient(90deg, #f7c46c 0%, #ffaacc 100%)',
@@ -297,9 +293,6 @@ const ANALYSIS_ITEMS = [
   {
     id: 'input',
     index: '②',
-    overlayLabel: '② INPUT →',
-    overlayColor: '#88bbff',
-    overlayPosition: { left: '50%', top: '35%' } as const,
     sectionLabel: 'INPUT',
     title: '入力情報の権利処理',
     titleGradient: 'linear-gradient(90deg, #4F8EF7 0%, #88bbff 100%)',
@@ -313,10 +306,6 @@ const ANALYSIS_ITEMS = [
   {
     id: 'compute',
     index: '③',
-    overlayLabel: '③ 演算環境',
-    overlayColor: '#c8a8ff',
-    overlayPosition: { left: '74%', top: '48%' } as const,
-    overlayAlign: 'outside-left' as const,
     sectionLabel: '演算環境',
     title: 'モデル基盤',
     titleGradient: 'linear-gradient(90deg, #c8a8ff 0%, #88bbff 100%)',
@@ -330,9 +319,6 @@ const ANALYSIS_ITEMS = [
   {
     id: 'output',
     index: '④',
-    overlayLabel: '← ④ OUTPUT',
-    overlayColor: '#FF6B9D',
-    overlayPosition: { left: '50%', top: '78%' } as const,
     sectionLabel: 'OUTPUT',
     title: '出力の取扱い',
     titleGradient: 'linear-gradient(90deg, #c8a8ff 0%, #FF6B9D 100%)',
@@ -343,18 +329,6 @@ const ANALYSIS_ITEMS = [
     ],
   },
 ] as const;
-
-const OVERLAY_ALIGN_CLASS = {
-  center: '-translate-x-1/2',
-  'outside-left': '-translate-y-1/2',
-  'outside-right': '-translate-x-full -translate-y-1/2',
-} as const;
-
-type OverlayAlign = keyof typeof OVERLAY_ALIGN_CLASS;
-
-function overlayAlignClass(align?: OverlayAlign): string {
-  return OVERLAY_ALIGN_CLASS[align ?? 'center'];
-}
 
 /* ────────── スライド本体 ────────── */
 export default function Slide26DataFlow() {
@@ -383,66 +357,46 @@ export default function Slide26DataFlow() {
           </h2>
         </motion.div>
 
-        {/* ── ② 3D キャンバス（高さを抑えて下段テキスト用の余白を確保） ── */}
-        <div className="relative shrink-0 -mt-1 h-[49%] min-h-0">
+        {/* ── ② 3D キャンバス（タイトルと下段テキストの間で中央配置） ── */}
+        <div className="relative flex-1 min-h-0 flex items-center justify-center px-4 z-0">
+          <div className="relative w-full h-full max-h-[min(58vh,540px)]">
           <Canvas
-            camera={{ position: [0, 0.95, 6.4], fov: 48 }}
+            camera={{ position: [0, 0.2, 5.4], fov: 44 }}
             gl={{ antialias: true, alpha: false }}
             style={{ background: '#0a0a0f', width: '100%', height: '100%' }}
           >
             <color attach="background" args={['#0a0a0f']} />
 
             {/* PC（左） */}
-            <group position={[-3, 0.08, 0]} scale={0.92}>
+            <group position={[-3, 0.08, 0]} scale={1.12}>
               <PCMesh />
             </group>
 
             {/* AI モデル（右） */}
-            <group position={[3, 0.08, 0]} scale={0.92}>
+            <group position={[3, 0.08, 0]} scale={1.12}>
               <AIModel />
             </group>
 
             {/* 接続ライン */}
-            <ConnectionLine startX={-1.9} endX={1.9} y={-0.12}  color="#88bbff" />
-            <ConnectionLine startX={-1.9} endX={1.9} y={-0.48} color="#FF6B9D" />
+            <ConnectionLine startX={-1.9} endX={1.9} y={0.15}  color="#88bbff" />
+            <ConnectionLine startX={-1.9} endX={1.9} y={-0.3}  color="#FF6B9D" />
 
             {/* 入力ストリーム: PC → AI */}
             <DataStream
               startX={-1.9} endX={1.9}
-              yBase={-0.12} zBase={0}
+              yBase={0.15} zBase={0}
               color="#88bbff"
-              count={45} speed={0.32} amp={0.16} freq={3.5}
+              count={45} speed={0.32} amp={0.14} freq={3.5}
             />
             {/* 出力ストリーム: AI → PC */}
             <DataStream
               startX={1.9} endX={-1.9}
-              yBase={-0.48} zBase={0}
+              yBase={-0.3} zBase={0}
               color="#FF6B9D"
-              count={45} speed={0.32} amp={0.16} freq={3.5}
+              count={45} speed={0.32} amp={0.14} freq={3.5}
             />
           </Canvas>
-
-          {/* 分析項目ラベル（Canvas 上） */}
-          {ANALYSIS_ITEMS.map((item, i) => (
-            <motion.div
-              key={item.id}
-              className={`absolute pointer-events-none z-10 ${overlayAlignClass('overlayAlign' in item ? item.overlayAlign : undefined)}`}
-              style={{
-                left: item.overlayPosition.left,
-                top: item.overlayPosition.top,
-              }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 + i * 0.15 }}
-            >
-              <span
-                className="font-mono tracking-widest whitespace-nowrap"
-                style={{ color: item.overlayColor, fontSize: 'clamp(11px, 1.05vw, 15px)' }}
-              >
-                {item.overlayLabel}
-              </span>
-            </motion.div>
-          ))}
+          </div>
         </div>
 
         {/* ── ③ テキストブロック（4列並列） ── */}

@@ -1,4 +1,4 @@
-import type { SlideEntry } from '@/config/slides';
+import type { SlideEntry } from '@/config/slide-entry';
 import {
   CHAPTER_02_BACK_KEY,
   INTERNAL_RULES_TOC_SLIDE_ID,

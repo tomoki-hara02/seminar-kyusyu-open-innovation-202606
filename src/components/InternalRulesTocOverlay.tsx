@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import type { SlideEntry } from '@/config/slides';
+import type { SlideEntry } from '@/config/slide-entry';
 import InternalRulesTocStrip from '@/components/InternalRulesTocStrip';
 import { buildRulesTocSlideIndexMap } from '@/lib/internal-rules-navigation';
 

@@ -1,260 +1,233 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 
-type Step = {
+/**
+ * p5: 令和8年改正個人情報保護法 — 12の改正項目（閣議決定案の概要）
+ */
+
+const LAW_ACCENT = '#60a5fa';
+const GRADIENT = `linear-gradient(90deg, ${LAW_ACCENT} 0%, #88bbff 45%, #c8a8ff 100%)`;
+
+type AmendmentItem = {
   badge: string;
-  title: string;
-  desc: string;
-  accent: string;
-  Icon: React.FC<{ color: string }>;
+  text: string;
 };
 
-const IconCamera: React.FC<{ color: string }> = ({ color }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-    <circle cx="12" cy="13" r="4" />
-  </svg>
-);
+type Category = {
+  num: number;
+  title: string;
+  accent: string;
+  items: AmendmentItem[];
+};
 
-const IconBrain: React.FC<{ color: string }> = ({ color }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9.5 2a2.5 2.5 0 0 1 5 0v.5A2.5 2.5 0 0 1 12 5a2.5 2.5 0 0 1-2.5-2.5V2z" />
-    <path d="M4 8.5A2.5 2.5 0 0 1 6.5 6H8a4 4 0 0 1 4 4v8H7a3 3 0 0 1-3-3v-6.5z" />
-    <path d="M20 8.5A2.5 2.5 0 0 0 17.5 6H16a4 4 0 0 0-4 4v8h5a3 3 0 0 0 3-3v-6.5z" />
-    <path d="M8 18a4 4 0 0 0 8 0" />
-    <path d="M6 11h2M16 11h2M9 15h.01M15 15h.01" />
-  </svg>
-);
-
-const IconPlug: React.FC<{ color: string }> = ({ color }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22v-5" />
-    <path d="M9 8V2" />
-    <path d="M15 8V2" />
-    <path d="M18 8H6a1 1 0 0 0-1 1v4a5 5 0 0 0 10 0V9a1 1 0 0 0-1-1z" />
-  </svg>
-);
-
-const IconEdit: React.FC<{ color: string }> = ({ color }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-  </svg>
-);
-
-const IconBarChart: React.FC<{ color: string }> = ({ color }) => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="20" x2="18" y2="10" />
-    <line x1="12" y1="20" x2="12" y2="4" />
-    <line x1="6"  y1="20" x2="6"  y2="14" />
-    <line x1="2"  y1="20" x2="22" y2="20" />
-  </svg>
-);
-
-const STEPS: Step[] = [
+const CATEGORIES: Category[] = [
   {
-    badge: '01',
-    title: '名刺をスマホで撮影',
-    desc: 'スマホカメラで名刺を撮影するだけ。紙の名刺を手入力する手間がゼロに。',
+    num: 1,
+    title: 'データ利活用の推進',
+    accent: '#60a5fa',
+    items: [
+      {
+        badge: '①',
+        text: '統計作成等目的による同意不要の新設（AI開発等含む）',
+      },
+      {
+        badge: '②',
+        text: '同意取得の例外要件を緩和（本人意思不反の場合等）',
+      },
+    ],
+  },
+  {
+    num: 2,
+    title: 'リスク対応規律',
     accent: '#88bbff',
-    Icon: IconCamera,
+    items: [
+      { badge: '③', text: '子ども（16歳未満）の個人情報規制を明確化・厳格化' },
+      { badge: '④', text: '顔特徴データ等（特定生体個人情報）の規律を新設' },
+      { badge: '⑤', text: '委託先の義務整備（目的外利用禁止・義務免除条件）' },
+      { badge: '⑥', text: '漏えい時の本人通知義務を緩和（権利侵害おそれ小の場合）' },
+    ],
   },
   {
-    badge: '02',
-    title: 'AIがOCR＋データ整形',
-    desc: '生成AIが画像から氏名・会社名・連絡先を自動抽出し、データベース向けに整形。',
-    accent: '#c8a8ff',
-    Icon: IconBrain,
-  },
-  {
-    badge: '03',
-    title: '外部DBアプリに接続',
-    desc: 'MCP経由で外部の顧客管理ツールやデータベースと自動接続。人手のコピペ不要。',
-    accent: '#ffaacc',
-    Icon: IconPlug,
-  },
-  {
-    badge: '04',
-    title: '情報を登録・更新',
-    desc: '新規顧客は自動登録。既存顧客なら差分を検知して最新情報に更新。重複も防止。',
+    num: 3,
+    title: '不適正利用等の防止',
     accent: '#f7c46c',
-    Icon: IconEdit,
+    items: [
+      {
+        badge: '⑦',
+        text: '連絡可能個人関連情報（電話番号・メール・Cookie等）の不正利用・取得禁止',
+      },
+      { badge: '⑧', text: 'オプトアウト提供時に提供先の身元・目的確認を義務化' },
+    ],
   },
   {
-    badge: '05',
-    title: 'ダッシュボード作成',
-    desc: '顧客データを可視化したダッシュボードを自動生成。営業状況をリアルタイムで把握。',
+    num: 4,
+    title: '規律遵守の実効性確保',
     accent: '#9ee0a8',
-    Icon: IconBarChart,
+    items: [
+      { badge: '⑨', text: '勧告・命令の発動要件を緩和・柔軟化' },
+      { badge: '⑩', text: '違反を補助する第三者（クラウド事業者等）への要請根拠を法定' },
+      {
+        badge: '⑪',
+        text: '罰則を強化・拡大（法定刑引上げ＋加害目的の取得も処罰対象に）',
+      },
+      { badge: '⑫', text: '課徴金制度を導入（違反行為で得た利益相当額）' },
+    ],
   },
 ];
 
-const STEP_MS = 1800;
+const META = [
+  { label: '対象', value: '民間部門 中心' },
+  { label: '施行見込み', value: '公布後 2年以内' },
+  { label: '国会', value: '第221回特別国会 審議中' },
+] as const;
 
-export default function Slide05CrmPipeline() {
-  const [active, setActive] = useState(0);
+function AmendmentRow({
+  item,
+  accent,
+  delay,
+}: {
+  item: AmendmentItem;
+  accent: string;
+  delay: number;
+}) {
+  return (
+    <motion.li
+      className="flex items-start gap-2 min-w-0"
+      initial={{ opacity: 0, x: -6 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.35, delay }}
+    >
+      <span
+        className="shrink-0 font-bold leading-none pt-px"
+        style={{ color: accent, fontSize: 'clamp(14px, 1.25vw, 16px)' }}
+      >
+        {item.badge}
+      </span>
+      <span
+        className="text-white/82 leading-snug"
+        style={{ fontSize: 'clamp(13px, 1.12vw, 15px)' }}
+      >
+        {item.text}
+      </span>
+    </motion.li>
+  );
+}
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setActive((a) => (a + 1) % (STEPS.length + 1));
-    }, STEP_MS);
-    return () => clearInterval(id);
-  }, []);
+function CategoryCard({ category, baseDelay }: { category: Category; baseDelay: number }) {
+  return (
+    <motion.section
+      className="flex flex-col gap-1.5 md:gap-2 p-2.5 md:p-3 rounded-xl border min-h-0 overflow-hidden"
+      style={{
+        borderColor: `${category.accent}33`,
+        background: `linear-gradient(145deg, ${category.accent}10 0%, rgba(255,255,255,0.02) 100%)`,
+      }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, delay: baseDelay }}
+    >
+      <div className="flex items-center gap-2 shrink-0">
+        <span
+          className="shrink-0 font-mono font-bold rounded border leading-none px-1.5 py-0.5"
+          style={{
+            color: category.accent,
+            borderColor: `${category.accent}55`,
+            background: `${category.accent}14`,
+            fontSize: 'clamp(12px, 1.05vw, 14px)',
+          }}
+        >
+          {category.num}
+        </span>
+        <h3
+          className="font-bold text-white leading-tight"
+          style={{ fontSize: 'clamp(14px, 1.25vw, 16.5px)' }}
+        >
+          {category.title}
+        </h3>
+      </div>
+      <ul className="flex flex-col gap-1 md:gap-1.5 flex-1 min-h-0">
+        {category.items.map((item, i) => (
+          <AmendmentRow
+            key={item.badge}
+            item={item}
+            accent={category.accent}
+            delay={baseDelay + 0.06 + i * 0.04}
+          />
+        ))}
+      </ul>
+    </motion.section>
+  );
+}
 
+export default function Slide05PipAmendment2026() {
   return (
     <SlideWrapper>
       <motion.div
-        className="flex flex-col w-full h-full max-w-6xl px-2 py-5 gap-6 pt-14"
-        initial={{ opacity: 0, y: 20 }}
+        className="flex flex-col w-full h-full max-w-7xl px-2 py-4 pt-12 gap-2.5 md:gap-3"
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: 'easeInOut' }}
       >
-        {/* ヘッダー */}
         <div className="shrink-0 flex flex-col gap-1">
-          <span className="text-[10px] tracking-[0.22em] uppercase text-white/30">
-            活用事例 · CRM
+          <span
+            className="tracking-[0.28em] uppercase text-white/35"
+            style={{ fontSize: 'clamp(9px, 0.85vw, 11px)' }}
+          >
+            個人情報保護法 · 改正概要
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-            顧客管理
-            <span
-              className="bg-clip-text text-transparent ml-2"
-              style={{
-                backgroundImage: 'linear-gradient(90deg, #88bbff 0%, #c8a8ff 60%, #ffaacc 100%)',
-              }}
-            >
-              （CRM）
+          <h2
+            className="font-bold tracking-tight text-white leading-tight"
+            style={{ fontSize: 'clamp(20px, 2.4vw, 34px)' }}
+          >
+            令和8年改正
+            <span className="bg-clip-text text-transparent ml-1.5" style={{ backgroundImage: GRADIENT }}>
+              個人情報保護法
             </span>
-            の参考例
+            <span className="text-white/90 ml-1.5" style={{ fontSize: 'clamp(16px, 1.9vw, 28px)' }}>
+              12の改正項目
+            </span>
           </h2>
+          <p
+            className="text-white/50 tracking-wide"
+            style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+          >
+            2026年4月7日閣議決定　／　公布から原則2年以内施行
+          </p>
         </div>
 
-        {/* パイプライン */}
-        <div className="relative flex-1 flex flex-col justify-center gap-0">
-          {/* 接続ライン（ベース） */}
-          <div className="absolute left-[5.5%] right-[5.5%] top-[6.8rem] h-px bg-white/10" />
-          {/* 接続ライン（アクティブ） */}
-          <motion.div
-            className="absolute left-[5.5%] top-[6.8rem] h-px"
-            style={{
-              background: 'linear-gradient(90deg, #7B5EA7, #4F8EF7, #FF6B9D)',
-              filter: 'drop-shadow(0 0 8px rgba(79,142,247,0.5))',
-            }}
-            animate={{
-              width: `${Math.min(active, STEPS.length - 1) / (STEPS.length - 1) * 89}%`,
-            }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-          />
-
-          <div className="flex items-stretch justify-between gap-2">
-            {STEPS.map((step, i) => {
-              const isDone   = i < active;
-              const isActive = i === active;
-              const accentColor = step.accent;
-
-              return (
-                <div key={step.badge} className="flex-1 flex flex-col items-center gap-4">
-                  {/* Step ラベル（円の上） */}
-                  <motion.span
-                    className="text-[10px] font-mono tracking-[0.2em] uppercase shrink-0"
-                    animate={{
-                      color: isActive ? step.accent : isDone ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.2)',
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    Step {step.badge}
-                  </motion.span>
-
-                  {/* サークルノード */}
-                  <motion.div
-                    className="relative w-20 h-20 rounded-full flex items-center justify-center z-10 shrink-0"
-                    animate={{
-                      background: isDone
-                        ? 'linear-gradient(135deg, #7B5EA7, #4F8EF7)'
-                        : isActive
-                        ? `linear-gradient(135deg, ${accentColor}cc, ${accentColor}66)`
-                        : 'rgba(20,22,38,0.85)',
-                      borderColor: isDone || isActive ? 'transparent' : 'rgba(255,255,255,0.15)',
-                      scale: isActive ? 1.1 : 1,
-                    }}
-                    style={{
-                      border: '1px solid',
-                      boxShadow: isActive
-                        ? `0 0 35px ${accentColor}88`
-                        : isDone
-                        ? '0 0 20px rgba(123,94,167,0.35)'
-                        : 'none',
-                    }}
-                    transition={{ duration: 0.45, ease: 'easeOut' }}
-                  >
-                    {isActive && (
-                      <motion.span
-                        className="absolute inset-0 rounded-full"
-                        style={{ border: `1px solid ${accentColor}` }}
-                        animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
-                        transition={{ duration: 1.4, repeat: Infinity, ease: 'easeOut' }}
-                      />
-                    )}
-
-                    {isDone ? (
-                      <motion.svg width="24" height="24" viewBox="0 0 22 22" fill="none">
-                        <motion.path
-                          d="M5 11.5l4.2 4.2L17 8"
-                          stroke="white"
-                          strokeWidth="2.2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          initial={{ pathLength: 0 }}
-                          animate={{ pathLength: 1 }}
-                          transition={{ duration: 0.4, ease: 'easeOut' }}
-                        />
-                      </motion.svg>
-                    ) : (
-                      <step.Icon color={isActive ? step.accent : 'rgba(255,255,255,0.35)'} />
-                    )}
-                  </motion.div>
-
-                  {/* テキスト */}
-                  <div className="text-center px-1">
-                    <motion.h3
-                      className="text-sm font-bold tracking-tight leading-snug"
-                      animate={{
-                        color: isActive
-                          ? accentColor
-                          : isDone
-                          ? 'rgba(255,255,255,0.85)'
-                          : 'rgba(255,255,255,0.4)',
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {step.title}
-                    </motion.h3>
-                    <motion.p
-                      className="text-[11px] mt-2 leading-relaxed"
-                      animate={{
-                        color: isActive
-                          ? 'rgba(255,255,255,0.7)'
-                          : isDone
-                          ? 'rgba(255,255,255,0.45)'
-                          : 'rgba(255,255,255,0.25)',
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {step.desc}
-                    </motion.p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        <div className="flex-1 min-h-0 grid grid-cols-2 grid-rows-2 gap-2 md:gap-2.5">
+          {CATEGORIES.map((cat, i) => (
+            <CategoryCard key={cat.num} category={cat} baseDelay={0.12 + i * 0.08} />
+          ))}
         </div>
 
-        {/* フッターノート */}
-        <p className="shrink-0 text-xs text-white/30 tracking-wide text-center">
-          名刺撮影からダッシュボード作成まで、AIが自動でつなぐ顧客管理フロー
-        </p>
+        <motion.div
+          className="shrink-0 grid grid-cols-3 gap-2 md:gap-3"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.5 }}
+        >
+          {META.map((m) => (
+            <div
+              key={m.label}
+              className="flex flex-col gap-0.5 px-2.5 py-2 rounded-lg border border-white/10 bg-white/[0.03]"
+            >
+              <span
+                className="tracking-[0.2em] uppercase text-white/35"
+                style={{ fontSize: 'clamp(8px, 0.72vw, 10px)' }}
+              >
+                {m.label}
+              </span>
+              <span
+                className="font-semibold text-white/85 leading-snug"
+                style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}
+              >
+                {m.value}
+              </span>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </SlideWrapper>
   );

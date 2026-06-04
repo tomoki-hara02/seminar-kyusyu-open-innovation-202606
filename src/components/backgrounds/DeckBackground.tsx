@@ -31,6 +31,10 @@ const BACKGROUNDS = {
   logoParticles: dynamic(() => import('../LogoParticlesBackground'), {
     ssr: false,
   }),
+  /** p8 専用：PC メッシュ + パーティクルハロー（生成AIは異次元の成果を出す） */
+  aiCapability: dynamic(() => import('../AiCapabilityBackground'), {
+    ssr: false,
+  }),
 } as const;
 
 export type DeckBackgroundVariant = keyof typeof BACKGROUNDS;

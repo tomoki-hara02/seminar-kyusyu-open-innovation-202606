@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { motion } from 'framer-motion';
-import SlideWrapper from '../../SlideWrapper';
 import { mulberry32 } from '@/lib/random';
 
 // useMemo の geo を unmount で dispose するためのヘルパー hook
@@ -286,46 +284,5 @@ export function LogoParticlesScene() {
       <color attach="background" args={['#0a0a0f']} />
       <ParticlesMesh samples={samples} />
     </Canvas>
-  );
-}
-
-// ─── スライド本体 ────────────────────────────────────────────────────────
-export default function LogoParticles() {
-  return (
-    <SlideWrapper>
-      {/* 3D Canvas */}
-      <div className="absolute inset-0">
-        <LogoParticlesScene />
-      </div>
-
-      {/* 上部キャプション */}
-      <motion.div
-        className="relative z-10 flex flex-col items-center gap-2 mb-auto mt-14 pointer-events-none"
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.0, ease: 'easeOut', delay: 0.4 }}
-      >
-        <span className="text-[10px] tracking-[0.32em] uppercase text-white/40">
-          Brand Mark · 3D Particle Field
-        </span>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-          {/* TODO: ブランド名 / 事務所名 */}
-          Our Mark
-        </h2>
-      </motion.div>
-
-      {/* 下部キャプション */}
-      <motion.div
-        className="relative z-10 flex flex-col items-center gap-2 mt-auto mb-12 pointer-events-none"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut', delay: 0.8 }}
-      >
-        <p className="text-xs text-white/35 tracking-widest">
-          {/* TODO: ロゴ下のキャプション */}
-          散らばっては集う、粒子のリズム
-        </p>
-      </motion.div>
-    </SlideWrapper>
   );
 }

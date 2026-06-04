@@ -95,7 +95,7 @@ const STEPS: Step[] = [
 
 const STEP_MS = 1800;
 
-export default function Slide06WebPipeline() {
+export default function Slide07WebPipeline() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {

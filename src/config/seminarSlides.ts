@@ -1,12 +1,12 @@
-import type { SlideEntry } from '@/config/slides';
+import type { SlideEntry } from '@/config/slide-entry';
 
 import Slide01Title from '@/components/slides/seminar/01-title';
 import Slide02OfficeIntro from '@/components/slides/seminar/02-office-intro';
 import Slide03Speaker from '@/components/slides/seminar/03-speaker';
 import Slide04HotTopics from '@/components/slides/seminar/04-hot-topics';
-import Slide05CrmPipeline from '@/components/slides/seminar/05-crm-pipeline';
-import Slide06WebPipeline from '@/components/slides/seminar/06-web-pipeline';
-import Slide07DemoGallery from '@/components/slides/seminar/07-demo-gallery';
+import Slide05PipAmendment2026 from '@/components/slides/seminar/05-crm-pipeline';
+import Slide06VoiceActorGenai from '@/components/slides/seminar/06-voice-actor-genai';
+import Slide07WebPipeline from '@/components/slides/seminar/07-web-pipeline';
 import Slide08AiCapability from '@/components/slides/seminar/08-ai-capability';
 import Slide09Agenda from '@/components/slides/seminar/09-agenda';
 import Slide10Start from '@/components/slides/seminar/10-start';
@@ -82,12 +82,23 @@ import Slide79RegulationReview from '@/components/slides/seminar/79-regulation-r
 import Slide80InternalLiteracy from '@/components/slides/seminar/80-internal-literacy';
 import Slide81Chapter02BackRecap from '@/components/slides/seminar/81-chapter-02-back-recap';
 import Slide82Chapter03 from '@/components/slides/seminar/82-chapter-03';
+import Slide83AiUseTop7 from '@/components/slides/seminar/83-ai-use-top7';
+import Slide84SectionCh03Sales01 from '@/components/slides/seminar/84-chapter-sales-01';
+import Slide85SalesLegalRights from '@/components/slides/seminar/85-sales-legal-rights';
+import Slide86SalesMeetingAiCheckpoints from '@/components/slides/seminar/86-sales-meeting-ai-checkpoints';
+import Slide87SalesAiPolicyExample from '@/components/slides/seminar/87-sales-ai-policy-example';
+import Slide88SectionCh03Creative02 from '@/components/slides/seminar/88-section-ch03-creative-02';
+import Slide89CreativeLegalRights from '@/components/slides/seminar/89-creative-legal-rights';
+import Slide90CreativeLegalCheckpoints from '@/components/slides/seminar/90-creative-legal-checkpoints';
+import Slide91SeminarRecap from '@/components/slides/seminar/91-seminar-recap';
+import Slide92NextSteps from '@/components/slides/seminar/92-next-steps';
+import Slide93Closing from '@/components/slides/seminar/93-closing';
 
 /**
  * 本番セミナー「生成AIを"安心して使い倒す"ためのルールづくり入門」用のスライド一覧。
  *
  * - 並び順 = 投影順
- * - 各エントリの `id` はファイル名と揃える（`01-title` 〜 `82-...`、番号重複なし）
+ * - 各エントリの `id` はファイル名と揃える（`01-title` 〜 `89-...`、番号重複なし）
  * - 投影順の連番（p1〜p71）は `note`・目次番号・ファイル先頭2桁が一致（`npm run renumber:seminar-files`）
  * - `background` を指定するとそのスライド表示中だけ背景を切り替えられる
  *
@@ -131,28 +142,29 @@ export const seminarSlideRegistry: SlideEntry[] = [
   },
   {
     id: '05-crm-pipeline',
-    Component: Slide05CrmPipeline,
+    Component: Slide05PipAmendment2026,
     chapter: 'opening',
-    title: '活用事例 — CRMパイプライン',
-    note: 'p5:活用事例 CRM パイプライン',
+    title: '令和8年改正 個人情報保護法 — 12の改正項目',
+    note: 'p5:令和8年改正個人情報保護法 12の改正項目',
   },
   {
-    id: '06-web-pipeline',
-    Component: Slide06WebPipeline,
+    id: '06-voice-actor-genai',
+    Component: Slide06VoiceActorGenai,
+    chapter: 'opening',
+    title: '声優と生成AIの活用',
+    note: 'p6:声優×生成AI — 法務省検討会・有志資料リンク',
+  },
+  {
+    id: '07-web-pipeline',
+    Component: Slide07WebPipeline,
     chapter: 'opening',
     title: '活用事例 — Webマーケティング',
-    note: 'p6:活用事例 Webマーケティング パイプライン',
-  },
-  {
-    id: '07-demo-gallery',
-    Component: Slide07DemoGallery,
-    chapter: 'opening',
-    title: 'デモギャラリー',
-    note: 'p7:デモギャラリー',
+    note: 'p7:活用事例 Webマーケティング パイプライン',
   },
   {
     id: '08-ai-capability',
     Component: Slide08AiCapability,
+    background: 'aiCapability',
     chapter: 'opening',
     title: '生成AIは異次元の成果を出す',
     note: 'p8:生成AIは異次元の成果を出す',
@@ -747,5 +759,87 @@ export const seminarSlideRegistry: SlideEntry[] = [
     chapter: 'chapter-03',
     title: 'Chapter 03 — その他生成AIに関する法的論点',
     note: 'p82:Chapter 03 — その他生成AIに関する法的論点',
+  },
+  {
+    id: '83-ai-use-top7',
+    Component: Slide83AiUseTop7,
+    chapter: 'chapter-03',
+    title: '業務での活用用途 TOP7 — 管理職調査',
+    note: 'p83:活用用途TOP7 横棒グラフ（コーレ2026・注記付き）',
+  },
+
+  {
+    id: '84-section-ch03-sales-01',
+    Component: Slide84SectionCh03Sales01,
+    chapter: 'chapter-03',
+    title: '商談編 01 — 取引先・関係者の生成AIと法的論点',
+    note: 'p84:Ch03 中間見出し — 商談編01 取引先・関係者の生成AI利用の法的問題',
+  },
+  {
+    id: '85-sales-legal-rights',
+    Component: Slide85SalesLegalRights,
+    chapter: 'chapter-03',
+    title: '商談時に気を付けるべき法律関係',
+    note: 'p85:商談編 — 法的権利関係図（営業秘密・秘密保持契約ハイライト）',
+  },
+  {
+    id: '86-sales-meeting-ai-checkpoints',
+    Component: Slide86SalesMeetingAiCheckpoints,
+    chapter: 'chapter-03',
+    title: 'Webミーティング・議事録AI — チェックポイント',
+    note: 'p86:商談編 — 録音録画周知・AI不使用・条件定め',
+  },
+  {
+    id: '87-sales-ai-policy-example',
+    Component: Slide87SalesAiPolicyExample,
+    chapter: 'chapter-03',
+    title: 'ポリシー例 — 対面・商談における生成AIツール使用',
+    note: 'p87:商談編 — 生成AI使用ポリシー例（第1〜4条）',
+    textSelectable: true,
+  },
+  {
+    id: '88-section-ch03-creative-02',
+    Component: Slide88SectionCh03Creative02,
+    chapter: 'chapter-03',
+    title: 'クリエイティブ編 02 — 業務委託と生成AI',
+    note: 'p88:Ch03 中間見出し — クリエイティブ編02 業務委託×生成AI',
+  },
+  {
+    id: '89-creative-legal-rights',
+    Component: Slide89CreativeLegalRights,
+    chapter: 'chapter-03',
+    title: '業務委託時に気を付けるべき法律関係',
+    note: 'p89:クリエイティブ編 — 法的権利関係図（著作権・不正競争防止法・人格的利益）',
+  },
+  {
+    id: '90-creative-legal-checkpoints',
+    Component: Slide90CreativeLegalCheckpoints,
+    chapter: 'chapter-03',
+    title: 'クリエイター業務委託時の法的チェックポイント',
+    note: 'p90:クリエイティブ編 — 業務委託の4チェックポイント（著作物性／譲渡対価／侵害Tips／従業員モデル）',
+  },
+
+  // ── Closing: 本セミナーのまとめ ──────────────────────────────
+  {
+    id: '91-seminar-recap',
+    Component: Slide91SeminarRecap,
+    chapter: 'closing',
+    title: '本セミナーの3つの核心メッセージ',
+    note: 'p91:Final Recap — Chapter 01〜03 の核心メッセージ',
+  },
+  {
+    id: '92-next-steps',
+    Component: Slide92NextSteps,
+    chapter: 'closing',
+    title: '明日から始める3つの一歩',
+    note: 'p92:Next Steps — 棚卸し／4分析セグメント点検／規程v0.1 改訂サイクル',
+  },
+  {
+    id: '93-closing',
+    Component: Slide93Closing,
+    background: 'logoParticles',
+    chapter: 'closing',
+    title: 'ご清聴ありがとうございました',
+    note: 'p93:Closing — ロゴパーティクル + Thank You + 事務所情報',
   },
 ];

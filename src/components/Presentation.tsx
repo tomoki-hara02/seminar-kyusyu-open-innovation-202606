@@ -7,7 +7,7 @@ import TableOfContents from './TableOfContents';
 import BreakSlide from './BreakSlide';
 import InternalRulesTocOverlay from './InternalRulesTocOverlay';
 import SlideStage from './SlideStage';
-import { slideRegistry as defaultRegistry, type SlideEntry } from '@/config/slides';
+import type { SlideEntry } from '@/config/slide-entry';
 import { BG_COLOR } from '@/theme/colors';
 import { PresentationContext } from '@/context/presentation';
 import { shouldShowRulesTocButton } from '@/lib/internal-rules-navigation';
@@ -19,12 +19,11 @@ const slideVariants = {
 };
 
 interface PresentationProps {
-  /** 表示するスライドの一覧。未指定の場合は既存テンプレートの slideRegistry を使う。 */
-  registry?: SlideEntry[];
+  registry: SlideEntry[];
 }
 
-export default function Presentation({ registry }: PresentationProps = {}) {
-  const slideRegistry = registry ?? defaultRegistry;
+export default function Presentation({ registry }: PresentationProps) {
+  const slideRegistry = registry;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [tocOpen, setTocOpen] = useState(false);

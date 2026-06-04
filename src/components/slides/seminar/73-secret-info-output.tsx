@@ -8,7 +8,6 @@ import SlideWrapper from '../../SlideWrapper';
  */
 
 const OUTPUT_ACCENT = '#ff9966';
-const OUTPUT_GRAD: [string, string] = ['#f17a45', '#c64823'];
 const SECRET_ACCENT = '#9ee0a8';
 const LAW_ACCENT = '#60a5fa';
 const HIGHLIGHT_ACCENT = '#f7c46c';

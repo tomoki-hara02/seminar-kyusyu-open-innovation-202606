@@ -18,7 +18,6 @@ import SlideWrapper from '../../SlideWrapper';
 import {
   INTERNAL_RULE_CARDS as CARDS,
   groupRuleCards,
-  type RuleCard,
 } from '@/data/internal-rules-cards';
 
 // ─── ホイール幾何 ───────────────────────────────────────────────────────────

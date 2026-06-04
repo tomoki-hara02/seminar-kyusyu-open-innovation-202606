@@ -179,39 +179,6 @@ function ProviderCard({
   );
 }
 
-function BridgeArrow() {
-  return (
-    <motion.div
-      className="hidden lg:flex flex-col items-center justify-center gap-2 py-4 shrink-0"
-      initial={{ opacity: 0, x: -8 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: 0.55 }}
-    >
-      <span
-        className="tracking-[0.32em] uppercase text-white/35 font-semibold writing-mode-vertical"
-        style={{
-          fontSize: 'clamp(9px, 0.78vw, 11px)',
-          writingMode: 'vertical-rl',
-        }}
-      >
-        だから
-      </span>
-      <svg width="22" height="40" viewBox="0 0 22 40" fill="none" aria-hidden>
-        <motion.path
-          d="M11 0 L11 32 M11 32 L4 25 M11 32 L18 25"
-          stroke={`${GOVERN_ACCENT}cc`}
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-        />
-      </svg>
-    </motion.div>
-  );
-}
-
 function TriggerCard({
   trigger,
   index,
@@ -314,7 +281,7 @@ export default function Slide79RegulationReview() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-3 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-stretch">
           {/* LEFT: 事業者の改訂リズム */}
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-2 px-1">
@@ -332,9 +299,6 @@ export default function Slide79RegulationReview() {
               ))}
             </div>
           </div>
-
-          {/* BRIDGE */}
-          <BridgeArrow />
 
           {/* RIGHT: 社内規程の見直し視点 */}
           <div className="flex flex-col gap-2.5">

@@ -1,6 +1,6 @@
 'use client';
 
-import { LogoParticlesScene } from './slides/templates/LogoParticles';
+import { LogoParticlesScene } from './LogoParticlesScene';
 
 /**
  * 全画面ロゴパーティクル背景レイヤー。

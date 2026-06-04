@@ -13,7 +13,6 @@ import SlideWrapper from '../../SlideWrapper';
 
 const LAW_ACCENT = '#60a5fa';
 const AI_ACCENT = '#f7c46c';
-const CHAPTER_ACCENT = '#9ee0a8';
 const HIGHLIGHT = '#88bbff';
 
 const PURPOSE_POINTS = [

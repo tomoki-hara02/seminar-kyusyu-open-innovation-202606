@@ -62,7 +62,8 @@ src/
 ├── hooks/
 │   └── useCountUp.ts     ← カウントアップ hook（Slide06/18/24 で共有）
 ├── config/
-│   └── slides.ts         ← スライド順序・背景メタの「シングルソース」
+│   ├── slide-entry.ts    ← SlideEntry 型
+│   └── seminarSlides.ts  ← セミナー用スライド順序・背景メタ
 └── components/
     ├── Presentation.tsx  ← レジストリを読んでスライド/背景を制御
     ├── SlideWrapper.tsx  ← 各スライドの共通レイアウト
@@ -144,22 +145,20 @@ src/
 
 ### 3. スライドを追加・削除する
 
-スライドの順序・有無は `src/config/slides.ts` の **`slideRegistry`** に集約しています。
+スライドの順序・有無は `src/config/seminarSlides.ts` の **`seminarSlideRegistry`** に集約しています。
 `Presentation.tsx` を触る必要はありません。
 
 ```tsx
-// src/config/slides.ts
-export const slideRegistry: SlideEntry[] = [
-  { id: 'title', Component: Slide01, background: 'morph' },
-  { id: 'feature-cards', Component: Slide02 },
+// src/config/seminarSlides.ts
+export const seminarSlideRegistry: SlideEntry[] = [
+  { id: 'opening-title', Component: Slide01Opening, background: 'morph' },
   // ...
-  { id: 'thank-you', Component: Slide39, background: 'morph' },
 ];
 ```
 
 - **順序を変える** → 配列を並び替えるだけ
-- **不要なスライドを外す** → 行を削除（ファイル本体は残して OK）
-- **新しいスライドを足す** → import して `slideRegistry` に push
+- **不要なスライドを外す** → 行を削除
+- **新しいスライドを足す** → `src/components/slides/seminar/` にコンポーネントを追加し、import して `seminarSlideRegistry` に push
 
 ### 4. 背景の表示・非表示（パーティクルを呼び出す）
 

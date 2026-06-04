@@ -2,7 +2,7 @@
 
 import { useEffect, useCallback, useId, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import type { SlideEntry } from '@/config/slides';
+import type { SlideEntry } from '@/config/slide-entry';
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
@@ -50,6 +50,7 @@ const CHAPTER_LABELS: Record<string, ChapterLabel> = {
     display: 'Chapter 03',
     subtitle: 'その他生成AIに関する法的論点',
   },
+  closing: { display: 'Closing', subtitle: '本セミナーのまとめ' },
 };
 
 // ─── fallback categories（chapter 未設定時の旧グルーピング）────────────────────
