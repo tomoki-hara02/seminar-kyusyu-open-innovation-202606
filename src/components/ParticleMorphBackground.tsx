@@ -72,10 +72,8 @@ const fragmentShader = /* glsl */ `
 
 // ─── Surface sampler helper ───────────────────────────────────────────────────
 function sampleSurface(geo: THREE.BufferGeometry, scale: number): Float32Array {
-  const mesh = new THREE.Mesh(
-    geo.toNonIndexed(),
-    new THREE.MeshBasicMaterial()
-  );
+  const nonIndexed = geo.index !== null ? geo.toNonIndexed() : geo;
+  const mesh = new THREE.Mesh(nonIndexed, new THREE.MeshBasicMaterial());
   const sampler = new MeshSurfaceSampler(mesh).build();
   const buf = new Float32Array(COUNT * 3);
   const v   = new THREE.Vector3();
