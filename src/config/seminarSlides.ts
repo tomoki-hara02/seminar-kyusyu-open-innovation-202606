@@ -7,11 +7,11 @@ import Slide04Agenda from '@/components/slides/seminar/04-agenda';
 import Slide05Start from '@/components/slides/seminar/05-start';
 import Slide06Chapter01 from '@/components/slides/seminar/06-chapter-01';
 import Slide07HotTopics from '@/components/slides/seminar/07-hot-topics';
-import Slide08CrmPipeline from '@/components/slides/seminar/08-crm-pipeline';
-import Slide09VoiceActorGenai from '@/components/slides/seminar/09-voice-actor-genai';
-import Slide10AiRoi from '@/components/slides/seminar/10-ai-roi';
-import Slide11UserAiExamples from '@/components/slides/seminar/11-user-ai-examples';
-import Slide12AiCapability from '@/components/slides/seminar/12-ai-capability';
+import Slide08LegalHotTopics from '@/components/slides/seminar/08-legal-hot-topics';
+import Slide09AiRoi from '@/components/slides/seminar/09-ai-roi';
+import Slide10OcrScan3D from '@/components/slides/seminar/10-ocr-scan-3d';
+import Slide11AiStructure3D from '@/components/slides/seminar/11-ai-structure-3d';
+import Slide12FirestoreSync3D from '@/components/slides/seminar/12-firestore-sync-3d';
 import Slide13Recap from '@/components/slides/seminar/13-recap';
 import Slide14Chapter02 from '@/components/slides/seminar/14-chapter-02';
 import Slide15AiPrinciples from '@/components/slides/seminar/15-ai-principles';
@@ -163,40 +163,39 @@ export const seminarSlideRegistry: SlideEntry[] = [
     note: 'p7:近時の生成AIのホットトピック',
   },
   {
-    id: '08-crm-pipeline',
-    Component: Slide08CrmPipeline,
+    id: '08-legal-hot-topics',
+    Component: Slide08LegalHotTopics,
     chapter: 'chapter-01',
-    title: '令和8年改正 個人情報保護法 — 12の改正項目',
-    note: 'p8:令和8年改正個人情報保護法 12の改正項目',
+    title: '近時の法的ホットトピック — 個情法改正 × 声優×生成AI',
+    note: 'p8:法的ホットトピック統合（旧 p8 個情法改正 12項目 + 旧 p9 声優×生成AI）',
   },
   {
-    id: '09-voice-actor-genai',
-    Component: Slide09VoiceActorGenai,
-    chapter: 'chapter-01',
-    title: '声優と生成AIの活用',
-    note: 'p9:声優×生成AI — 法務省検討会・有志資料リンク',
-  },
-  {
-    id: '10-ai-roi',
-    Component: Slide10AiRoi,
+    id: '09-ai-roi',
+    Component: Slide09AiRoi,
     chapter: 'chapter-01',
     title: 'MIT GenAI Divide — 95%とROI',
-    note: 'p10:MIT GenAI Divide — 95%とROI',
+    note: 'p9:MIT GenAI Divide — 95%とROI',
   },
   {
-    id: '11-user-ai-examples',
-    Component: Slide11UserAiExamples,
+    id: '10-ocr-scan-3d',
+    Component: Slide10OcrScan3D,
     chapter: 'chapter-01',
-    title: 'tAiL. CRM活用例 — Claudeに話しかけて人脈管理',
-    note: 'p11:tAiL. CRM × MCP × Claude — 3シーン + システム構成',
+    title: '実例① — 名刺をスマホで OCR（3D 演出）',
+    note: 'p10:実例① 名刺 × スマホ OCR — Cube3D 系 3D 演出',
   },
   {
-    id: '12-ai-capability',
-    Component: Slide12AiCapability,
-    background: 'aiCapability',
+    id: '11-ai-structure-3d',
+    Component: Slide11AiStructure3D,
     chapter: 'chapter-01',
-    title: '生成AIは異次元の成果を出す',
-    note: 'p12:生成AIは異次元の成果を出す',
+    title: '実例② — Claude が OCR 結果を構造化（3D 演出）',
+    note: 'p11:実例② スマホ → Claude → 構造化 JSON の流れ',
+  },
+  {
+    id: '12-firestore-sync-3d',
+    Component: Slide12FirestoreSync3D,
+    chapter: 'chapter-01',
+    title: '実例③ — Claude が Firestore と双方向同期（3D 演出）',
+    note: 'p12:実例③ スマホ ⇄ Claude ⇄ Firestore の保存/取り出し',
   },
   {
     id: '13-recap',

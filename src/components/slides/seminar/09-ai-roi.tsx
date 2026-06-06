@@ -41,7 +41,7 @@ const SUCCESS_FACTORS = [
   },
 ];
 
-export default function Slide10AiRoi() {
+export default function Slide09AiRoi() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
   const v = useCountUp(95, { duration: 1.8, start: inView, easePower: 4 });
