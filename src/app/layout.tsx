@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   title: '生成AIを"安心して使い倒す"ためのルールづくり入門 | tAiL. 法律事務所',
   description:
     "経営者・幹部・次世代リーダー層向けセミナー（2026年6月17日 熊本城ホール）。生成AI活用のルールづくりを学ぶ実践型セッション。",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   icons: {
     icon: '/04_favicon.ico',
     shortcut: '/04_favicon.ico',
