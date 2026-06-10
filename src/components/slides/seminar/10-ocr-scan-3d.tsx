@@ -320,7 +320,7 @@ function GroundGlow() {
   );
 }
 
-export default function Slide10OcrScan3D() {
+export default function Slide10OcrScan3d() {
   return (
     <SlideWrapper>
       <div

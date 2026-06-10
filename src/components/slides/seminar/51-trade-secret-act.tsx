@@ -504,12 +504,12 @@ export default function Slide51TradeSecretAct() {
           </h2>
           <div className="flex flex-wrap gap-2 pt-1.5">
             <RelatedRuleLink
-              targetId="70-secret-info-output"
+              targetId="71-secret-info-output"
               label="関連: 5-4 秘密情報入力時の出力"
               accent="#9ee0a8"
             />
             <RelatedRuleLink
-              targetId="86-creative-legal-rights"
+              targetId="87-creative-legal-rights"
               label="関連: クリエイティブ編 業務委託"
               accent="#c8a8ff"
             />

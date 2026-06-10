@@ -191,6 +191,14 @@ export default function Slide01Title() {
               </motion.div>
             ))}
           </div>
+          <motion.p
+            className="text-[10px] text-white/30 tracking-wide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.7 }}
+          >
+            ※ 本資料の法令・ガイドライン等の記載は 2026年6月時点の情報に基づきます
+          </motion.p>
         </motion.div>
       </motion.div>
     </SlideWrapper>

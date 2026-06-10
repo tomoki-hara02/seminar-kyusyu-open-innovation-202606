@@ -303,7 +303,7 @@ function StepCard({
                   </span>
                   <div className="mt-1">
                     <RelatedRuleLink
-                      targetId="68-hitl-human-review"
+                      targetId="69-hitl-human-review"
                       label="5-2 HITL（各論）へ"
                       accent="#ffaacc"
                     />

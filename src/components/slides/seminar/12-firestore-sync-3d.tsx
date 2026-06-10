@@ -473,7 +473,7 @@ function ParticleHalo({ count = 1100 }: { count?: number }) {
   );
 }
 
-export default function Slide12FirestoreSync3D() {
+export default function Slide12FirestoreSync3d() {
   return (
     <SlideWrapper>
       <div

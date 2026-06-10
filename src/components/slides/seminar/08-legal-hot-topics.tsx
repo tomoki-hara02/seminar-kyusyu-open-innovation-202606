@@ -210,7 +210,7 @@ export default function Slide08LegalHotTopics() {
 
             <div className="shrink-0">
               <RelatedRuleLink
-                targetId="52-pip-act-genai-checkpoints"
+                targetId="53-pip-act-genai-checkpoints"
                 label="関連: 4-4 個情法×生成AIの論点"
                 accent={LAW_ACCENT}
               />

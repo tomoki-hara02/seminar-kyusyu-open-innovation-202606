@@ -399,7 +399,7 @@ function ParticleHalo({ count = 1100 }: { count?: number }) {
   );
 }
 
-export default function Slide11AiStructure3D() {
+export default function Slide11AiStructure3d() {
   return (
     <SlideWrapper>
       {/* 3D 背景：1440×810 にフルブリード */}
