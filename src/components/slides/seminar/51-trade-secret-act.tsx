@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p51: 4-3 社内秘密情報・営業秘密 — 不正競争防止法 第2条6項
@@ -501,6 +502,18 @@ export default function Slide51TradeSecretAct() {
               法的要件と管理
             </span>
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="70-secret-info-output"
+              label="関連: 5-4 秘密情報入力時の出力"
+              accent="#9ee0a8"
+            />
+            <RelatedRuleLink
+              targetId="86-creative-legal-rights"
+              label="関連: クリエイティブ編 業務委託"
+              accent="#c8a8ff"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 items-stretch">

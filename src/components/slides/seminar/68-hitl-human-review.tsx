@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p68: 5-2 出力情報 — HITL（人間による確認）
@@ -170,6 +171,13 @@ export default function Slide68HitlHumanReview() {
             </span>
             <span className="text-white/90 ml-2">（人間による確認）</span>
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <RelatedRuleLink
+              targetId="22-risk-practice"
+              label="関連: RBA実践例（名刺管理MCP）"
+              accent="#ffaacc"
+            />
+          </div>
         </div>
 
         {/* 責任 + 注意点 */}

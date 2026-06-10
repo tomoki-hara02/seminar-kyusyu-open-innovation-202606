@@ -111,8 +111,8 @@ export const seminarSlideRegistry: SlideEntry[] = [
     Component: Slide01Title,
     background: 'morph',
     chapter: 'opening',
-    title: 'タイトル',
-    note: 'p1:タイトル',
+    title: 'タイトル ＋ セミナーの楽しみ方（3 Tips）',
+    note: 'p1:タイトル／3 Tips（ブラウザAI深堀・F11全画面・左上の目次）',
   },
   {
     id: '02-office-intro',
@@ -143,8 +143,8 @@ export const seminarSlideRegistry: SlideEntry[] = [
     Component: Slide05Start,
     background: 'logoParticles',
     chapter: 'opening',
-    title: 'では、始めましょう ＋ セミナーの楽しみ方',
-    note: 'p5:では、始めましょう／2 Tips（ブラウザAI深堀・F11全画面）',
+    title: 'では、始めましょう',
+    note: 'p5:では、始めましょう（Chapter 01 への導入トランジション）',
   },
 
   // ── Chapter 01: 近時のホットトピックと生成AI活用プラン ─────
@@ -269,7 +269,7 @@ export const seminarSlideRegistry: SlideEntry[] = [
     Component: Slide22RiskPractice,
     chapter: 'chapter-02-front',
     title: 'リスクベースアプローチ — 実践例（名刺管理MCP）',
-    note: 'p22:リスクベースアプローチ実践例 — 名刺管理MCP → zod → 重複登録リスク → HITL/続行 → 判断',
+    note: 'p22:リスクベースアプローチ実践例 — 名刺管理MCP → zod → 懸念(技術=ミスアライメント/法令=個人情報・守秘義務) → RBA検証(検討事項・リスク対策HITL/入力情報範囲ルール化) → 判断',
   },
   {
     id: '23-data-flow',

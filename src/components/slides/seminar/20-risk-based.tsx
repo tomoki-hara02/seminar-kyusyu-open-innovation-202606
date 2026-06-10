@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p20: リスクベースアプローチとは？
@@ -108,6 +109,13 @@ export default function Slide20RiskBased() {
             <span className="text-white/85 font-bold">優先度の高い領域にリソースを集中</span>
             させる考え方。
           </span>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <RelatedRuleLink
+              targetId="50-risk-based-input-relationship"
+              label="関連: 4-2 入力禁止情報×RBA（応用）"
+              accent="#f7c46c"
+            />
+          </div>
         </div>
 
         {/* 本体: 左マトリックス / 右 凡例 */}

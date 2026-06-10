@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 import {
   LEGAL_RIGHTS_CHAPTER_ACCENT,
   RightsHubDiagram,
@@ -55,6 +56,13 @@ export default function Slide86CreativeLegalRights() {
             <span className="text-white/80 font-medium"> 人格的利益 </span>
             を意識する
           </p>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="51-trade-secret-act"
+              label="関連: 4-3 営業秘密・不正競争防止法"
+              accent={CREATIVE_ACCENT}
+            />
+          </div>
         </div>
 
         <RightsHubDiagram highlightIds={HIGHLIGHT_IDS} />

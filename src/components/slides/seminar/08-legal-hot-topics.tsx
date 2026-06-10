@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p8: 法的な近時のホットトピック
@@ -13,7 +14,8 @@ import SlideWrapper from '../../SlideWrapper';
 const LAW_ACCENT = '#88bbff';
 const PURPLE_ACCENT = '#c8a8ff';
 const PINK_ACCENT = '#ffaacc';
-const MOJ_URL = 'https://www.moj.go.jp/content/001463284.pdf';
+const MOJ_URL = 'https://www.moj.go.jp/MINJI/minji07_00400.html';
+const PPC_URL = 'https://www.ppc.go.jp/news/press/2026/260407/';
 
 type PipCategory = {
   num: number;
@@ -112,19 +114,55 @@ export default function Slide08LegalHotTopics() {
               >
                 12
               </span>
-              <div className="flex flex-col min-w-0">
+              <div className="flex flex-col min-w-0 gap-0.5">
                 <span
                   className="tracking-[0.18em] uppercase text-white/40"
                   style={{ fontSize: 'clamp(10px, 0.8vw, 11px)' }}
                 >
                   Topic 01 · 個人情報保護法
                 </span>
-                <h3
-                  className="font-bold text-white leading-tight"
-                  style={{ fontSize: 'clamp(15px, 1.4vw, 19px)' }}
+                <a
+                  href={PPC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex flex-col w-fit max-w-full"
+                  style={{ color: 'inherit' }}
                 >
-                  令和8年改正 — 12 の改正項目
-                </h3>
+                  <span className="inline-flex items-center gap-1.5">
+                    <h3
+                      className="font-bold text-white leading-tight transition-colors group-hover:text-[var(--law-accent)] underline underline-offset-4 decoration-1 decoration-white/30 group-hover:decoration-[var(--law-accent)]"
+                      style={{
+                        fontSize: 'clamp(15px, 1.4vw, 19px)',
+                        ['--law-accent' as string]: LAW_ACCENT,
+                      }}
+                    >
+                      令和8年改正 — 12 の改正項目
+                    </h3>
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden
+                      className="shrink-0 text-white/40 transition-colors group-hover:text-[var(--law-accent)]"
+                      style={{ ['--law-accent' as string]: LAW_ACCENT }}
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </span>
+                  <span
+                    className="text-white/50 leading-snug transition-colors group-hover:text-white/70"
+                    style={{ fontSize: 'clamp(10px, 0.82vw, 12px)' }}
+                  >
+                    「個人情報の保護に関する法律等の一部を改正する法律案」の閣議決定について（令和8年4月7日）
+                  </span>
+                </a>
               </div>
             </div>
 
@@ -169,6 +207,14 @@ export default function Slide08LegalHotTopics() {
                 </motion.li>
               ))}
             </ul>
+
+            <div className="shrink-0">
+              <RelatedRuleLink
+                targetId="52-pip-act-genai-checkpoints"
+                label="関連: 4-4 個情法×生成AIの論点"
+                accent={LAW_ACCENT}
+              />
+            </div>
 
             <div
               className="shrink-0 flex flex-wrap gap-1.5 pt-1 border-t"
@@ -294,7 +340,7 @@ export default function Slide08LegalHotTopics() {
                   e.currentTarget.style.color = LAW_ACCENT;
                 }}
               >
-                <span>声優有志提出資料</span>
+                <span>検討会 公式ページ（法務省）</span>
                 <svg
                   width="14"
                   height="14"

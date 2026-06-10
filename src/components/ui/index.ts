@@ -9,3 +9,6 @@ export type { FadeUpProps } from './FadeUp';
 
 export { default as GlassCard } from './GlassCard';
 export type { GlassCardProps } from './GlassCard';
+
+export { default as RelatedRuleLink } from './RelatedRuleLink';
+export type { RelatedRuleLinkProps } from './RelatedRuleLink';

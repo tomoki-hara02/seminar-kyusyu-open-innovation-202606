@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p42: 3-2 アクセス可能な端末 — 企業が注意すべきこと
@@ -421,6 +422,16 @@ export default function Slide42AccessibleDevices() {
                   {item.message}
                 </p>
               </div>
+
+              {i === 1 && (
+                <div className="pl-2">
+                  <RelatedRuleLink
+                    targetId="38-account-management"
+                    label="関連規程: 2-2 アカウント別アクセス へ"
+                    accent={item.accent}
+                  />
+                </div>
+              )}
 
               <div
                 className="rounded-lg border px-3 py-3 min-h-[8.5rem] flex items-center ml-2"

@@ -50,6 +50,16 @@ export default function Presentation({ registry }: PresentationProps) {
     [currentSlide]
   );
 
+  const goToId = useCallback(
+    (id: string) => {
+      const index = slideRegistry.findIndex((e) => e.id === id);
+      if (index < 0) return;
+      setDirection(index > currentSlide ? 1 : -1);
+      setCurrentSlide(index);
+    },
+    [slideRegistry, currentSlide]
+  );
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // TOC / 休憩スライド表示中は矢印ナビを無効化
@@ -81,7 +91,7 @@ export default function Presentation({ registry }: PresentationProps) {
   };
 
   return (
-    <PresentationContext.Provider value={{ currentSlide, goTo }}>
+    <PresentationContext.Provider value={{ currentSlide, goTo, goToId }}>
     <div
       className={`relative w-screen h-screen overflow-hidden ${entry.textSelectable ? 'cursor-default select-text' : 'cursor-pointer select-none'}`}
       style={{ backgroundColor: BG_COLOR }}

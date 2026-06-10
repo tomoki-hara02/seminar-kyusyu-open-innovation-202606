@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p70: 5-4 出力情報 — 秘密情報入力時の出力の扱い
@@ -202,6 +203,13 @@ export default function Slide70SecretInfoOutput() {
             <span className="text-white/55 font-semibold mx-1.5">（営業秘密 / 守秘義務）</span>
             を入力した際の出力について
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="51-trade-secret-act"
+              label="関連: 4-3 営業秘密・不正競争防止法"
+              accent="#9ee0a8"
+            />
+          </div>
         </div>
 
         <div className="flex items-center justify-center">

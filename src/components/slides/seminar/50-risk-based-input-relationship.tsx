@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p50: 4-2 入力禁止情報 — リスクベースアプローチとの関係
@@ -151,6 +152,13 @@ export default function Slide50RiskBasedInputRelationship() {
             </span>
             との関係
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="20-risk-based"
+              label="関連: RBAとは（定義・マトリックス）"
+              accent="#f7c46c"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col items-center justify-center">

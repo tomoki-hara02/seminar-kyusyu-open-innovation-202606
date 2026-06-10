@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
 import { mulberry32 } from '@/lib/random';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p58: 4-5 取引先・他社の秘密情報 — 秘密保持契約
@@ -340,6 +341,14 @@ export default function Slide58ThirdPartySecrets() {
               </motion.li>
             ))}
           </ul>
+
+          <div className="pointer-events-auto mt-1">
+            <RelatedRuleLink
+              targetId="82-sales-legal-rights"
+              label="関連: 商談編 取引先との秘密保持"
+              accent={CHAPTER_ACCENT}
+            />
+          </div>
         </div>
       </motion.div>
 

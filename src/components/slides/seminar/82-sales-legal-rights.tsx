@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 import {
   LEGAL_RIGHTS_CHAPTER_ACCENT,
   RightsHubDiagram,
@@ -53,6 +54,13 @@ export default function Slide82SalesLegalRights() {
             <span className="text-white/80 font-medium"> 秘密保持契約 </span>
             の範囲を意識する
           </p>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="58-third-party-secrets"
+              label="関連: 4-5 取引先・他社の秘密情報"
+              accent={SALES_ACCENT}
+            />
+          </div>
         </div>
 
         <RightsHubDiagram highlightIds={HIGHLIGHT_IDS} />

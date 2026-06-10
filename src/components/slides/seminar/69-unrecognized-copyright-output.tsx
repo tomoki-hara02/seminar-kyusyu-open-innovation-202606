@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p69: 5-3 出力情報 — 認識の無い著作物の出力
@@ -208,6 +209,13 @@ export default function Slide69UnrecognizedCopyrightOutput() {
             </span>
             著作物の出力
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="62-copyright-article-30-4"
+              label="関連: 4-6 入力側の著作権（30条の4）"
+              accent="#88bbff"
+            />
+          </div>
           <p
             className="text-white/40 leading-relaxed"
             style={{ fontSize: 'clamp(10px, 0.88vw, 12px)' }}

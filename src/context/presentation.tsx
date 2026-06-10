@@ -10,11 +10,14 @@ import { createContext, useContext } from 'react';
 export interface PresentationContextValue {
   currentSlide: number;
   goTo: (index: number) => void;
+  /** スライド id を指定してジャンプ（関連規程リンク等で使用） */
+  goToId: (id: string) => void;
 }
 
 export const PresentationContext = createContext<PresentationContextValue>({
   currentSlide: 0,
   goTo: () => {},
+  goToId: () => {},
 });
 
 export const usePresentationContext = () => useContext(PresentationContext);

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p38: 2-2 アカウントの管理 — 2つの要点
@@ -219,6 +220,14 @@ export default function Slide38AccountManagement() {
                   {point.message}
                 </p>
               </div>
+
+              {point.num === '02' && (
+                <RelatedRuleLink
+                  targetId="42-accessible-devices"
+                  label="関連規程: 3-2 端末 × SSO連携 へ"
+                  accent={point.accent}
+                />
+              )}
 
               <div
                 className="rounded-xl border px-3 py-3 md:py-4 min-h-[9.5rem] flex items-center"

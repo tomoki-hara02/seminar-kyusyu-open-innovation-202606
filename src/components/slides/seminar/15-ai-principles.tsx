@@ -13,6 +13,11 @@ import SlideWrapper from '../../SlideWrapper';
  * 右: 各原則の説明文（タブ切り替え）
  */
 
+// ─── 出典リンク ──────────────────────────────────────────────────────────────
+const GUIDELINE_URL =
+  'https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html';
+const TITLE_ACCENT = '#88bbff';
+
 // ─── Triangle geometry ──────────────────────────────────────────────────────
 const S  = 340;
 const H  = (S * Math.sqrt(3)) / 2;
@@ -135,10 +140,36 @@ export default function Slide15AiPrinciples() {
         <div className="flex flex-col items-center justify-center shrink-0" style={{ width: '44%' }}>
           {/* ヘッダー */}
           <div className="flex flex-col items-center gap-1 text-center mb-2">
-            <h2 className="font-bold tracking-tight text-white leading-tight"
-              style={{ fontSize: 'clamp(16px, 2vw, 26px)' }}>
-              経産省「AI事業者ガイドライン（1.2版）」
-            </h2>
+            <a
+              href={GUIDELINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 w-fit max-w-full transition-colors"
+              style={{ ['--title-accent' as string]: TITLE_ACCENT }}
+            >
+              <h2
+                className="font-bold tracking-tight text-white leading-tight transition-colors group-hover:text-[var(--title-accent)] underline underline-offset-4 decoration-1 decoration-white/30 group-hover:decoration-[var(--title-accent)]"
+                style={{ fontSize: 'clamp(16px, 2vw, 26px)' }}
+              >
+                経産省「AI事業者ガイドライン（1.2版）」
+              </h2>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+                className="shrink-0 text-white/40 transition-colors group-hover:text-[var(--title-accent)]"
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
             <span className="text-white/40" style={{ fontSize: 'clamp(11px, 1.1vw, 15px)' }}>
               基本理念
             </span>

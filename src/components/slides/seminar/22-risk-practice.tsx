@@ -3,12 +3,15 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p22: リスクベースアプローチ — 実践例
  *
- * 名刺管理MCPサーバー設計 → zodバリデーション → 重複登録の懸念 →
- * リスク検証（HITL / 続行） → 判断、のフローを示す。
+ * 名刺管理MCPサーバー設計 → zodバリデーション →
+ * 懸念（技術面=ミスアライメント / 法令面=個人情報・守秘義務）→
+ * RBAで検証（検討事項: ミスアライメント / 格納情報範囲、リスク対策: HITL / 入力情報範囲のルール化）→
+ * 判断、のフローを示す。
  */
 
 type FlowStep = {
@@ -20,33 +23,34 @@ type FlowStep = {
   variant?: 'default' | 'concern' | 'branch' | 'decision';
 };
 
+// 面の色（技術面 / 法令面）
+const TECH_ACCENT = '#88bbff'; // 技術面
+const LEGAL_ACCENT = '#c8a8ff'; // 法令面
+
 const STEPS: FlowStep[] = [
   {
     id: 'design',
     label: 'Step 01',
     title: '名刺管理MCPサーバーの設計',
-    desc: '名刺OCR → CRM連携のMCPツールを設計・実装',
     accent: '#88bbff',
   },
   {
     id: 'zod',
     label: 'Step 02',
     title: 'zodでバリデーション強化',
-    desc: '入力スキーマを厳密化し、型安全なデータ受け渡しを担保',
     accent: '#c8a8ff',
   },
   {
     id: 'concern',
     label: '懸念事項',
-    title: '重複登録回避の挙動（ミスアライメント）',
-    desc: '「同一人物の更新」と「別人物の新規登録」の判定が意図とズレる可能性',
+    title: '技術面・法令面、2つの懸念',
     accent: '#f7c46c',
     variant: 'concern',
   },
   {
     id: 'risk',
     label: 'Step 03',
-    title: 'リスクベースアプローチにて重複登録のリスクを検証',
+    title: 'リスクベースアプローチにてリスクを検証',
     accent: '#ffaacc',
     variant: 'branch',
   },
@@ -125,7 +129,7 @@ function StepCard({
                 fontSize: 'clamp(10px, 0.75vw, 11px)',
               }}
             >
-              ⚠ ミスアライメント
+              ⚠ 2つの側面
             </span>
           )}
         </div>
@@ -146,59 +150,186 @@ function StepCard({
           </p>
         )}
 
-        {isBranch && (
+        {isConcern && (
           <div className="grid grid-cols-2 gap-2 mt-1">
             <div
-              className="flex flex-col gap-1 p-2.5 rounded-xl border"
+              className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
               style={{
-                borderColor: '#ff556066',
-                background: 'linear-gradient(135deg, #ff556018 0%, #ff556006 100%)',
+                borderColor: `${TECH_ACCENT}66`,
+                background: `linear-gradient(135deg, ${TECH_ACCENT}16 0%, ${TECH_ACCENT}04 100%)`,
               }}
             >
               <span
-                className="font-mono tracking-wider text-[#ff5560]"
-                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
+                className="font-mono tracking-wider"
+                style={{ color: TECH_ACCENT, fontSize: 'clamp(10px, 0.75vw, 11px)' }}
               >
-                リスク大
+                技術面
               </span>
               <span
                 className="font-bold text-white leading-snug"
                 style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
               >
-                → HITL
+                ミスアライメント
               </span>
               <span
-                className="text-white/50 leading-snug"
-                style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
+                className="text-white/55 leading-snug"
+                style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
               >
-                人が確認してから登録
+                「登録して」を満たそうと、AIが重複チェックを回避して強行登録
               </span>
             </div>
             <div
-              className="flex flex-col gap-1 p-2.5 rounded-xl border"
+              className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
               style={{
-                borderColor: '#9ee0a866',
-                background: 'linear-gradient(135deg, #9ee0a818 0%, #9ee0a806 100%)',
+                borderColor: `${LEGAL_ACCENT}66`,
+                background: `linear-gradient(135deg, ${LEGAL_ACCENT}16 0%, ${LEGAL_ACCENT}04 100%)`,
               }}
             >
               <span
-                className="font-mono tracking-wider text-[#9ee0a8]"
-                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
+                className="font-mono tracking-wider"
+                style={{ color: LEGAL_ACCENT, fontSize: 'clamp(10px, 0.75vw, 11px)' }}
               >
-                許容範囲
+                法令面
               </span>
               <span
                 className="font-bold text-white leading-snug"
                 style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
               >
-                → 続行
+                個人情報 / 守秘義務
               </span>
               <span
-                className="text-white/50 leading-snug"
-                style={{ fontSize: 'clamp(13px, 1vw, 14px)' }}
+                className="text-white/55 leading-snug"
+                style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
               >
-                自動登録フローを維持
+                名刺情報か相談情報か、格納する情報の性質に応じた義務
               </span>
+            </div>
+          </div>
+        )}
+
+        {isBranch && (
+          <div className="flex flex-col gap-2.5 mt-1">
+            {/* 検討事項 */}
+            <div className="flex flex-col gap-1.5">
+              <span
+                className="font-mono tracking-wider text-white/45"
+                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
+              >
+                検討事項
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                <div
+                  className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
+                  style={{
+                    borderColor: `${TECH_ACCENT}66`,
+                    background: `linear-gradient(135deg, ${TECH_ACCENT}14 0%, ${TECH_ACCENT}04 100%)`,
+                  }}
+                >
+                  <span
+                    className="font-mono tracking-wider"
+                    style={{ color: TECH_ACCENT, fontSize: 'clamp(10px, 0.72vw, 11px)' }}
+                  >
+                    技術面
+                  </span>
+                  <span
+                    className="font-bold text-white leading-snug"
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
+                  >
+                    ミスアライメント
+                  </span>
+                  <span
+                    className="text-white/50 leading-snug"
+                    style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
+                  >
+                    強行登録の挙動が起こりうるか
+                  </span>
+                </div>
+                <div
+                  className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
+                  style={{
+                    borderColor: `${LEGAL_ACCENT}66`,
+                    background: `linear-gradient(135deg, ${LEGAL_ACCENT}14 0%, ${LEGAL_ACCENT}04 100%)`,
+                  }}
+                >
+                  <span
+                    className="font-mono tracking-wider"
+                    style={{ color: LEGAL_ACCENT, fontSize: 'clamp(10px, 0.72vw, 11px)' }}
+                  >
+                    法令面
+                  </span>
+                  <span
+                    className="font-bold text-white leading-snug"
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
+                  >
+                    格納情報範囲
+                  </span>
+                  <span
+                    className="text-white/50 leading-snug"
+                    style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
+                  >
+                    名刺情報のみか、相談情報まで保存するか
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* リスク対策 */}
+            <div className="flex flex-col gap-1.5">
+              <span
+                className="font-mono tracking-wider text-white/45"
+                style={{ fontSize: 'clamp(10px, 0.75vw, 11px)' }}
+              >
+                リスク対策
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                <div
+                  className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
+                  style={{
+                    borderColor: '#ffaacc66',
+                    background: 'linear-gradient(135deg, #ffaacc18 0%, #ffaacc06 100%)',
+                  }}
+                >
+                  <span
+                    className="font-bold text-white leading-snug"
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
+                  >
+                    HITL
+                  </span>
+                  <span
+                    className="text-white/55 leading-snug"
+                    style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
+                  >
+                    人が確認してから登録する
+                  </span>
+                  <div className="mt-1">
+                    <RelatedRuleLink
+                      targetId="68-hitl-human-review"
+                      label="5-2 HITL（各論）へ"
+                      accent="#ffaacc"
+                    />
+                  </div>
+                </div>
+                <div
+                  className="flex flex-col gap-0.5 p-2.5 rounded-xl border"
+                  style={{
+                    borderColor: '#9ee0a866',
+                    background: 'linear-gradient(135deg, #9ee0a818 0%, #9ee0a806 100%)',
+                  }}
+                >
+                  <span
+                    className="font-bold text-white leading-snug"
+                    style={{ fontSize: 'clamp(13px, 1.05vw, 15px)' }}
+                  >
+                    入力情報範囲のルール化
+                  </span>
+                  <span
+                    className="text-white/55 leading-snug"
+                    style={{ fontSize: 'clamp(12px, 0.95vw, 13px)' }}
+                  >
+                    名刺情報のみに限定する等、保存範囲を規程で定める
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         )}

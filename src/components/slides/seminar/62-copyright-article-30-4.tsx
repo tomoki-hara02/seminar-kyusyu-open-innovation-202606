@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p62: 4-6 著作物 — 第30条の4 条文解説 + 文化審議会の考え方
@@ -63,6 +64,13 @@ export default function Slide62CopyrightArticle304() {
           >
             {ARTICLE_SUBTITLE}
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="69-unrecognized-copyright-output"
+              label="関連: 5-3 出力側の著作権（依拠性）"
+              accent="#88bbff"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-3.5 items-start">

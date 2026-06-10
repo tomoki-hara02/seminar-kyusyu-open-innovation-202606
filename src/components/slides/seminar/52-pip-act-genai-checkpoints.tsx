@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SlideWrapper from '../../SlideWrapper';
+import { RelatedRuleLink } from '../../ui';
 
 /**
  * p52: 4-4 個人情報 — 個人情報保護法と生成AIの論点チェック
@@ -57,6 +58,13 @@ export default function Slide52PipActGenaiCheckpoints() {
               生成AIの論点
             </span>
           </h2>
+          <div className="flex flex-wrap gap-2 pt-1.5">
+            <RelatedRuleLink
+              targetId="08-legal-hot-topics"
+              label="関連: 令和8年改正の概要（p8）"
+              accent={LAW_ACCENT}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col gap-3 md:gap-3.5 justify-center">
